@@ -1,0 +1,66 @@
+.footer {
+  padding-top: $spacing10;
+  text-align: center;
+  @include breakpoints-down(sm) {
+    padding-top: $spacing5
+  }
+  nav {
+    margin: spacing(6, 0);
+    ul {
+      margin: 0;
+      padding: 0;
+      li {
+        display: inline-block;
+        margin: spacing(0, 1);
+        a {
+          @include use-theme(color, $palette-primary-main, $palette-primary-light);
+          text-transform: capitalize;
+          text-decoration: none !important;
+          padding: spacing(0, 1);
+          font-size: 18px;
+          @include breakpoints-down(xs) {
+            font-size: 16px
+          }
+        }
+      }
+    }
+  }
+}
+
+.socmed {
+  display: flex;
+  width: 200px;
+  margin: $spacing8 auto;
+  justify-content: space-between;
+}
+
+.icon {
+  padding: $spacing1;
+  width: 40px;
+  height: 40px;
+  @include use-theme(background, $palette-primary-light, $palette-primary-main);
+  &.v-btn {
+    i {
+      @include use-theme(color, $palette-primary-dark, $palette-primary-light);
+      width: 25px;
+      height: 25px;
+      font-size: 22px;
+    }
+  }
+  &:hover {
+    background: $palette-primary-dark;
+    i {
+      color: $palette-primary-light !important;
+    }
+  }
+}
+.copyright {
+  display: block;
+  @include use-theme(color, $palette-primary-dark, $palette-primary-light);
+  @include use-theme(background, $palette-primary-light, $palette-primary-main);
+  padding: spacing(1.5);
+  margin-top: spacing(3);
+  p {
+    margin-bottom: 0
+  }
+}

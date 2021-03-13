@@ -1,0 +1,88 @@
+.filter {
+  @include breakpoints-down(sm) {
+    padding: $spacing4;
+    height: 100%;
+    overflow: auto;
+    position: absolute;
+    width: 100%;
+  }
+}
+
+.filter-block {
+  margin-bottom: 50px;
+}
+
+.sorter {
+  @include breakpoints-down(xs) {
+    flex-direction: column-reverse;
+  }
+}
+
+.btn-tag {
+  position: relative;
+  cursor: pointer;
+  label {
+    display: inline-block;
+    padding: 1px 6px;
+    margin: 4px;
+    border-radius: $rounded-small;
+    border: 1px solid $palette-primary-main;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    @include palette-background-default;
+  }
+  input {
+    opacity: 0;
+    position: absolute;
+    &:checked + label {
+      color: $palette-common-white;
+      background: $palette-primary-main;
+    }
+  }
+}
+
+.input-price {
+  width: 75px;
+  display: inline-block;
+}
+
+.search-banner {
+  height: 520px;
+  display: flex;
+  align-items: center;
+  @include use-theme(background-color, $palette-primary-light, $palette-primary-dark);
+}
+
+.search {
+  position: relative;
+  display: flex;
+  margin: $spacing4 auto;
+  align-items: center;
+  @include breakpoints-up(sm) {
+    width: 600px;
+  }
+  ::v-deep fieldset {
+    height: 41px;
+  }
+  ::v-deep .v-text-field--outlined > .v-input__control > .v-input__slot {
+    @include padding-left($spacing5);
+    min-height: 0;
+    margin-bottom: 0;
+    input {
+      max-height: none;
+    }
+  }
+  ::v-deep .v-text-field__details {
+    display: none;
+  }
+  .search-icon {
+    position: absolute;
+    top: 7px;
+    @include left($spacing1);
+  }
+}
+
+.apply-range {
+  @include rtl-flip
+}

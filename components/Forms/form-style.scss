@@ -1,0 +1,289 @@
+.page-wrap {
+  min-height: 100%;
+  position: relative;
+  width: 100%;
+  align-items: center;
+  @include breakpoints-up(md) {
+    display: flex;
+  }
+  a {
+    @include use-theme(color, $palette-primary-main, $palette-primary-light);
+    text-transform: none;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: $font-regular;
+    @include breakpoints-down(xs) {
+      font-size: 14px;
+    }
+  }
+}
+
+.full-form-wrap {
+  padding-top: $spacing8;
+  @include breakpoints-down(xs) {
+    padding-top: $spacing4
+  }
+}
+
+.v-card.form-box {
+  overflow: hidden;
+  background: transparent;
+  border: 1px solid $palette-primary-main;
+  &.map-form {
+    @include breakpoints-up(md) {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-right: none;
+    }
+  }
+}
+
+
+.desc {
+  text-align: center;
+  padding: spacing(0, 10);
+  @include breakpoints-down(xs) {
+    padding: spacing(0, 2)
+  }
+}
+
+
+.form {
+  position: relative;
+  margin-top: $spacing8;
+  padding: spacing(0, 8, 10);
+  @include breakpoints-down(md) {
+    padding: spacing(0, 4, 8)
+  }
+  @include breakpoints-down(xs) {
+    padding: spacing(0, 2, 8)
+  }
+}
+
+.form-helper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-size: 14px;
+  @include breakpoints-down(xs) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.btn-area {
+  justify-content: space-between;
+  @include breakpoints-up(md) {
+    margin-top: $spacing3;
+    display: flex;
+  }
+  @include breakpoints-down('sm') {
+    button {
+      margin-top: $spacing4;
+      width: 100%
+    }
+  }
+  @include breakpoints-down(xs) {
+    margin-top: $spacing2;
+    margin-bottom: $spacing3;
+  }
+  button.v-btn.v-size--large {
+    margin-top: $spacing2;
+    min-height: 48px;
+    min-width: 180px;
+  }
+  span {
+    a.link {
+      text-decoration: none !important;
+      color: $palette-secondary-main
+    }
+  }
+  &.flex {
+    display: flex;
+    justify-content: space-between;
+    @include breakpoints-down(sm) {
+      display: block
+    }
+  }
+}
+
+.right-icon {
+  @include margin-left($spacing1)
+}
+
+.check {
+  svg {
+    fill: $palette-secondary-main
+  }
+}
+
+.auth-frame {
+  display: block;
+  position: relative;
+  .row > div {
+    padding: 0
+  }
+}
+
+.greeting {
+  display: flex;
+  padding-top: $spacing5;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  text-align: center;
+  h6 {
+    color: $palette-primary-main;
+    font-weight: $font-regular
+  }
+}
+
+.img {
+  margin: spacing(5, 0)
+}
+
+.head {
+  text-align: center;
+  margin-bottom: $spacing5;
+  text-transform: capitalize;
+  @include breakpoints-down(sm) {
+    margin-top: $spacing2;
+    justify-content: center;
+    a {
+      display: none
+    }
+  }
+}
+
+.form-wrap {
+  @include palette-background-paper;
+  position: relative;
+  padding: 0 $spacing1;
+  @include breakpoints-up(sm) {
+    padding: $spacing5
+  }
+}
+
+.socmed-side-login {
+  display: flex;
+  justify-content: space-around;
+  @include breakpoints-down(md) {
+    justify-content: center
+  }
+  @include breakpoints-down(xs) {
+    display: block
+  }
+  > * {
+    color: $palette-common-white;
+    width: 150px;
+    padding: $spacing1;
+    @include breakpoints-down(md) {
+      margin: 0 4px;
+      width: 120px;
+    }
+    @include breakpoints-down(xs) {
+      margin: 0 0 $spacing2;
+      width: 100%
+    }
+  }
+  i {
+    color: $palette-common-white;
+    @include margin-right($spacing1)
+  }
+}
+
+.blue-btn {
+  background: #28aae1 !important;
+  &:hover {
+    background: darken(#28aae1, 20%) !important
+  }
+}
+.navi-btn {
+  background: #3b579d !important;
+  &:hover {
+    background: darken(#3b579d, 20%) !important
+  }
+}
+.red-btn {
+  background: #dd493c !important;
+  &:hover {
+    background: darken(#dd493c, 20%) !important
+  }
+}
+.separator {
+  margin: 40px auto;
+  max-width: 300px;
+  min-width: 200px;
+  text-align: center;
+  position: relative;
+  @include palette-text-secondary;
+  p {
+    @include breakpoints-down(xs) {
+      font-size: 12px
+    }
+  }
+  &:before, &:after {
+    content: "";
+    border-top: 1px solid;
+    @include use-theme(border-top-color, $light-text-hint, $dark-text-hint);
+    top: 50%;
+    position: absolute;
+    width: 20%
+  }
+  &:before {
+    left: 0
+  }
+  &:after {
+    right: 0
+  }
+}
+
+.form-control-label {
+  a {
+    position: relative;
+    top: -20px
+  }
+  > div {
+    margin-top: 0
+  }
+}
+
+.map {
+  position: relative;
+  z-index: 20;
+  overflow: hidden;
+  color: $light-text-primary;
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.4);
+  height: 745px;
+  @include breakpoints-down(sm) {
+    height: 300px !important;
+  }
+  @include breakpoints-up(md) {
+    border-radius: 0 $rounded-medium $rounded-medium 0 !important;
+  }
+  ::v-deep .GMap__Wrapper{
+    height: 745px;
+    @include breakpoints-down(sm) {
+      height: 300px !important;
+    }
+  }
+  &.full {
+    height: 952px;
+    ::v-deep .GMap__Wrapper{
+      height: 952px;
+    }
+  }
+}
+
+.bubel-wrap {
+  height: 300px;
+  position: relative
+}
+
+.icon {
+  color: #607D8B;
+  @include margin-right($spacing1);
+  font-size: 16px;
+}

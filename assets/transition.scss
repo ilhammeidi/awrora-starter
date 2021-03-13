@@ -1,0 +1,9 @@
+/* Fade Up */
+#main-wrap {
+  opacity: 0;
+  &.page-fade-transition-exit {
+    opacity: 1;
+    -webkit-transition: opacity 400ms;
+    transition: opacity 400ms;
+  }
+}

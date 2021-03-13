@@ -1,0 +1,200 @@
+/* General */
+
+.profile-card {
+  display: flex;
+  border-radius: $rounded-medium;
+}
+
+.v-btn.main-btn {
+  min-width: 150px;
+}
+
+.properties {
+  padding: $spacing2;
+}
+
+.figure {
+  display: block;
+  position: relative;
+}
+
+.avatar {
+  margin: 0 auto;
+}
+
+.subtitle {
+  font-size: 18px;
+}
+
+.desc {
+  margin-top: $spacing2
+}
+
+.action {
+  padding: 0;
+  ::v-deep .v-btn {
+    flex: 1;
+    padding: $spacing1;
+    height: 60px;
+  }
+  ::v-deep .v-btn__content {
+    flex-direction: column;
+    text-transform: none;
+    font-weight: $font-regular;
+  }
+  .icon {
+    color: $palette-secondary-main
+  }
+}
+
+/* Orientation */
+
+.portrait {
+  max-width: 400px;
+  flex-direction: column;
+  text-align: center;
+  .properties {
+    padding-left: $spacing2;
+    padding-right: $spacing2;
+  }
+  .avatar {
+    margin-top: -50px;
+  }
+  .action {
+    border-top: 1px solid;
+    @include palette-divider;
+    padding-top: $spacing2;
+    margin-top: $spacing5;
+  }
+}
+
+.landscape {
+  max-width: 820px;
+  flex-direction: row;
+  align-items: center;
+  height: 160px;
+  @include text-align(left);
+  @include breakpoints-down(xs) {
+    width: 280px
+  }
+  @include breakpoints-up(md) {
+    height: 120px;
+  }
+  .figure {
+    width: 100px;
+    height: 100%;
+    @include margin-right($spacing4 * -1);
+  }
+  .v-btn--text {
+    margin-left: $spacing1 * -1
+  }
+  .subtitle {
+    font-size: 14px;
+  }
+  .properties {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    @include breakpoints-down(xs) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  .desc {
+    padding: 0;
+    @include breakpoints-down(sm) {
+      margin-top: $spacing1;
+      margin-bottom: $spacing1;
+    }
+  }
+  .action {
+    margin: 0 $spacing5;
+    @include breakpoints-down(xs) {
+      display: none
+    }
+    & > *:nth-child(1) {
+      @include breakpoints-down(sm) {
+        display: none
+      }
+    }
+  }
+  .v-btn.main-btn {
+    @include breakpoints-down(sm) {
+      min-width: 100px;
+      height: 28px;
+      font-size: 12px;
+    }
+  }
+}
+
+/* Type */
+
+.full { 
+  overflow: hidden;
+  position: relative;
+}
+
+.round {
+  .figure {
+    margin: $spacing1;
+    overflow: hidden;
+    height: 105px;
+    border-radius: $rounded-medium
+  }
+  &.landscape {
+    @include breakpoints-down(sm) {
+      .figure {
+        height: 145px;
+      }
+    }
+  }
+}
+
+.oval {
+  overflow: hidden;
+  &.portrait {
+    .figure {
+      height: 150px;
+      width: 120%;
+      margin-left: -10%;
+      overflow: hidden;
+      border-radius: 0 0 50% 50%;
+      & > div {
+        overflow: visible;
+        height: auto !important;
+      }
+    }
+  }
+  &.landscape {
+    .figure {
+      overflow: hidden;
+      & > div {
+        border-radius: 0 50% 50% 0 !important;
+        height: 120% !important;
+        margin-top: -10%;
+      }
+    }
+  }
+}
+
+.over {
+  &.portrait {
+    margin-top: $spacing2;
+    .figure {
+      overflow: hidden;
+      @include shade;
+      margin: spacing(-2, 2, 0);
+      border-radius: $rounded-medium;
+    }
+  }
+  &.landscape {
+    @include margin-left($spacing2);
+    .figure {
+      overflow: hidden;
+      @include shade;
+      height: 105px;
+      @include margin-left($spacing2 * -1);
+      border-radius: $rounded-medium;
+    }
+  }
+}

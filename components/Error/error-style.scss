@@ -1,0 +1,54 @@
+.error-wrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  @include breakpoints-up(md) {
+    min-height: 100vh;
+  }
+  @include breakpoints-down(sm) {
+    margin: spacing(10, 0)
+  }
+}
+
+.flex {
+  display: flex;
+  justify-content: center
+}
+
+.illustration {
+  margin: spacing(2, 5);
+  img {
+    max-width: 300px;
+    @include breakpoints-down(xs) {
+      max-width: 200px;
+    }
+  }
+}
+
+.text {
+  @include breakpoints-up(md) {
+    @include border-left(1px solid);
+    @include palette-divider;
+    @include padding-left($spacing5);
+  }
+  @include breakpoints-down(sm) {
+    text-align: center;
+  }
+  h3 {
+    font-size: 106px;
+    text-transform: capitalize;
+    font-weight: $font-bold;
+  }
+  h4 {
+    font-weight: $font-bold;
+    margin-bottom: $spacing3  
+  }
+  p {
+    font-size: 22px;
+    @include palette-text-secondary
+  }
+}
+
+.button {
+  margin-top: $spacing4
+}

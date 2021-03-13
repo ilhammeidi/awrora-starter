@@ -1,0 +1,171 @@
+.desc {
+  max-height: 130px;
+  padding: spacing(1, 0);
+  margin-bottom: $spacing5;
+  h6 {
+    font-weight: $font-medium;
+  }
+}
+
+.text {
+  @include text-align(left);
+  h4 {
+    font-weight: $font-bold;
+    margin-bottom: $spacing2;
+    width: 100%;
+    span {
+      display: block;
+      font-weight: $font-medium;
+    }
+  }
+}
+
+.property {
+  width: 100%;
+  display: flex;
+  margin-bottom: $spacing2;
+  .star {
+    color: #ff9500;
+    @include margin-right($spacing2);
+
+    i {
+      color: #ff9500;
+    }
+  }
+  .divider {
+    background: none;
+    border-left: 1px solid;
+    @include use-theme(border-color, $light-text-primary, $dark-text-primary);
+    height: 12px;
+    margin: 6px $spacing2;
+    display: inline-block;
+  }
+}
+
+.btn-area {
+  z-index: 10;
+  position: relative;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  @include breakpoints-down(xs) {
+    display: block;
+    & > * {
+      margin: spacing(0, 0, 2);
+    }
+  }
+  .text-btn {
+    padding-left: 8px;
+    padding-right: 8px;
+    @include use-theme(color, $palette-secondary-main, $palette-secondary-light);
+    i {
+      font-size: 1.3rem;
+      @include margin-right(4px);
+    }
+  }
+  & > * {
+    @include margin-right($spacing2);
+  }
+}
+
+.zoom-icon {
+  &.v-icon {
+    position: absolute;
+    font-size: 56px;
+  }
+  top: calc(50% - 28px);
+  left: calc(50% - 28px);
+  opacity: 0;
+  color: $palette-common-white;
+  text-shadow: 1px 1px 10px $palette-common-black;
+}
+
+.image {
+  text-align: center;
+  line-height: 360px;
+  vertical-align: middle;
+  position: relative !important;
+  margin: 0 auto;
+  width: 360px;
+  .figure {
+    @include shadow3;
+    overflow: hidden;
+    border-radius: $rounded-big;
+    margin: $spacing2;
+    margin-top: 0;
+    cursor: pointer;
+  }
+  &:hover {
+    .zoom-icon {
+      opacity: 1
+    }
+  }
+}
+
+.image-detail {
+  min-height: 300px;
+}
+
+.about {
+  margin-top: $spacing12 * -1;
+  padding: spacing(7, 10);
+  @include breakpoints-down(xs) {
+    padding: $spacing2;
+  }
+  h4 {
+    margin: 0;
+  }
+  .btn-area {
+    margin-top: $spacing6;
+  }
+  .person {
+    @include breakpoints-down(sm) {
+      margin-top: $spacing5;
+    }
+    h6 {
+      font-size: 14px;
+      text-transform: uppercase;
+      font-weight: $font-bold;
+    }
+    p {
+      margin-bottom: $spacing4;
+    }
+  }
+}
+
+.help-paper {
+  background-color: $palette-primary-light;
+  padding: spacing(2, 1);
+}
+.headline {
+  color: $palette-primary-dark;
+}
+
+.gallery-item {
+  padding: 2px;
+}
+
+.product-item {
+  padding: $spacing1;
+  margin-bottom: $spacing1;
+  a {
+    display: block;
+    text-decoration: none;
+  }
+}
+.image {
+  border-radius: $rounded-small;
+}
+.price {
+  font-weight: $font-bold;
+  font-size: 14px;
+  color: $palette-primary-main;
+}
+
+.scroll-tablet {
+  @include breakpoints-down(sm) {
+    overflow: auto;
+    flex-wrap: nowrap;
+  }
+}
+

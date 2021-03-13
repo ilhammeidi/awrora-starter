@@ -1,0 +1,139 @@
+.banner-wrap {
+  position: relative;
+  display: block;
+  @include use-theme(background, $palette-primary-light, $palette-primary-dark);
+  @include breakpoints-up('sm') {
+    height: 600px;
+  }
+  @include breakpoints-down('xs') {
+    padding: spacing(12, 0, 5)
+  }
+}
+
+.slide {
+  position: relative;
+}
+
+.img {
+  text-align: center;
+  @include breakpoints-down('xs') {
+    margin-top: $spacing3
+  }
+  img {
+    width: 310px;
+  }
+}
+
+.inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.text {
+  h4 {
+    font-weight: $font-bold;
+    margin-bottom: $spacing2;
+  }
+  h5 {
+    @include palette-text-secondary
+  }
+}
+
+.video-popup {
+  max-width: none;
+  h4 {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex: 1;
+    overflow: hidden;
+  }
+  @include breakpoints-up(sm) {
+    width: 690px;
+  }
+  ::v-deep iframe {
+    width: 100%
+  }
+}
+
+.close-btn {
+  position: absolute;
+  top: 4px;
+  @include right(4px);
+}
+
+.progress-wrap {
+  padding-bottom: $spacing8;
+  @include breakpoints-up(sm) {
+    padding: spacing(5, 0, 10)
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    li {
+      list-style: none;
+      margin-bottom: $spacing5;
+      &:last-child {
+        margin-bottom: 0
+      }
+      h5 {
+        font-weight: $font-bold
+      }
+    }
+  }
+}
+
+.text-icon {
+  margin-bottom: $spacing1;
+  display: flex;
+  align-items: center;
+  i {
+    @include palette-text-secondary;
+    font-size: 28px;
+  }
+  h5 {
+    @include margin-left($spacing1)
+  }
+}
+
+.progress {
+  border-radius: 10px;
+  @include use-theme(background, $light-divider, $dark-divider);
+  ::v-deep .v-progress-linear__determinate {
+    transition: all 0.5s cubic-bezier(0, 0, 0, 0.96);
+    border-radius: 10px;
+    background-image: linear-gradient(120deg, $palette-secondary-main, $palette-primary-main);
+  }
+}
+
+.bg-wrapper {
+  @include use-theme(background-color, $palette-primary-light, $palette-primary-dark);
+  padding: spacing(4, 0, 10)
+}
+
+.gallery-root, .team-root {
+  @include breakpoints-down(xs) {
+    text-align: center
+  }
+  ::v-deep .slick-dots {
+    bottom: -55px;
+  }
+}
+
+.carousel {
+  position: relative;
+}
+
+.nav {
+  position: absolute;
+  top: 50%;
+  font-size: 38px;
+}
+
+.prev {
+  left: -30px;
+}
+
+.next {
+  right: -30px;
+}

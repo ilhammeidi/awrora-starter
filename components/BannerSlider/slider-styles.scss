@@ -1,0 +1,82 @@
+.banner-wrap {
+  position: relative;
+  display: block;
+}
+
+.slide {
+  position: relative;
+  @include breakpoints-up('sm') {
+    height: 450px;
+  }
+  @include breakpoints-down('xs') {
+    padding: spacing(15, 0, 5)
+  }
+}
+
+.img {
+  @include right(1%);
+  max-width: 40%;
+  img {
+    width: 100%;
+  }
+  @include breakpoints-up('sm') {
+    position: absolute;
+    top: 100px;
+  }
+  @include breakpoints-up('md') {
+    @include right(10%);
+    max-width: 50%;
+  }
+  @include breakpoints-down('xs') {
+    margin: spacing(4, 0)
+  }
+}
+
+.inner {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  @include breakpoints-down('md') {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.text {
+  h4 {
+    font-weight: $font-bold;
+    margin-bottom: $spacing2;
+  }
+  h5 {
+    @include palette-text-secondary
+  }
+}
+
+.slide-nav {
+  display: flex;
+  .v-btn {
+    text-transform: none;
+    height: auto;
+    padding: $spacing1;
+    flex: 1;
+    font-weight: $font-regular;
+    ::v-deep .v-btn__content {
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+    }
+    strong {
+      text-transform: capitalize;
+      font-size: 28px;
+      display: block;
+      font-weight: $font-bold;
+    }
+    &.active {
+      color: $palette-link
+    }
+  }
+}
+
+.divider {
+  margin: spacing(0, 2)
+}

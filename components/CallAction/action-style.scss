@@ -1,0 +1,93 @@
+.root {
+  position: relative;
+  p {
+    margin: 0
+  }
+}
+
+.background {
+  width: 560px;
+  height: 560px;
+  top: $spacing10 * -5;
+  @include left(20%);
+  position: absolute;
+  transform: scale(3);
+  &.front {
+    opacity: 0.2;
+    .theme--dark & {
+      fill:  $palette-primary-light;
+    }
+    .theme--light & {
+      fill: $palette-primary-light
+    }
+  }
+  &.base {
+    .theme--dark & {
+      fill: $palette-common-black
+    }
+    .theme--light & {
+      fill: $palette-common-white
+    }
+  }
+}
+
+.button.v-btn {
+  @include breakpoints-up(md) {
+    width: 240px;
+    height: 64px;
+    font-size: 18px
+  }
+  @include breakpoints-down(sm) {
+    margin: 0 auto
+  }
+}
+
+.paper {
+  padding: $spacing4;
+  border: 2px solid $palette-secondary-main;
+  @include breakpoints-down(sm) {
+    text-align: center
+  }
+  @include breakpoints-up(lg) {
+    padding: spacing(4, 10);
+    margin: spacing(0, 4);
+  }
+  @include breakpoints-down(sm) {
+    margin-bottom: $spacing5
+  }
+  @include breakpoints-down(xs) {
+    padding: spacing(4, 1);
+    text-align: center
+  }
+  h4 {
+    font-weight: 700;
+    .theme--dark & {
+      color: $palette-secondary-light
+    }
+    .theme--light & {
+      color: $palette-secondary-dark
+    }
+    font-family: 'Roboto Condensed';
+    @include breakpoints-down(xs) {
+      font-size: 28px !important;
+      margin-bottom: $spacing2
+    }
+  }
+  p {
+    font-size: 24px;
+    @include breakpoints-down(sm) {
+      margin-bottom: $spacing5
+    }
+    @include breakpoints-down(xs) {
+      font-size: 18px;
+      margin-bottom: $spacing3
+    }
+  }
+}
+
+.right-icon {
+  @include margin-left($spacing1);
+  .v-application--is-rtl & {
+    transform: rotate(180deg)
+  }
+}

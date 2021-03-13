@@ -1,0 +1,108 @@
+.root {
+  position: relative;
+  z-index: 56
+}
+
+.text {
+  position: relative;
+  z-index: 20
+}
+
+.illustration {
+  position: relative;
+  margin: spacing(6, 6, 0);
+  > div {
+    top: -400px;
+  }
+  img {
+    display: block;
+    width: 280px
+  }
+}
+
+.accordion {
+  position: relative;
+  margin-bottom: $spacing4;
+}
+
+.item {
+  margin-bottom: $spacing3
+}
+
+.paper {
+  border-radius: $rounded-medium !important;
+  margin-bottom: $spacing3;
+  overflow: hidden;
+  .theme--dark & {
+    box-shadow: 0px 1px 3px 0px rgba(64, 64, 64, 1), 0px 1px 1px 0px rgba(42, 42, 42, 1), 0px 2px 1px -1px rgba(20, 20, 20, 1)
+  }
+  .theme--light & {
+    box-shadow: 0 1.5px 12px 2px rgba(0, 0, 0, 0.06)
+  }
+}
+
+.heading {
+  font-weight: $font-medium;
+  padding: spacing(1, 2, 1, 0);
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 0;
+  @include breakpoints-down(xs) {
+    font-size: 16px;
+  }
+}
+
+.content {
+  .icon {
+    position: absolute;
+    top: 20px;
+    @include right($spacing2)
+  }
+}
+
+.expanded {
+  &.v-expansion-panel {
+    background: $palette-secondary-main !important;
+  }
+  .heading {
+    color: $palette-common-white;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  ::v-deep .v-icon {
+    color: $palette-common-white !important;
+    transform: rotate(180deg)
+  }
+}
+
+.detail {
+  @include palette-background-paper;
+  padding-top: $spacing3;
+  border-radius: 0 0 $rounded-medium $rounded-medium;
+  p {
+    font-size: 18px;
+    @include breakpoints-down(xs) {
+      font-size: 16px;
+    }
+  }
+}
+
+.icon {
+  @include use-theme(color, $palette-primary-main, $palette-primary-light);
+}
+
+.topic-list {
+  padding: 0;
+  li {
+    padding: spacing(2, 0);
+    border-bottom: 1px solid;
+    @include palette-divider;
+    list-style: none;
+    a {
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline
+      }
+    }
+  }
+}

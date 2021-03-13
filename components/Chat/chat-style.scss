@@ -1,0 +1,147 @@
+.chat-button {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  text-align: right;
+  font-size: 32px;
+  &.v-btn:not(.v-btn--flat):not(.v-btn--text):not(.v-btn--outlined) {
+    @include shade;
+    @include use-theme(background-color, $palette-primary-light, $palette-primary-dark);
+  }
+  i {
+    position: relative;
+    @include left(-3px);
+    top: 3px;
+    @include use-theme(color, $palette-primary-dark, $palette-primary-light);
+  }
+  .indicator {
+    position: absolute;
+    top: -4px;
+    left: 2px;
+  }
+}
+
+.panel {
+  position: fixed;
+  bottom: 120px;
+  right: 40px;
+  text-align: right;
+  visibility: hidden;
+  z-index: -1;
+  opacity: 0;
+  text-align: left;
+  transform: scale(0.9);
+  transition: all 0.2s cubic-bezier(0.01, 0.65, 0.3, 0.9);
+  @include palette-background-paper;
+  @include shade;
+  border-radius: $rounded-medium;
+  overflow: hidden;
+  header {
+    display: flex;
+    padding: spacing(2, 2, 0.5);
+    @include use-theme(background-color, $palette-primary-light, $palette-primary-dark);
+    h3 {
+      flex: 1
+    }
+  }
+  &.show {
+    transform: scale(1);
+    visibility: visible;
+    z-index: 100;
+    opacity: 1;
+  }
+}
+
+.close {
+  font-size: 24px;
+  position: relative;
+  top: -4px;
+  margin: spacing(0, 1);
+  i {
+    position: relative;
+    left: -2px;
+    @include left(-2px);
+    top: 0;
+  }
+}
+
+.indicator {
+  @include margin-right(4px);
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+}
+
+.online {
+  background: #07D517
+}
+
+.offline {
+  background: #b7b7b7
+}
+
+.chat-room {
+  padding: $spacing2;
+  position: relative;
+  height: 300px;
+  width: 300px;
+  overflow: auto;
+  ul {
+    padding: 0;
+    li {
+      display: block;
+      position: relative;
+      margin-bottom: $spacing4;
+    }
+  }
+}
+
+.avatar {
+  img {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+.talk {
+  position: relative;
+  border-radius: $rounded-small;
+  border: 2px solid $palette-primary-main;
+  padding: spacing(1, 1.5)
+}
+
+.from {
+  border: none;
+  @include use-theme(background-color, $palette-primary-light, $palette-primary-dark);
+  &:before {
+    position: absolute;
+    top: 5px;
+    content: "";
+    left: -5px;
+    border-top: 5px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 5px solid;
+    @include use-theme(border-right-color, $palette-primary-light, $palette-primary-dark);
+  }
+}
+
+
+.form {
+  display: flex;
+  align-items: center;
+  margin: spacing(0, 2)
+}
+
+.input {
+  flex: 1
+}
+
+.send {
+  @include margin-left($spacing2);
+  font-size: 22px;
+  span {
+    @include margin-left(4px);
+    @include rtl-flip;
+  }
+}

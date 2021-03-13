@@ -1,0 +1,216 @@
+/* General */
+
+.product-card {
+  position: relative;
+  width: 100%;
+  figure {
+    margin: 0px;
+    overflow: hidden;
+    img {
+      width: 100%;
+      min-height: 100%
+    }
+  }
+  .property {
+    display: flex;
+    justify-content: space-between;
+    strong {
+      font-weight: $font-bold;
+      font-size: 18px;
+    }
+  }
+}
+
+.hidden-link {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.desc {
+  padding: spacing(2, 3);
+  p {
+    overflow: hidden;
+  }
+  h6 {
+    font-family: "Lato", sans-serif !important;
+    font-weight: $font-bold
+  }
+  .button {
+    width: 100%;
+    border-width: 2px;
+    padding: spacing(0.5, 3) !important
+  }
+}
+
+.text {
+  @include margin-right($spacing2)
+}
+
+.rating {
+  ::v-deep .v-rating .v-icon {
+    padding: 0;
+  }
+  i {
+    color: #FFC107
+  }
+}
+
+.star-icon {
+  color: #FFC107
+}
+
+.star-icon-disable {
+  .theme--light & {
+    color: $light-divider;
+  }
+  .theme--dark & {
+    color: $dark-divider;
+  }
+}
+
+.button.v-btn {
+  margin-top: $spacing2;
+}
+
+/* Orientation */
+.portrait {
+  max-width: 350px;
+  figure {
+    display: block;
+    height: 170px;
+  }
+  .desc {
+    padding: $spacing2;
+    p {
+      height: 90px;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      display: -webkit-box;
+    }
+  }
+}
+
+.landscape {
+  display: flex;
+  @include breakpoints-up(sm) {
+    height: 150px;
+  }
+  figure {
+    width: 200px;
+    height: 150px;
+  }
+  .desc {
+    @include breakpoints-up(sm) {
+      display: flex;
+      flex: 1;
+      align-items: center;
+      justify-content: space-between;
+    }
+    @include breakpoints-down(xs) {
+      width: 65%;
+      p {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+  }
+  .button.v-btn {
+    width: 200px;
+    @include breakpoints-down(xs) {
+      display: none
+    }
+  }
+  .hidden-link {
+    @include breakpoints-down(xs) {
+      display: block;
+    }
+  }
+}
+
+/* Type */
+.full {
+  overflow: hidden;
+  figure {
+    border-radius: 0 !important;
+  }
+}
+
+.round {
+  figure {
+    overflow: hidden;
+    border-radius: $rounded-medium;
+    height: 134px;
+  }
+  &.portrait {
+    figure {
+      position: relative;
+      top: $spacing1;
+      margin-left: $spacing1;
+      margin-right: $spacing1;
+      margin-bottom: $spacing1;
+    }
+  }
+  &.landscape {
+    figure {
+      margin-top: $spacing1;
+      margin-bottom: $spacing1;
+      @include margin-left($spacing1);
+    }
+  }
+}
+
+.oval {
+  overflow: hidden;
+  &.portrait {
+    figure {
+      height: 150px;
+      width: 120%;
+      margin-left: -10%;
+      overflow: hidden;
+      border-radius: 0 0 50% 50%;
+    }
+  }
+  &.landscape {
+    @include breakpoints-down(xs) {
+      height: 150px;
+    }
+    figure {
+      overflow: hidden;
+      border-radius: 0 50% 50% 0 !important;
+      height: 250px;
+      margin-top: -50px;
+    }
+  }
+}
+
+.over {
+  figure {
+    overflow: hidden;
+    @include shade;
+    position: relative;
+    border-radius: $rounded-medium;
+  }
+  &.portrait {
+    margin-top: $spacing2;
+    figure {
+      margin: spacing(0, 2);
+      top: $spacing2 * -1;
+      margin-bottom: $spacing2 * -1;
+    }
+  }
+  &.landscape {
+    @include margin-left($spacing2);
+    figure {
+      margin: spacing(2, 0);
+      height: 118px;
+      width: 140px;
+      @include left($spacing2 * -1);
+      @include margin-right($spacing2 * -1)
+    }
+  }
+}

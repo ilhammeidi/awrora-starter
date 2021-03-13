@@ -1,0 +1,104 @@
+.footer {
+  text-align: center;
+  padding-bottom: $spacing5;
+  margin-top: $spacing20;
+  @include breakpoints-down(md) {
+    margin-top: $spacing10
+  }
+}
+.logo {
+  @include palette-text-secondary;
+  margin-bottom: $spacing5;
+  @include breakpoints-down(md) {
+    margin-top: $spacing5
+  }
+  img {
+    width: 80px;
+  }
+  h4 {
+    text-transform: uppercase
+  }
+}
+.margin {
+  margin: $spacing2
+}
+.socmed {
+  margin: spacing(6, 0);
+  button {
+    @include use-theme(background, $palette-primary-light, $palette-primary-dark);
+    margin: $spacing1;
+    i {
+      @include use-theme(color, $palette-primary-dark, $palette-primary-light);
+    }
+  }
+  i {
+    position: relative;
+    @include left(-2px);
+    top: 1px;
+    font-size: 24px
+  }
+}
+.contact {
+  @include palette-text-secondary;
+}
+.divider {
+  margin: 12px;
+  border: none;
+  background: none
+}
+
+.form-wrap {
+  position: relative
+}
+.form-box {
+  padding: $spacing2;
+  @include breakpoints-up(sm) {
+    padding: $spacing7
+  }
+  @include breakpoints-down(xs) {
+    padding: spacing(4, 2)
+  }
+  &:before {
+    content: "";
+    @include left(-16px);
+    bottom: -16px;
+    width: 45%;
+    height: 30%;
+    border: 16px solid;
+    border-image-source: linear-gradient(120deg, $palette-secondary-main, $palette-primary-main);
+    border-image-slice: 1;
+    border-top: 0;
+    @include border-right(0);
+    position: absolute
+  }
+}
+
+.title-main {
+  @include text-align(left);
+  @include use-theme(color, $palette-primary-dark, $palette-primary-light);
+}
+.input {
+  width: 100%;
+  margin-bottom: $spacing5;
+  @include breakpoints-down(xs) {
+    margin-bottom: $spacing3
+  }
+}
+
+.form {
+  @include text-align(left);
+  position: relative;
+}
+.btn-area {
+  display: flex;
+  justify-content: space-between;
+  margin: spacing(0, 0, 3);
+  @include breakpoints-up(sm) {
+    margin: spacing(3, 0, 0)
+  }
+  @include breakpoints-down(xs) {
+    .v-btn {
+      width: 100%
+    }
+  }
+}
