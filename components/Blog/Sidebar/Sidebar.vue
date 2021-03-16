@@ -11,7 +11,6 @@
     <list-widget />
     <div class="py-6" />
     <gallery-widget />
-    <div class="py-6" />
   </div>
 </template>
 

@@ -1,6 +1,7 @@
 $identation: 8px;
 
 .side-multilv {
+  padding-top: $spacing6;
   > div {
     @include margin-left(0);
   }

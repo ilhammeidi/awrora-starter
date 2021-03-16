@@ -120,6 +120,14 @@
   }
 }
 
+.team-root {
+  .item > *{
+    @include breakpoints-down(xs) {
+      width: 280px;
+    }
+  }
+}
+
 .carousel {
   position: relative;
 }

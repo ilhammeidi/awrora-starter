@@ -74,9 +74,6 @@
   align-items: center;
   height: 160px;
   @include text-align(left);
-  @include breakpoints-down(xs) {
-    width: 280px
-  }
   @include breakpoints-up(md) {
     height: 120px;
   }
