@@ -1,4 +1,4 @@
-# Veluxi Starter - Vue JS Landing Page Template
+# Awrora Starter - Vue JS Landing Page Template
 ----------
 
 ### Read documentation here
