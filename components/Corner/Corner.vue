@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import PageNav from '../Pagenav'
+import PageNav from '../PageNav'
 import Chat from '../Chat'
 
 export default {
