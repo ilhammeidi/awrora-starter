@@ -22,10 +22,10 @@
 		"lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
 	},
   "resolutions": {
-    "@babel/preset-env": "~7.12.17"
+    "@babel/preset-env": "7.12.17"
   },
 	"dependencies": {
-    "@babel/preset-env": "^7.12.17",
+    "@babel/preset-env": "7.12.17",
 		"@nuxtjs/eslint-config": "^3.1.0",
 		"@nuxtjs/html-minifier": "^0.1.2",
 		"@nuxtjs/style-resources": "^1.0.0",
