@@ -1,4 +1,4 @@
-# Veluxi Starter - Vue JS Landing Page Template
+# Awrora Starter - Vue JS Landing Page Template
 ----------
 
 ### Read documentation here
@@ -33,7 +33,7 @@ http://ilhammeidi.github.io/awrora-docs
     `npm install`
  - Finally run the app.
 	 `npm run dev`
- - Navigate to  [http://localhost:3000](http://localhost:8000)
+ - Navigate to  [http://localhost:8000](http://localhost:8000)
 
 ### Deployment
 
@@ -41,7 +41,7 @@ http://ilhammeidi.github.io/awrora-docs
     `npm run build`
  - Then start the app
     `npm start`
- - Navigate to  [http://localhost:3000](http://localhost:8000)
+ - Navigate to  [http://localhost:8000](http://localhost:8000)
 
 ### License
 This project is licensed under the terms of the [MIT license](https://github.com/ilhammeidi/boss-lite/blob/master/LICENSE.txt).
