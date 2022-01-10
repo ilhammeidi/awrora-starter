@@ -10,11 +10,11 @@
           <p>Pellentesque ullamcorper aliquet ultrices. Aenean facilisis vitae purus facilisis semper. Nam vitae scelerisque lorem, quis tempus libero. Proin varius, tortor faucibus tempor pharetra, nunc mi consectetur enim, nec posuere ante magna vitae quam.</p>
           <div class="btn-area">
             <v-btn href="#" class="text-btn" text>
-              <i class="ion-android-share-alt" />
+              <i class="ion-md-share" />
               Share
             </v-btn>
             <v-btn href="#" class="text-btn" text>
-              <i class="ion-film-marker" />
+              <i class="ion-ios-film" />
               Trivia
             </v-btn>
             <v-btn href="#" class="text-btn" text>

@@ -1,6 +1,6 @@
 <template>
   <article class="blog-content">
-    <h4 class="text-h4 title-blog">Maecenas rutrum dolor sed nisi</h4>
+    <h4 class="use-text-title2 title-blog">Maecenas rutrum dolor sed nisi</h4>
     <time class="caption">June 19, 2020 by Oliver</time>
     <figure class="image-blog">
       <img src="https://source.unsplash.com/random" alt="blog" />

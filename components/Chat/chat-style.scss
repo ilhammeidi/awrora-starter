@@ -47,7 +47,7 @@
   &.show {
     transform: scale(1);
     visibility: visible;
-    z-index: 100;
+    z-index: 201;
     opacity: 1;
   }
 }
@@ -90,7 +90,7 @@
   ul {
     padding: 0;
     li {
-      display: block;
+      display: flex;
       position: relative;
       margin-bottom: $spacing4;
     }

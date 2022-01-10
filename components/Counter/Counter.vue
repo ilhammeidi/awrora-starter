@@ -9,7 +9,7 @@
       >
         <v-col sm="4">
           <div class="counter-item">
-            <span class="icon ion-leaf" />
+            <span class="icon ion-ios-leaf-outline" />
             <div class="text">
               <h4 class="display-1" v-if="loaded">
                 +
@@ -28,7 +28,7 @@
         </v-col>
         <v-col sm="4">
           <div class="counter-item">
-            <span class="icon ion-ios-lightbulb-outline" />
+            <span class="icon ion-ios-bulb-outline" />
             <div class="text">
               <h4 class="display-1" v-if="loaded">
                 +
@@ -47,7 +47,7 @@
         </v-col>
         <v-col sm="4">
           <div class="counter-item">
-            <span class="icon ion-ios-world-outline" />
+            <span class="icon ion-ios-globe" />
             <div class="text">
               <h4 class="display-1" v-if="loaded">
                 $

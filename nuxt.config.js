@@ -63,7 +63,7 @@ module.exports = {
       // Fonts and Icons
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Montserrat:400,500,600&display=swap' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/icon?family=Material+Icons' },
-      { rel: 'stylesheet', href: 'https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css' }
+      { rel: 'stylesheet', href: 'https://unpkg.com/ionicons@3.0.0/dist/css/ionicons.min.css' }
     ]
   },
   /*
@@ -125,28 +125,21 @@ module.exports = {
       }
     ],
     ['nuxt-gmaps', { key: '' }],
-    [
-      'nuxt-i18n',
-      {
-        // Options
-        //to make it seo friendly remove below line and add baseUrl option to production domain
-        seo: false,
-        // baseUrl: 'https://my-nuxt-app.com',
-        lazy: true,
-        locales: languages,
-        defaultLocale: 'en',
-        vueI18n: {
-          fallbackLocale: 'en',
-        },
-        detectBrowserLanguage: {
-          useCookie: true,
-          cookieKey: 'i18n_redirected',
-          alwaysRedirect: true
-        },
-        langDir: 'static/lang/'
-      }
-    ]
+    '@nuxtjs/i18n',
   ],
+  i18n: {
+    locales: languages,
+    defaultLocale: 'en',
+    vueI18n: {
+      fallbackLocale: 'en',
+    },
+    strategy: 'prefix',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieCrossOrigin: true
+    },
+    langDir: 'static/lang/'
+  },
   /*
   ** vuetify module configuration
   ** https://github.com/nuxt-community/vuetify-module
@@ -197,7 +190,7 @@ module.exports = {
         config.module.rules.push({
           enforce: "pre",
           test: /\.(js|vue)$/,
-          loader: "eslint-loader",
+          loader: "eslint-webpack-plugin",
           exclude: /([node_modules, static])/,
           options: {
             fix: false

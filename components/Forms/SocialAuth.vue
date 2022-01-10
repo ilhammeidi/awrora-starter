@@ -1,15 +1,15 @@
 <template>
   <div class="socmed-side-login">
     <v-btn class="navi-btn">
-      <i class="ion-social-facebook" />
+      <i class="ion-logo-facebook" />
       Facebook
     </v-btn>
     <v-btn class="blue-btn">
-      <i class="ion-social-twitter" />
+      <i class="ion-logo-twitter" />
       Twitter
     </v-btn>
     <v-btn class="red-btn">
-      <i class="ion-social-google" />
+      <i class="ion-logo-google" />
       Google
     </v-btn>
   </div>

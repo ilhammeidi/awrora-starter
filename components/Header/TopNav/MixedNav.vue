@@ -96,11 +96,7 @@ export default {
   mounted() {
     this.curURL = window.location.href
     this.curOrigin = window.location.origin
-    if (this.$i18n.locale !== 'en') {
-      this.langPath = '/' + this.$i18n.locale
-    } else {
-      this.langPath = ''
-    }
+    this.langPath = '/' + this.$i18n.locale
   },
   computed: {
     isDesktop() {

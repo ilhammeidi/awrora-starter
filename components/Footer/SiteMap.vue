@@ -79,28 +79,28 @@
               icon
               class="button"
             >
-              <span class="ion-social-facebook icon" />
+              <span class="ion-logo-facebook icon" />
             </v-btn>
             <v-btn
               text
               icon
               class="button"
             >
-              <span class="ion-social-twitter icon" />
+              <span class="ion-logo-twitter icon" />
             </v-btn>
             <v-btn
               text
               icon
               class="button"
             >
-              <span class="ion-social-instagram icon" />
+              <span class="ion-logo-instagram icon" />
             </v-btn>
             <v-btn
               text
               icon
               class="button"
             >
-              <span class="ion-social-linkedin icon" />
+              <span class="ion-logo-linkedin icon" />
             </v-btn>
           </div>
           <v-select
@@ -141,7 +141,7 @@ export default {
       {
         title: 'company',
         description: ['Team', 'History', 'Contact us', 'Locations'],
-        link: ['#team', '#history', '#contact-us', '#locations']
+        link: ['#', '#', '#', '#']
       },
       {
         title: 'resources',
@@ -152,16 +152,16 @@ export default {
           'Final resource'
         ],
         link: [
-          '#resource',
-          '#resource-name',
-          '#another-resource',
-          '#final-resource'
+          '#',
+          '#',
+          '#',
+          '#'
         ]
       },
       {
         title: 'legal',
         description: ['Privacy policy', 'Terms of use'],
-        link: ['#privacy-policy', '#terms-of-use']
+        link: ['#', '#']
       }
     ]
   }),

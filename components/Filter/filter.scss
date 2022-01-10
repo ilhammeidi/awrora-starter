@@ -42,6 +42,13 @@
   }
 }
 
+.title-filter {
+  font-weight: $font-medium;
+  font-size: 18px;
+  @include palette-text-primary;
+  padding: 0
+}
+
 .input-price {
   width: 75px;
   display: inline-block;

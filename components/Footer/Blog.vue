@@ -63,28 +63,28 @@
               icon
               class="button"
             >
-              <span class="ion-social-twitter icon" />
+              <span class="ion-logo-twitter icon" />
             </v-btn>
             <v-btn
               text
               icon
               class="button"
             >
-              <span class="ion-social-facebook icon" />
+              <span class="ion-logo-facebook icon" />
             </v-btn>
             <v-btn
               text
               icon
               class="button"
             >
-              <span class="ion-social-instagram icon" />
+              <span class="ion-logo-instagram icon" />
             </v-btn>
             <v-btn
               text
               icon
               class="button"
             >
-              <span class="ion-social-linkedin icon" />
+              <span class="ion-logo-linkedin icon" />
             </v-btn>
           </div>
           <v-select
@@ -126,7 +126,7 @@ export default {
     footer: {
       title: 'Quick Links',
       description: ['Resource', 'Another resource', 'Final resource', 'Privacy policy', 'Terms of use', 'Terms Condition'], // eslint-disable-line
-      link: ['#resource', '#another-resource', '#final-resource', '#privacy-policy', '#terms-of-use', '#terms-condition'] // eslint-disable-line
+      link: ['#', '#', '#', '#', '#', '#'] // eslint-disable-line
     },
     news: [
       {

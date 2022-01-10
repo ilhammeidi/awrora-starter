@@ -9,16 +9,16 @@
           </p>
           <div class="socmed">
             <v-btn icon class="margin">
-              <i class="ion-social-facebook" />
+              <i class="ion-logo-facebook" />
             </v-btn>
             <v-btn icon class="margin">
-              <i class="ion-social-linkedin" />
+              <i class="ion-logo-linkedin" />
             </v-btn>
             <v-btn icon class="margin">
-               <i class="ion-social-twitter" />
+               <i class="ion-logo-twitter" />
             </v-btn>
             <v-btn icon class="margin">
-              <i class="ion-social-instagram" />
+              <i class="ion-logo-instagram" />
             </v-btn>
           </div>
           <div class="contact">

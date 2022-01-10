@@ -15,13 +15,13 @@
       </nav>
       <div class="socmed">
         <v-btn icon small class="icon">
-          <i class="ion-social-twitter" />
+          <i class="ion-logo-twitter" />
         </v-btn>
         <v-btn icon small class="icon">
-          <i class="ion-social-facebook" />
+          <i class="ion-logo-facebook" />
         </v-btn>
         <v-btn icon small class="icon">
-          <i class="ion-social-instagram" />
+          <i class="ion-logo-instagram" />
         </v-btn>
       </div>
     </v-container>

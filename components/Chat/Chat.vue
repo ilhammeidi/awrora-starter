@@ -14,7 +14,7 @@
           class="close"
           icon
         >
-          <i class="ion-android-close" />
+          <i class="ion-md-close" />
         </v-btn>
       </header>
       <div class="chat-room" id="chat-container">
@@ -57,7 +57,7 @@
           small
           @click="send()"
         >
-          <span class="ion-android-send" />
+          <span class="ion-md-send" />
         </v-btn>
       </div>
     </div>
@@ -67,7 +67,7 @@
       class="chat-button"
     >
       <span class="indicator online" />
-      <i class="ion-chatbox" />
+      <i class="ion-md-text" />
     </v-btn>
   </div>
 </template>

@@ -2,7 +2,7 @@
   <aside class="filter">
     <div class="filter-block">
       <v-list>
-        <v-subheader>Filter Categories</v-subheader>
+        <v-subheader class="title-filter">Filter Categories</v-subheader>
         <v-list-item-group
           :value="filterCategory"
           @change="(e) => changeCategory(e)"
@@ -35,7 +35,7 @@
       </v-list>
     </div>
     <div class="filter-block">
-      <v-subheader>Rating</v-subheader>
+      <v-subheader class="title-filter">Rating</v-subheader>
       <v-list-item-group
         :value="filterRating"
         @change="(e) => changeRating(e)"
@@ -107,7 +107,7 @@
       </v-list-item-group>
     </div>
     <div class="filter-block">
-      <h3>Filter Tags</h3>
+      <h3 class="title-filter">Filter Tags</h3>
       <span class="btn-tag">
         <input
           id="tag_one"
@@ -154,7 +154,7 @@
       </span>
     </div>
     <div class="filter-block">
-      <h3>Filter Range</h3>
+      <h3 class="title-filter">Filter Range</h3>
       <v-text-field class="input-price" v-model="from" placeholder="$ From" />
       &nbsp; - &nbsp;
       <v-text-field class="input-price" v-model="to" placeholder="$ To" />
@@ -171,7 +171,7 @@
     </div>
     <div class="filter-block">
       <v-list>
-        <v-subheader>Filter Check</v-subheader>
+        <v-subheader class="title-filter">Filter Check</v-subheader>
         <v-list-item @click="handleCheckAll">
           <v-list-item-content>
             <v-list-item-title>Select All</v-list-item-title>
@@ -254,7 +254,7 @@
     </div>
     <div class="filter-block">
       <v-list>
-        <v-subheader>Filter Radio</v-subheader>
+        <v-subheader class="title-filter">Filter Radio</v-subheader>
         <v-radio-group
           :value="filterRadio"
           @change="(e) => changeRadio(e)"

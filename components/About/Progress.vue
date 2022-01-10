@@ -4,7 +4,7 @@
       <ul>
         <li>
           <div class="text-icon">
-            <i class="ion-wand" />
+            <i class="ion-ios-color-wand" />
             <h5 class="use-text-subtitle2">UI Interface Design</h5>
           </div>
           <v-progress-linear
@@ -16,7 +16,7 @@
         </li>
         <li>
           <div class="text-icon">
-            <i class="ion-social-dribbble-outline" />
+            <i class="ion-logo-dribbble" />
             <h5 class="use-text-subtitle2">Icon Design</h5>
           </div>
           <v-progress-linear
@@ -28,7 +28,7 @@
         </li>
         <li>
           <div class="text-icon">
-            <i class="ion-ios-world-outline" />
+            <i class="ion-ios-globe" />
             <h5 class="use-text-subtitle2">HTML Prototyping</h5>
           </div>
           <v-progress-linear
@@ -40,7 +40,7 @@
         </li>
         <li>
           <div class="text-icon">
-            <i class="ion-ios-camera-outline" />
+            <i class="ion-ios-camera" />
             <h5 class="use-text-subtitle2">Photo Editing</h5>
           </div>
           <v-progress-linear
@@ -52,7 +52,7 @@
         </li>
         <li>
           <div class="text-icon">
-            <i class="ion-ios-snowy" />
+            <i class="ion-ios-snow" />
             <h5 class="use-text-subtitle2">Graphic Illustrations</h5>
           </div>
           <v-progress-linear
