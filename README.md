@@ -24,7 +24,7 @@ http://ilhammeidi.github.io/awrora-docs
 
 [GET IT NOW on Envato](https://themeforest.net/item/awrora-vue-js-landing-page-collection/31173494)
 
-[SEE DEMO](http://awrora3.indisains.com/)
+[SEE DEMO](https://awrora.netlify.app/)
 
 ### Installation
 
