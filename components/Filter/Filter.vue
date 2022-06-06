@@ -184,7 +184,7 @@
           active-class=""
         >
           <v-list-item value="check-a">
-            <template v-slot:default="{ active }">
+            <template #default="{ active }">
               <v-list-item-action>
                 <v-checkbox :input-value="active"></v-checkbox>
               </v-list-item-action>
@@ -195,7 +195,7 @@
             </template>
           </v-list-item>
           <v-list-item value="check-b">
-            <template v-slot:default="{ active }">
+            <template #default="{ active }">
               <v-list-item-action>
                 <v-checkbox :input-value="active"></v-checkbox>
               </v-list-item-action>
@@ -206,7 +206,7 @@
             </template>
           </v-list-item>
           <v-list-item value="check-c">
-            <template v-slot:default="{ active }">
+            <template #default="{ active }">
               <v-list-item-action>
                 <v-checkbox :input-value="active"></v-checkbox>
               </v-list-item-action>
@@ -217,7 +217,7 @@
             </template>
           </v-list-item>
           <v-list-item value="check-d">
-            <template v-slot:default="{ active }">
+            <template #default="{ active }">
               <v-list-item-action>
                 <v-checkbox :input-value="active"></v-checkbox>
               </v-list-item-action>
@@ -228,7 +228,7 @@
             </template>
           </v-list-item>
           <v-list-item value="check-e">
-            <template v-slot:default="{ active }">
+            <template #default="{ active }">
               <v-list-item-action>
                 <v-checkbox :input-value="active"></v-checkbox>
               </v-list-item-action>
@@ -239,7 +239,7 @@
             </template>
           </v-list-item>
           <v-list-item value="check-f">
-            <template v-slot:default="{ active }">
+            <template #default="{ active }">
               <v-list-item-action>
                 <v-checkbox :input-value="active"></v-checkbox>
               </v-list-item-action>

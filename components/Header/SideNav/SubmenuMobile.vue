@@ -6,7 +6,7 @@
       no-action
       class="side-group"
     >
-      <template v-slot:activator>
+      <template #activator>
         <v-list-item class="has-grand-child">
           <v-list-item-title class="menu-list">
             {{ menuItems.name }}

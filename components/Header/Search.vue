@@ -36,7 +36,6 @@
 <script>
 import link from '~/static/text/link'
 import Logo from '../Logo'
-import Settings from './TopNav/Settings'
 import UserMenu from './TopNav/UserMenu'
 import SearchField from './TopNav/SearchField'
 import Hidden from '../Hidden'
@@ -45,7 +44,6 @@ export default {
   components: {
     Logo,
     Hidden,
-    'setting-menu': Settings,
     SearchField,
     UserMenu
   },

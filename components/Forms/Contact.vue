@@ -114,12 +114,8 @@
 import logo from '~/static/images/starter-logo.svg'
 import brand from '~/static/text/brand'
 import link from '~/static/text/link'
-import Hidden from '../Hidden'
 
 export default {
-  components: {
-    Hidden
-  },
   data() {
     return {
       valid: true,

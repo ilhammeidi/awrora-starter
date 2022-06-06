@@ -56,7 +56,6 @@
 <script>
 import link from '~/static/text/link'
 import Logo from '../Logo'
-import Settings from './TopNav/Settings'
 import UserMenu from './TopNav/UserMenu'
 import MegaMenu from './TopNav/MegaMenu'
 import MegaMobile from './SideNav/MegaMobile'
@@ -66,7 +65,6 @@ export default {
   components: {
     'mobile-menu': MegaMobile,
     'header-menu': MegaMenu,
-    'setting-menu': Settings,
     UserMenu,
     Logo
   },

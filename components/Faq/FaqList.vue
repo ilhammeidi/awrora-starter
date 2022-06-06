@@ -39,8 +39,6 @@
 </style>
 
 <script>
-import Hidden from '../Hidden'
-
 const faqData = [
   {
     q: 'Pellentesque ac bibendum tortor?',
@@ -70,9 +68,6 @@ const faqData = [
 ]
 
 export default {
-  components: {
-    Hidden
-  },
   data() {
     return {
       panel: 0,

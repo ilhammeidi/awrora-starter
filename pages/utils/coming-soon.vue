@@ -24,7 +24,7 @@
               <v-row justify="center">
                 <v-col sm="8" cols="12">
                   <v-text-field :label="$t('common.form_email')">
-                    <template v-if="isDesktop" v-slot:append>
+                    <template v-if="isDesktop" #append>
                       <v-btn outlined class="mb-2">
                         {{ $t('common.util_notif') }}
                       </v-btn>

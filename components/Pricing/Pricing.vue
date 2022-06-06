@@ -47,10 +47,7 @@ export default {
         {
           title: 'Free',
           price: '0',
-          description: [
-            '10 users included',
-            '2 GB of storage',
-          ],
+          description: ['10 users included', '2 GB of storage'],
           buttonText: 'Sign up for free',
           buttonVariant: 'outlined'
         },

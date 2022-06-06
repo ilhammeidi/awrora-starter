@@ -1,4 +1,4 @@
-import sample from './sample-pages';
+import sample from './sample-pages'
 
 const defaultChild = [
   {
@@ -15,7 +15,7 @@ const defaultChild = [
       {
         name: '1Vivamus Condimentum',
         link: '#'
-      },
+      }
     ]
   },
   {

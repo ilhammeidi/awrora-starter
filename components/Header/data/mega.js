@@ -1,5 +1,5 @@
-import sample from './sample-pages';
-import imgAPI from '~/static/images/imgAPI';
+import sample from './sample-pages'
+import imgAPI from '~/static/images/imgAPI'
 
 const grandChild = [
   {
@@ -19,8 +19,6 @@ const grandChild = [
     link: '#'
   }
 ]
-
-
 
 const mega = [
   {

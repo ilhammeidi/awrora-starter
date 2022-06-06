@@ -147,12 +147,7 @@
 </style>
 
 <script>
-import Hidden from '../Hidden'
-
 export default {
-  components: {
-    Hidden
-  },
   data: () => ({
     currentLocation: {},
     locations: [

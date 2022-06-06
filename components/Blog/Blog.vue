@@ -41,12 +41,10 @@
 
 <script>
 import PostCard from '../Cards/PostCard'
-import ScrollWrap from '../ScrollWrap'
 
 export default {
   components: {
-    PostCard,
-    ScrollWrap
+    PostCard
   },
   data() {
     return {

@@ -5,7 +5,7 @@
       offset-x
       v-model="showMenu"
     >
-      <template v-slot:activator="{ attrs, on }">
+      <template #activator="{ attrs, on }">
         <v-list-item
           v-bind="attrs"
           v-on="on"

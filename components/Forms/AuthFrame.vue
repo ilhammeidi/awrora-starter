@@ -40,12 +40,10 @@
 import brand from '~/static/text/brand'
 import routerLink from '~/static/text/link'
 import Hidden from '../Hidden'
-import Logo from '../Logo'
 
 export default {
   components: {
-    Hidden,
-    Logo
+    Hidden
   },
   data() {
     return {

@@ -1,4 +1,4 @@
-import sample from './sample-pages';
+import sample from './sample-pages'
 
 const multiple = [
   {

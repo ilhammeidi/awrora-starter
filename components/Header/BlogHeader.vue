@@ -64,7 +64,6 @@
 <script>
 import link from '~/static/text/link'
 import Logo from '../Logo'
-import Settings from './TopNav/Settings'
 import SearchField from './TopNav/SearchField'
 import MultiLevel from './TopNav/MultiLevel'
 import MultiMobile from './SideNav/MultiMobile'
@@ -77,9 +76,7 @@ export default {
     Hidden,
     'mobile-menu': MultiMobile,
     'header-menu': MultiLevel,
-    'setting-menu': Settings,
-    SearchField,
-    Settings
+    SearchField
   },
   data() {
     return {

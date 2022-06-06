@@ -1,4 +1,4 @@
-import imgAPI from '~/static/images/imgAPI';
+import imgAPI from '~/static/images/imgAPI'
 
 const sample = [
   {
@@ -21,7 +21,7 @@ const sample = [
         name: 'blog detail',
         link: '/blog/detail-blog'
       }
-    ],
+    ]
   },
   {
     name: 'Form',
@@ -43,7 +43,7 @@ const sample = [
         name: 'contact map',
         link: '/contact/with-map'
       }
-    ],
+    ]
   },
   {
     name: 'items',
@@ -61,7 +61,7 @@ const sample = [
         name: 'product detail',
         link: '/collection/detail-product'
       }
-    ],
+    ]
   },
   {
     name: 'utilities',

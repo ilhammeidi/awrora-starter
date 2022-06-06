@@ -65,7 +65,7 @@
 </style>
 
 <script>
-import Hidden from '../Hidden';
+import Hidden from '../Hidden'
 
 export default {
   components: {

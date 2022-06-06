@@ -10,7 +10,7 @@
         no-action
         class="group-child"
       >
-        <template v-slot:activator>
+        <template #activator>
           <v-list-item class="has-child">
             <v-list-item-title class="menu-list">
               {{ item.name }}

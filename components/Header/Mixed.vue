@@ -61,7 +61,6 @@
 
 <script>
 import link from '~/static/text/link'
-import Settings from './TopNav/Settings'
 import Logo from '../Logo'
 import UserMenu from './TopNav/UserMenu'
 import MixedNav from './TopNav/MixedNav'
@@ -84,7 +83,6 @@ export default {
   components: {
     'header-menu': MixedNav,
     'mobile-menu': MixedMobile,
-    'setting-menu': Settings,
     UserMenu,
     Logo
   },

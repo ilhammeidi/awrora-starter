@@ -11,7 +11,7 @@
         offset-y
         class="wrap-menu"
       >
-        <template v-slot:activator="{ attrs, on }">
+        <template #activator="{ attrs, on }">
           <v-btn
             v-bind="attrs"
             v-on="on"

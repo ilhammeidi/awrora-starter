@@ -79,7 +79,7 @@ import imgAPI from '~/static/images/imgAPI'
 
 export default {
   components: {
-    Slick: () => import('vue-slick'),
+    Slick: () => import('vue-slick')
   },
   data: () => ({
     loaded: false,

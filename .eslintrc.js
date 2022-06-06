@@ -22,6 +22,9 @@
     rules: {
       'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
       'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+      'vue/multi-word-component-names': 0,
+      'vue/no-use-v-if-with-v-for': 0,
+      'vue/no-template-shadow': 0,
       'no-nested-ternary': 0,
       'import/no-unresolved': 0,
       'import/no-named-as-default': 0,

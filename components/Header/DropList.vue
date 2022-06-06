@@ -56,7 +56,6 @@
 <script>
 import link from '~/static/text/link'
 import Logo from '../Logo'
-import Settings from './TopNav/Settings'
 import UserMenu from './TopNav/UserMenu'
 import MultiLevel from './TopNav/MultiLevel'
 import MultiMobile from './SideNav/MultiMobile'
@@ -67,7 +66,6 @@ export default {
     Logo,
     'mobile-menu': MultiMobile,
     'header-menu': MultiLevel,
-    'setting-menu': Settings,
     UserMenu
   },
   data() {

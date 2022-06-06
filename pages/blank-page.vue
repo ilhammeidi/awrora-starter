@@ -27,7 +27,7 @@ import Footer from '~/components/Footer'
 export default {
   components: {
     'main-header': Header,
-    'main-footer': Footer,
+    'main-footer': Footer
   },
   head() {
     return {

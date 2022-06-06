@@ -55,7 +55,6 @@
 
 <script>
 import Logo from '../Logo'
-import Settings from './TopNav/Settings'
 import UserMenu from './TopNav/UserMenu'
 import SingleNav from './TopNav/SingleNav'
 import MobileNav from './SideNav/SingleNavMobile'
@@ -77,7 +76,6 @@ export default {
     Logo,
     'mobile-menu': MobileNav,
     'header-menu': SingleNav,
-    'setting-menu': Settings,
     UserMenu
   },
   data() {

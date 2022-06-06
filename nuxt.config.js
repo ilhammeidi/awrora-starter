@@ -1,4 +1,5 @@
 import FilterWarningsPlugin from 'webpack-filter-warnings-plugin'
+// import ESLintPlugin from 'eslint-webpack-plugin'
 import nodeExternals from 'webpack-node-externals'
 import { theme } from './config/vuetify.options'
 import languages from './static/lang/languages'
@@ -186,17 +187,15 @@ module.exports = {
           exclude: /Critical dependency: the request of a dependency is an expression/
         })
       );
-      if (ctx.isDev && ctx.isClient) {
-        config.module.rules.push({
-          enforce: "pre",
-          test: /\.(js|vue)$/,
-          loader: "eslint-webpack-plugin",
-          exclude: /([node_modules, static])/,
-          options: {
-            fix: false
-          }
-        });
-      }
+      //      if (ctx.isDev && ctx.isClient) {
+      //        config.plugins.push(
+      //          new ESLintPlugin({
+      //            extensions: ["js", "vue"],
+      //            exclude: ["node_modules", "static"],
+      //            fix: false
+      //          })
+      //        );
+      //      }
     }
   },
   /*

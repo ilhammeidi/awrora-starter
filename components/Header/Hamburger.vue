@@ -71,7 +71,6 @@
 
 <script>
 import Logo from '../Logo'
-import Settings from './TopNav/Settings'
 import UserMenu from './TopNav/UserMenu'
 import navMenu from './data/single'
 
@@ -88,7 +87,6 @@ function createData(name, link, offset) {
 
 export default {
   components: {
-    'setting-menu': Settings,
     UserMenu,
     Logo
   },

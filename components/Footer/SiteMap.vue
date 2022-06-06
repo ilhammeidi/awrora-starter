@@ -151,12 +151,7 @@ export default {
           'Another resource',
           'Final resource'
         ],
-        link: [
-          '#',
-          '#',
-          '#',
-          '#'
-        ]
+        link: ['#', '#', '#', '#']
       },
       {
         title: 'legal',

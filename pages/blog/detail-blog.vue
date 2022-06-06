@@ -26,8 +26,6 @@
 <script>
 import brand from '~/static/text/brand'
 import BlogHeader from '~/components/Header/BlogHeader'
-import Headline from '~/components/Blog/Headline'
-import PostCard from '~/components/Cards/PostCard'
 import Article from '~/components/Blog/Article'
 import Sidebar from '~/components/Blog/Sidebar'
 import Footer from '~/components/Footer'
@@ -36,8 +34,6 @@ export default {
   components: {
     'main-header': BlogHeader,
     'main-footer': Footer,
-    Headline,
-    PostCard,
     Sidebar,
     'article-blog': Article
   },

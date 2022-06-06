@@ -16,7 +16,7 @@
         nudge-left
         nudge-width
       >
-        <template v-slot:activator="{ attrs, on }">
+        <template #activator="{ attrs, on }">
           <span
             class="button-item"
             v-bind="attrs"
@@ -77,12 +77,7 @@
 </style>
 
 <script>
-import Submenu from './SubMenuClick'
-
 export default {
-  components: {
-    Submenu
-  },
   data() {
     return {
       hover: false,

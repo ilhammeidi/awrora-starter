@@ -79,12 +79,8 @@
 
 <script>
 import avatarDefault from '~/static/images/avatars/pp_boy4.svg'
-import Hidden from '../Hidden'
 
 export default {
-  components: {
-    Hidden
-  },
   props: {
     cover: {
       type: String,

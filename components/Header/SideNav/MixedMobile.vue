@@ -15,7 +15,7 @@
         </v-list-item-content>
       </v-list-item>
       <v-list-group class="group-child">
-        <template v-slot:activator>
+        <template #activator>
           <v-list-item class="has-child">
             <v-list-item-title class="menu-list">
               {{ $t('common.header_sample_page') }}

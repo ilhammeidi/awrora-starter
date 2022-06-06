@@ -22,7 +22,7 @@
             :nudge-top="5"
             left
           >
-            <template v-slot:activator="{ on }">
+            <template #activator="{ on }">
               <span v-on="on">{{ item.name }}</span>
             </template>
             <span class="tooltip">{{ item.name }}</span>
@@ -34,7 +34,7 @@
       :nudge-top="25"
       left
     >
-      <template v-slot:activator="{ on }">
+      <template #activator="{ on }">
         <scrollactive
           tag="div"
         >

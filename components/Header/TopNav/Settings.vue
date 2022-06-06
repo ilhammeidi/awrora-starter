@@ -8,7 +8,7 @@
     bottom
     class="menu-setting"
   >
-    <template v-slot:activator="{ on }">
+    <template #activator="{ on }">
       <div class="setting">
         <v-btn
           fab

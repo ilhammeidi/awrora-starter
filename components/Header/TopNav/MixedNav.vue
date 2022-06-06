@@ -26,7 +26,7 @@
         nudge-left
         nudge-width
       >
-        <template v-slot:activator="{ attrs, on }">
+        <template #activator="{ attrs, on }">
           <span
             class="button-item"
             v-bind="attrs"
