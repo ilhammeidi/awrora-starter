@@ -3,22 +3,23 @@
     <div>
       <v-list
         subheader
-        two-line
       >
         <v-list-item
           v-for="(item, index) in periode"
           :key="index"
           href="#"
         >
-          <v-list-item-content>
+          <div>
             <v-list-item-title>{{ item }}</v-list-item-title>
-          </v-list-item-content>
-          <v-list-item-action>
-            <v-icon color="grey lighten-1">mdi-chevron-right</v-icon>
-          </v-list-item-action>
+          </div>
+          <template #append>
+            <v-icon class="use-rtl-flip" color="grey lighten-1">
+              mdi-chevron-right
+            </v-icon>
+          </template>
         </v-list-item>
       </v-list>
-      <v-btn text block color="primary">
+      <v-btn variant="text" block color="primary">
         {{ $t('common.btn_seeall') }}
       </v-btn>
     </div>
@@ -26,11 +27,11 @@
 </template>
 
 <script>
-import Paper from '../../Paper'
+import Paper from '../../Paper';
 
 export default {
   components: {
-    Paper
+    Paper,
   },
   data() {
     return {
@@ -42,9 +43,9 @@ export default {
         'June 2018',
         'April 2018',
         'March 2018',
-        'Febuary 2018'
-      ]
-    }
-  }
-}
+        'Febuary 2018',
+      ],
+    };
+  },
+};
 </script>

@@ -1,6 +1,6 @@
 <template>
   <span :class="type" class="logo">
-    <img :src="logo" alt="logo" />
+    <img :src="logo" alt="logo">
     {{ type !== 'only' ? brand.starter.name : '' }}
   </span>
 </template>
@@ -10,21 +10,21 @@
 </style>
 
 <script>
-import logo from '~/static/images/starter-logo.svg'
-import brand from '~/static/text/brand'
+import logo from '@/assets/images/starter-logo.svg';
+import brand from '@/assets/text/brand';
 
 export default {
-  data() {
-    return {
-      brand: brand,
-      logo: logo
-    }
-  },
   props: {
     type: {
       type: String,
-      default: 'only'
-    }
-  }
-}
+      default: 'only',
+    },
+  },
+  data() {
+    return {
+      brand,
+      logo,
+    };
+  },
+};
 </script>

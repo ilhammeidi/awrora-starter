@@ -39,13 +39,13 @@
 </style>
 
 <script>
-import brand from '~/static/text/brand'
-import menu from '../Header/data/single'
+import brand from '@/assets/text/brand';
+import menu from '../Header/data/single';
 
 export default {
   data: () => ({
-    brand: brand,
-    menu: menu
-  })
-}
+    brand,
+    menu,
+  }),
+};
 </script>

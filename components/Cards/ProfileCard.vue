@@ -7,6 +7,7 @@
       <v-img
         :src="cover"
         height="200px"
+        cover
       />
     </div>
     <v-avatar
@@ -20,12 +21,12 @@
     </v-avatar>
     <div class="properties text-truncate">
       <div>
-        <strong class="title">
-          <span>
+        <h4 class="use-text-subtitle2">
+          <strong>
             {{ name }}
-          </span>
-        </strong>
-        <v-card-subtitle class="subtitle pa-0">
+          </strong>
+        </h4>
+        <v-card-subtitle class="use-text-paragraph pa-0">
           {{ title }}
         </v-card-subtitle>
         <v-card-text class="desc">
@@ -36,39 +37,47 @@
         <v-btn
           v-if="orientation === 'portrait'"
           :href="href"
-          outlined
+          variant="outlined"
           class="main-btn"
           color="primary"
         >
           See Profile
         </v-btn>
       </div>
-      <v-card-actions class="action">
-        <v-btn text>
-          <v-icon class="icon">mdi-account-multiple</v-icon>
-          {{ connection }}
-          Connection
+      <div class="action-area">
+        <v-card-actions class="action">
+          <v-btn text>
+            <v-icon class="icon">
+              mdi-account-multiple
+            </v-icon>
+            {{ connection }}
+            Connection
+          </v-btn>
+          <v-btn text>
+            <v-icon class="icon">
+              mdi-heart
+            </v-icon>
+            {{ favorites }}
+            Favorites
+          </v-btn>
+          <v-btn text>
+            <v-icon class="icon">
+              mdi-folder-multiple-image
+            </v-icon>
+            {{ albums }}
+            Albums
+          </v-btn>
+        </v-card-actions>
+        <v-btn
+          v-if="orientation === 'landscape'"
+          :href="href"
+          variant="outlined"
+          class="main-btn"
+          color="primary"
+        >
+          See Profile
         </v-btn>
-        <v-btn text>
-          <v-icon class="icon">mdi-heart</v-icon>
-          {{ favorites }}
-          Favorites
-        </v-btn>
-        <v-btn text>
-          <v-icon class="icon">mdi-folder-multiple-image</v-icon>
-          {{ albums }}
-          Albums
-        </v-btn>
-      </v-card-actions>
-      <v-btn
-        v-if="orientation === 'landscape'"
-        :href="href"
-        outlined
-        class="main-btn"
-        color="primary"
-      >
-        See Profile
-      </v-btn>
+      </div>
     </div>
   </v-card>
 </template>
@@ -78,50 +87,50 @@
 </style>
 
 <script>
-import avatarDefault from '~/static/images/avatars/pp_boy4.svg'
+import avatarDefault from '@/assets/images/avatars/pp_boy4.svg';
 
 export default {
   props: {
     cover: {
       type: String,
-      required: true
+      required: true,
     },
     avatar: {
       type: String,
-      default: avatarDefault
+      default: avatarDefault,
     },
     name: {
       type: String,
-      required: true
+      required: true,
     },
     title: {
       type: String,
-      required: true
+      required: true,
     },
     connection: {
       type: Number,
-      default: 0
+      default: 0,
     },
     favorites: {
       type: Number,
-      default: 0
+      default: 0,
     },
     albums: {
       type: Number,
-      default: 0
+      default: 0,
     },
     type: {
       type: String,
-      default: 'full' // available props: full, rounded, over, oval
+      default: 'full', // available props: full, rounded, over, oval
     },
     orientation: {
       type: String,
-      default: 'portrait' // available props: full, rounded, over, oval
+      default: 'portrait', // available props: full, rounded, over, oval
     },
     href: {
       type: String,
-      default: '#'
-    }
-  }
-}
+      default: '#',
+    },
+  },
+};
 </script>

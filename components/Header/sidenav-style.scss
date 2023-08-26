@@ -21,39 +21,36 @@ $identation: 8px;
 }
 
 .has-grand-child {
-  padding: 0;
   > div {
     @include margin-left(0);
   }
 }
 
 .group-child {
-  ::v-deep .v-list-group__items {
+  :deep(.v-list-group__items) {
     @include padding-left($identation * 2);
   }
 }
 
 .side-group {
-  ::v-deep .v-list-group__items {
+  :deep(.v-list-group__items) {
     @include padding-left($identation * 2);
   }
-  ::v-deep .v-list-group__header {
-    @include padding-left(0 !important);
+  :deep(.v-list-group__header) {
+    @include padding-left($identation !important);
   }
   &.v-list-group--sub-group .v-list-item__icon:first-child {
     @include margin-right(0);
   }
   .side-group {
-    ::v-deep .v-list-item__icon {
+    :deep(.v-list-item__icon) {
       margin-right: -16px;
     }
   }
 }
 
 .side-group-link {
-  .v-list-group--no-action > .v-list-group__items & {
-    @include padding-left($identation)
-  }
+  @include padding-left($identation !important)
 }
 
 .menu-list {
@@ -65,6 +62,7 @@ $identation: 8px;
   text-transform: uppercase;
   font-weight: $font-bold;
   font-size: 11px;
+  color: $palette-primary-main;
 }
 
 .current {

@@ -1,7 +1,7 @@
 <template>
   <v-list>
     <v-list-item href="#">
-      <v-list-item-avatar>
+      <template #prepend>
         <v-avatar
           color="primary"
           size="24"
@@ -10,15 +10,15 @@
             mdi-information-variant
           </v-icon>
         </v-avatar>
-      </v-list-item-avatar>
-      <v-list-item-content>
+      </template>
+      <div>
         <v-list-item-title class="help-item">
           {{ $t('common.list_report') }}
         </v-list-item-title>
-      </v-list-item-content>
+      </div>
     </v-list-item>
     <v-list-item href="#">
-      <v-list-item-avatar>
+      <template #prepend>
         <v-avatar
           color="primary"
           size="24"
@@ -27,15 +27,15 @@
             mdi-help
           </v-icon>
         </v-avatar>
-      </v-list-item-avatar>
-      <v-list-item-content>
+      </template>
+      <div>
         <v-list-item-title class="help-item">
           {{ $t('common.list_report') }}
         </v-list-item-title>
-      </v-list-item-content>
+      </div>
     </v-list-item>
     <v-list-item href="#">
-      <v-list-item-avatar>
+      <template #prepend>
         <v-avatar
           color="primary"
           size="24"
@@ -44,15 +44,15 @@
             mdi-disc
           </v-icon>
         </v-avatar>
-      </v-list-item-avatar>
-      <v-list-item-content>
+      </template>
+      <div>
         <v-list-item-title class="help-item">
           {{ $t('common.list_opt') }} 1
         </v-list-item-title>
-      </v-list-item-content>
+      </div>
     </v-list-item>
     <v-list-item href="#">
-      <v-list-item-avatar>
+      <template #prepend>
         <v-avatar
           color="primary"
           size="24"
@@ -61,12 +61,12 @@
             mdi-check
           </v-icon>
         </v-avatar>
-      </v-list-item-avatar>
-      <v-list-item-content>
+      </template>
+      <div>
         <v-list-item-title class="help-item">
           {{ $t('common.list_opt') }} 2
         </v-list-item-title>
-      </v-list-item-content>
+      </div>
     </v-list-item>
   </v-list>
 </template>

@@ -1,14 +1,21 @@
 .blog-headline {
   cursor: pointer;
+  :deep(.v-img__img) {
+    height: auto
+  }
 }
 
-a.anchor-content {
+.content {
   display: block;
   color: #fff;
   text-decoration: none;
+  box-sizing: border-box;
   padding: $spacing2;
   @include breakpoints-up(md) {
     padding: $spacing8;  
+  }
+  & > * {
+    white-space: normal;
   }
 }
 
@@ -32,7 +39,7 @@ a.anchor-content {
   @include breakpoints-down(xs) {
     margin-top: $spacing2
   }
-  ul, ol {
+  ul, ol, p {
     margin-bottom: $spacing2
   }
 }
@@ -47,7 +54,7 @@ a.anchor-content {
   @include palette-divider;
   padding: spacing(3, 0);
   margin: spacing(3, 0);
-  ::v-deep .v-btn {
+  :deep(.v-btn) {
     border-width: 2px;
     @include margin-right($spacing2)
   }
@@ -55,21 +62,21 @@ a.anchor-content {
 
 .facebook {
   border-color: #0D47A1;
-  ::v-deep .v-icon {
+  :deep(.v-icon) {
     color: #0D47A1;
   }
 }
 
 .twitter {
   border-color: #00BCD4;
-  ::v-deep .v-icon {
+  :deep(.v-icon) {
     color: #00BCD4;
   }
 }
 
 .linkedin {
   border-color: #2196F3;
-  ::v-deep .v-icon {
+  :deep(.v-icon) {
     color: #2196F3;
   }
 }
@@ -87,7 +94,7 @@ a.anchor-content {
 .form {
   display: flex;
   align-items: center;
-  padding: spacing(0, 2)
+  padding: spacing(1, 2)
 }
 
 .input {

@@ -7,12 +7,13 @@
     <div class="figure">
       <v-img
         :src="img"
+        cover
         class="white--text"
         height="200px"
       />
     </div>
     <div class="properties">
-      <strong class="use-text-tile2 text-truncate">
+      <strong class="use-text-subtitle text-truncate">
         <span>
           {{ title }}
         </span>
@@ -21,15 +22,15 @@
         {{ date }}
       </v-card-subtitle>
       <v-card-text class="desc">
-        <span class="text--primary">
+        <span class="text-body-1">
           <span>{{ desc }}</span>
         </span>
       </v-card-text>
       <v-card-actions>
         <v-btn
-          :small="orientation === 'landscape'"
+          size="small"
           :href="href"
-          outlined
+          variant="outlined"
           class="action-btn"
           color="primary"
         >
@@ -49,32 +50,32 @@ export default {
   props: {
     img: {
       type: String,
-      required: true
+      required: true,
     },
     title: {
       type: String,
-      required: true
+      required: true,
     },
     date: {
       type: String,
-      required: true
+      required: true,
     },
     desc: {
       type: String,
-      required: true
+      required: true,
     },
     orientation: {
       type: String,
-      default: 'portrait'
+      default: 'portrait',
     },
     type: {
       type: String,
-      default: 'full' // available props: full, rounded, over, oval
+      default: 'full', // available props: full, rounded, over, oval
     },
     href: {
       type: String,
-      default: '#'
-    }
-  }
-}
+      default: '#',
+    },
+  },
+};
 </script>

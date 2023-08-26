@@ -18,29 +18,30 @@
           md="6"
           cols="12"
         >
-          <v-expansion-panels v-if="isMobile">
+          <v-expansion-panels v-if="isMobile" class="accordion-root">
             <v-expansion-panel
               v-for="(footer, index) in footers"
               :key="index"
               class="accordion-content"
             >
-              <v-expansion-panel-header>
-                <h6 class="title mb-4">
+              <v-expansion-panel-title>
+                <h6 class="use-text-subtitle2 text-capitalize mb-4">
                   {{ $t('common.footer_'+footer.title) }}
                 </h6>
-              </v-expansion-panel-header>
-              <v-expansion-panel-content>
+              </v-expansion-panel-title>
+              <v-expansion-panel-text>
                 <ul>
                   <li
                     v-for="(item, index) in footer.description"
                     :key="index"
+                    class="use-text-subtitle2 mb-4"
                   >
                     <nuxt-link :to="footer.link[index]">
                       {{ item }}
                     </nuxt-link>
                   </li>
                 </ul>
-              </v-expansion-panel-content>
+              </v-expansion-panel-text>
             </v-expansion-panel>
           </v-expansion-panels>
           <v-row
@@ -52,7 +53,7 @@
               :key="index"
               class="pa-4 site-map-item"
             >
-              <h6 class="title mb-4">
+              <h6 class="use-text-subtitle2 text-capitalize mb-4">
                 {{ $t('common.footer_'+footer.title) }}
               </h6>
               <ul>
@@ -75,6 +76,7 @@
         >
           <div class="socmed">
             <v-btn
+              size="small"
               text
               icon
               class="button"
@@ -82,6 +84,7 @@
               <span class="ion-logo-facebook icon" />
             </v-btn>
             <v-btn
+              size="small"
               text
               icon
               class="button"
@@ -89,6 +92,7 @@
               <span class="ion-logo-twitter icon" />
             </v-btn>
             <v-btn
+              size="small"
               text
               icon
               class="button"
@@ -96,6 +100,7 @@
               <span class="ion-logo-instagram icon" />
             </v-btn>
             <v-btn
+              size="small"
               text
               icon
               class="button"
@@ -104,13 +109,14 @@
             </v-btn>
           </div>
           <v-select
-            :items="langList"
-            :value="lang"
             v-model="lang"
-            @change="switchLang(lang)"
-            label=""
-            outlined
+            :items="langList"
+            :value="curLang"
+            variant="outlined"
             class="select-lang"
+            color="primary"
+            prepend-inner-icon="mdi-web"
+            @update:model-value="switchLang(lang)"
           />
           <p v-if="isMobile" class="body-2 text-center">
             &copy;&nbsp;
@@ -127,21 +133,54 @@
 </style>
 
 <script>
-import Logo from '../Logo'
-import brand from '~/static/text/brand'
+import { ref } from 'vue';
+import { useI18n } from 'vue-i18n';
+import { useSwitchLocalePath } from 'vue-i18n-routing';
+import { setRtl } from '@/composables/uiTheme';
+import brand from '@/assets/text/brand';
+import Logo from '../Logo';
+import { navigateTo } from '#app';
 
 export default {
   components: {
-    Logo
+    Logo,
+  },
+  setup() {
+    const switchLocalePath = useSwitchLocalePath();
+
+    const i18n = useI18n();
+    const curLang = i18n.locale.value;
+    const lang = ref(curLang);
+
+    function switchLang(locale) {
+      navigateTo(switchLocalePath(locale));
+      lang.value = locale;
+
+      // Set RTL and Document attr
+      document.documentElement.setAttribute('lang', locale);
+
+      if (locale === 'ar') {
+        setRtl(true);
+        document.documentElement.setAttribute('dir', 'rtl');
+      } else {
+        setRtl(false);
+        document.documentElement.setAttribute('dir', 'ltr');
+      }
+    }
+
+    return {
+      curLang,
+      switchLang,
+      lang,
+    };
   },
   data: () => ({
-    brand: brand,
-    lang: 'en',
+    brand,
     footers: [
       {
         title: 'company',
         description: ['Team', 'History', 'Contact us', 'Locations'],
-        link: ['#', '#', '#', '#']
+        link: ['#', '#', '#', '#'],
       },
       {
         title: 'resources',
@@ -149,41 +188,36 @@ export default {
           'Resource',
           'Resource name',
           'Another resource',
-          'Final resource'
+          'Final resource',
         ],
-        link: ['#', '#', '#', '#']
+        link: ['#', '#', '#', '#'],
       },
       {
         title: 'legal',
         description: ['Privacy policy', 'Terms of use'],
-        link: ['#', '#']
-      }
-    ]
+        link: ['#', '#'],
+      },
+    ],
   }),
-  mounted() {
-    this.lang = this.$i18n.locale
-  },
   computed: {
-    langList: function() {
-      const list = []
-      this.$i18n.locales.map(item => {
-        list.push({ text: this.$t('common.' + item.code), value: item.code })
-      })
-      return list
+    langList() {
+      const list = [];
+      const i18n = this.$i18n.locales;
+
+      i18n.map((locale) => {
+        list.push({ title: this.$t('common.' + locale.code), value: locale.code });
+        return false;
+      });
+      return list;
     },
     isMobile() {
-      const smDown = this.$store.state.breakpoints.smDown
-      return smDown.indexOf(this.$mq) > -1
+      const smDown = this.$vuetify.display.smAndDown;
+      return smDown;
     },
     isDesktop() {
-      const mdUp = this.$store.state.breakpoints.mdUp
-      return mdUp.indexOf(this.$mq) > -1
-    }
+      const mdUp = this.$vuetify.display.mdAndUp;
+      return mdUp;
+    },
   },
-  methods: {
-    switchLang: function(val) {
-      this.$i18n.setLocale(val)
-    }
-  }
-}
+};
 </script>

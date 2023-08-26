@@ -1,10 +1,10 @@
 <template>
   <div class="page-wrap">
     <v-snackbar
+      v-model="snackbar"
       :timeout="4000"
       top
       right
-      v-model="snackbar"
       class="notification"
     >
       <div class="action">
@@ -80,7 +80,7 @@
                 </div>
                 <div class="btn-area">
                   <v-btn
-                    large
+                    size="large"
                     block
                     color="primary"
                     @click="validate"
@@ -94,47 +94,52 @@
         </v-col>
         <v-col md="6" cols="12" class="ps-md-0">
           <v-card :class="{ full: full }" class="map" raised>
-            <GMap
-              ref="gMap"
-              :center="{lat: locations[0].lat, lng: locations[0].lng}"
-              :options="{fullscreenControl: false}"
-              :zoom="6"
+            <GoogleMap
+              :zoom="5"
+              :center="{ lat: locations[0].lat, lng: locations[0].lng }"
+              style="width: 100%; height: 100%"
             >
-              <GMapMarker
-                ref="gMarker"
-                v-for="location in locations"
-                :key="location.id"
-                :position="{lat: location.lat, lng: location.lng}"
-              >
-                <GMapInfoWindow>
-                  <div class="bubel">
-                    <h6 class="title pb-2 px-3">
-                      Head Quarter
-                    </h6>
-                    <v-row class="ma-3">
-                      <v-col item sm="6" cols="12" class="pa-0">
-                        <p>
-                          <v-icon class="icon">mdi-phone</v-icon>
-                          +98 765 432 10
-                        </p>
-                      </v-col>
-                      <v-col item sm="6" cols="12" class="pa-0">
-                        <p>
-                          <v-icon class="icon">mdi-email</v-icon>
-                          hello@luxi.com
-                        </p>
-                      </v-col>
-                      <v-col item sm="12" cols="12" class="pa-0">
-                        <p>
-                          <v-icon class="icon">mdi-map-marker</v-icon>
-                          Lorem ipsum street Block C - Vestibullum Building
-                        </p>
-                      </v-col>
-                    </v-row>
-                  </div>
-                </GMapInfoWindow>
-              </GMapMarker>
-            </GMap>
+              <InfoWindow :options="{ position: { lat: locations[0].lat + 1, lng: locations[0].lng } }">
+                <div class="bubel">
+                  <h6 class="use-text-subtitle pb-1 px-3">
+                    Head Quarter
+                  </h6>
+                  <v-row class="ma-3">
+                    <v-col item sm="6" cols="12">
+                      <p>
+                        <v-icon class="icon">
+                          mdi-phone
+                        </v-icon>
+                        +98 765 432 10
+                      </p>
+                    </v-col>
+                    <v-col item sm="6" cols="12">
+                      <p>
+                        <v-icon class="icon">
+                          mdi-email
+                        </v-icon>
+                        hello@luxi.com
+                      </p>
+                    </v-col>
+                    <v-col item sm="12" cols="12">
+                      <p>
+                        <v-icon class="icon">
+                          mdi-map-marker
+                        </v-icon>
+                        Lorem ipsum street Block C - Vestibullum Building
+                      </p>
+                    </v-col>
+                  </v-row>
+                </div>
+              </InfoWindow>
+              <MarkerCluster>
+                <Marker
+                  v-for="(location, i) in locations"
+                  :key="i"
+                  :options="{ position: location }"
+                />
+              </MarkerCluster>
+            </GoogleMap>
           </v-card>
         </v-col>
       </v-row>
@@ -147,14 +152,33 @@
 </style>
 
 <script>
+import {
+  GoogleMap,
+  Marker,
+  MarkerCluster,
+  InfoWindow,
+} from 'vue3-google-map';
+
 export default {
+  components: {
+    GoogleMap,
+    Marker,
+    MarkerCluster,
+    InfoWindow,
+  },
+  props: {
+    full: {
+      type: Boolean,
+      default: false,
+    },
+  },
   data: () => ({
     currentLocation: {},
     locations: [
       {
         lat: 44.933076,
-        lng: 15.629058
-      }
+        lng: 15.629058,
+      },
     ],
     valid: true,
     snackbar: false,
@@ -163,25 +187,19 @@ export default {
     email: '',
     emailRules: [
       v => !!v || 'E-mail is required',
-      v => /.+@.+\..+/.test(v) || 'E-mail must be valid'
+      v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
     ],
     phone: '',
     company: '',
     message: '',
-    checkbox: false
+    checkbox: false,
   }),
   methods: {
     validate() {
       if (this.$refs.form.validate()) {
-        this.snackbar = true
+        this.snackbar = true;
       }
-    }
+    },
   },
-  props: {
-    full: {
-      type: Boolean,
-      default: false
-    }
-  }
-}
+};
 </script>

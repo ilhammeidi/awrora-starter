@@ -35,12 +35,12 @@
           <v-btn
             v-for="(item, index) in news"
             :key="index"
-            text     
+            variant="text"
             class="blog-item"
             href="#"
           >
             <span class="figure">
-              <img :src="item.img" alt="thumb" />
+              <img :src="item.img" alt="thumb">
             </span>
             <span class="list-text">
               <span class="category">
@@ -59,43 +59,47 @@
         >
           <div class="socmed">
             <v-btn
-              text
+              variant="text"
               icon
+              size="small"
               class="button"
             >
               <span class="ion-logo-twitter icon" />
             </v-btn>
             <v-btn
-              text
+              variant="text"
               icon
+              size="small"
               class="button"
             >
               <span class="ion-logo-facebook icon" />
             </v-btn>
             <v-btn
-              text
+              variant="text"
               icon
+              size="small"
               class="button"
             >
               <span class="ion-logo-instagram icon" />
             </v-btn>
             <v-btn
-              text
+              variant="text"
               icon
+              size="small"
               class="button"
             >
               <span class="ion-logo-linkedin icon" />
             </v-btn>
           </div>
           <v-select
-            :items="langList"
-            :value="lang"
             v-model="lang"
-            label=""
-            outlined
+            :items="langList"
+            :value="curLang"
+            variant="outlined"
             class="select-lang"
+            color="primary"
             prepend-inner-icon="mdi-web"
-            @change="switchLang(lang)"
+            @update:model-value="switchLang(lang)"
           />
           <p class="body-2">
             &copy;&nbsp;
@@ -112,17 +116,50 @@
 </style>
 
 <script>
-import img from '~/static/images/imgAPI'
-import brand from '~/static/text/brand'
-import Logo from '../Logo'
+import { ref } from 'vue';
+import { useI18n } from 'vue-i18n';
+import { useSwitchLocalePath } from 'vue-i18n-routing';
+import { setRtl } from '@/composables/uiTheme';
+import brand from '@/assets/text/brand';
+import img from '@/assets/images/imgAPI';
+import Logo from '../Logo';
+import { navigateTo } from '#app';
 
 export default {
   components: {
-    Logo
+    Logo,
+  },
+  setup() {
+    const switchLocalePath = useSwitchLocalePath();
+
+    const i18n = useI18n();
+    const curLang = i18n.locale.value;
+    const lang = ref(curLang);
+
+    function switchLang(locale) {
+      navigateTo(switchLocalePath(locale));
+      lang.value = locale;
+
+      // Set RTL and Document attr
+      document.documentElement.setAttribute('lang', locale);
+
+      if (locale === 'ar') {
+        setRtl(true);
+        document.documentElement.setAttribute('dir', 'rtl');
+      } else {
+        setRtl(false);
+        document.documentElement.setAttribute('dir', 'ltr');
+      }
+    }
+
+    return {
+      curLang,
+      switchLang,
+      lang,
+    };
   },
   data: () => ({
-    lang: 'en',
-    brand: brand,
+    brand,
     footer: {
       title: 'Quick Links',
       description: ['Resource', 'Another resource', 'Final resource', 'Privacy policy', 'Terms of use', 'Terms Condition'], // eslint-disable-line
@@ -132,36 +169,31 @@ export default {
       {
         type: 'news',
         text: 'Sed imperdiet enim ligula vitae viverra.',
-        img: img.photo[4]
+        img: img.photo[4],
       },
       {
         type: 'news',
         text: 'Sed imperdiet enim ligula vitae viverra.',
-        img: img.photo[1]
+        img: img.photo[1],
       },
       {
         type: 'news',
         text: 'Sed imperdiet enim ligula vitae viverra.',
-        img: img.photo[3]
-      }
-    ]
+        img: img.photo[3],
+      },
+    ],
   }),
   computed: {
-    langList: function() {
-      const list = []
-      this.$i18n.locales.map(item => {
-        list.push({ text: this.$t('common.' + item.code), value: item.code })
-      })
-      return list
-    }
+    langList() {
+      const list = [];
+      const i18n = this.$i18n.locales;
+
+      i18n.map((locale) => {
+        list.push({ title: this.$t('common.' + locale.code), value: locale.code });
+        return false;
+      });
+      return list;
+    },
   },
-  mounted() {
-    this.lang = this.$i18n.locale
-  },
-  methods: {
-    switchLang: function(val) {
-      this.$i18n.setLocale(val)
-    }
-  }
-}
+};
 </script>

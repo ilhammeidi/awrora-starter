@@ -5,14 +5,14 @@
       <search v-model="keyword" />
       <v-container class="max-md space-top-short">
         <v-row>
-          <v-col class="px-6" md="8">
+          <v-col class="px-6" md="8" cols="12">
             <faq-list />
           </v-col>
-          <v-col class="px-6" md="4">
+          <v-col class="px-6" md="4" cols="12">
             <div class="space-bottom-short">
               <topic-list />
             </div>
-            <div class="space-bottom-short">
+            <div>
               <help-widget />
             </div>
           </v-col>
@@ -24,17 +24,17 @@
 </template>
 
 <style scoped lang="scss">
-@import '~/assets/pages';
+@import '@/assets/scss/pages';
 </style>
 
 <script>
-import brand from '~/static/text/brand'
-import Header from '~/components/Header'
-import Footer from '~/components/Footer'
-import Search from '~/components/Filter/Search'
-import FaqList from '~/components/Faq/FaqList'
-import TopicList from '~/components/Faq/TopicList'
-import HelpWidget from '~/components/List/Sidebar/HelpWidget'
+import brand from '@/assets/text/brand';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import Search from '@/components/Filter/Search';
+import FaqList from '@/components/Faq/FaqList';
+import TopicList from '@/components/Faq/TopicList';
+import HelpWidget from '@/components/List/Sidebar/HelpWidget';
 
 export default {
   components: {
@@ -43,17 +43,17 @@ export default {
     Search,
     FaqList,
     TopicList,
-    HelpWidget
+    HelpWidget,
   },
   data() {
     return {
-      keyword: ''
-    }
+      keyword: '',
+    };
   },
   head() {
     return {
-      title: brand.starter.name + ' - Faq'
-    }
-  }
-}
+      title: brand.starter.name + ' - Faq',
+    };
+  },
+};
 </script>

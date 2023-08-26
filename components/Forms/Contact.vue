@@ -1,10 +1,10 @@
 <template>
   <div class="page-wrap">
     <v-snackbar
+      v-model="snackbar"
       :timeout="4000"
       top
       right
-      v-model="snackbar"
       class="notification"
     >
       <div class="action">
@@ -93,8 +93,8 @@
               <v-btn
                 :block="isMobile"
                 color="secondary"
+                size="large"
                 @click="validate"
-                large
               >
                 {{ $t('common.form_send') }}
               </v-btn>
@@ -111,9 +111,9 @@
 </style>
 
 <script>
-import logo from '~/static/images/starter-logo.svg'
-import brand from '~/static/text/brand'
-import link from '~/static/text/link'
+import logo from '@/assets/images/starter-logo.svg';
+import brand from '@/assets/text/brand';
+import link from '@/assets/text/link';
 
 export default {
   data() {
@@ -125,29 +125,29 @@ export default {
       email: '',
       emailRules: [
         v => !!v || 'E-mail is required',
-        v => /.+@.+\..+/.test(v) || 'E-mail must be valid'
+        v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
       ],
       phone: '',
       company: '',
       message: '',
       checkbox: false,
-      logo: logo,
-      brand: brand,
-      routeLink: link
-    }
+      logo,
+      brand,
+      routeLink: link,
+    };
+  },
+  computed: {
+    isMobile() {
+      const smDown = this.$vuetify.display.smAndDown;
+      return smDown;
+    },
   },
   methods: {
     validate() {
       if (this.$refs.form.validate()) {
-        this.snackbar = true
+        this.snackbar = true;
       }
-    }
+    },
   },
-  computed: {
-    isMobile() {
-      const smDown = this.$store.state.breakpoints.smDown
-      return smDown.indexOf(this.$mq) > -1
-    }
-  }
-}
+};
 </script>

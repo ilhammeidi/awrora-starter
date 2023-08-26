@@ -1,21 +1,23 @@
 <template>
   <v-card :class="[orientation, type]" class="product-card">
-    <a :href="href" v-ripple class="hidden-link">&nbsp;</a>
+    <a v-ripple :href="href" class="hidden-link">&nbsp;</a>
     <figure>
-      <img :src="img" :alt="title" />
+      <img :src="img" :alt="title">
     </figure>
     <div class="desc">
       <div class="text">
-        <h6 class="title pb-2 text-truncate">{{ title }}</h6>
+        <h6 class="use-text-subtitle2 pb-2 text-truncate">
+          {{ title }}
+        </h6>
         <p class="use-text-paragraph">
           {{ desc }}
         </p>
       </div>
       <div>
         <div class="property">
-          <div class="rating" v-if="rating > 0">
+          <div v-if="rating > 0" class="rating">
             <v-rating
-              :value="rating"
+              :model-value="rating"
               color="orange lighten-3"
               background-color="grey"
               length="5"
@@ -25,7 +27,7 @@
           </div>
           <strong v-if="price > 0">${{ price }}</strong>
         </div>
-        <v-btn :href="href" block class="button" outlined color="primary">
+        <v-btn :href="href" block class="button" variant="outlined" color="primary">
           {{ $t('common.btn_detail') }}
         </v-btn>
       </div>
@@ -42,36 +44,36 @@ export default {
   props: {
     type: {
       type: String,
-      default: 'full' // available props: full, rounded, over, oval
+      default: 'full', // available props: full, rounded, over, oval
     },
     img: {
       type: String,
-      required: true
+      required: true,
     },
     title: {
       type: String,
-      required: true
+      required: true,
     },
     desc: {
       type: String,
-      required: true
+      required: true,
     },
     rating: {
       type: Number,
-      default: 0
+      default: 0,
     },
     price: {
       type: Number,
-      default: 0
+      default: 0,
     },
     orientation: {
       type: String,
-      default: 'portrait'
+      default: 'portrait',
     },
     href: {
       type: String,
-      default: '#'
-    }
-  }
-}
+      default: '#',
+    },
+  },
+};
 </script>

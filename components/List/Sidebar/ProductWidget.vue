@@ -15,8 +15,9 @@
             class="product-item"
           >
             <v-item>
-              <a href="#" v-ripple>
+              <a v-ripple class="link" href="#">
                 <v-img
+                  cover
                   :src="item.image"
                   height="100"
                   class="image"
@@ -28,7 +29,9 @@
           </v-col>
         </v-row>
       </v-item-group>
-      <v-btn text block color="primary">See all</v-btn>
+      <v-btn variant="text" block color="primary">
+        See all
+      </v-btn>
     </div>
   </paper>
 </template>
@@ -38,38 +41,38 @@
 </style>
 
 <script>
-import Paper from '../../Paper'
+import Paper from '../../Paper';
 
 export default {
   components: {
-    Paper
+    Paper,
   },
   data() {
     return {
       products: [
         {
-          image: 'https://source.unsplash.com/random',
+          image: 'https://source.unsplash.com/random/?nice',
           text: 'Sed lacinia velit',
-          price: '32'
+          price: '32',
         },
         {
-          image: 'https://source.unsplash.com/random',
+          image: 'https://source.unsplash.com/random/?nice',
           text: 'Sed lacinia velit',
-          price: '20'
+          price: '20',
         },
         {
-          image: 'https://source.unsplash.com/random',
+          image: 'https://source.unsplash.com/random/?nice',
           text: 'Sed lacinia velit',
-          price: '15'
+          price: '15',
         },
         {
-          image: 'https://source.unsplash.com/random',
+          image: 'https://source.unsplash.com/random/?nice',
           text: 'Sed lacinia velit',
-          price: '21'
-        }
+          price: '21',
+        },
       ],
-      selected: []
-    }
-  }
-}
+      selected: [],
+    };
+  },
+};
 </script>

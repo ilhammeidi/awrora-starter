@@ -1,1 +1,1 @@
-export { default } from './CallAction'
+export { default } from './CallAction';

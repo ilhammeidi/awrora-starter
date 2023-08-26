@@ -8,13 +8,17 @@
   &.color {
     color: $palette-common-white;
     background: $palette-primary-main;
-    ::v-deep .v-card__subtitle{
+    :deep(.v-card__subtitle) {
       color: $palette-common-white;
     }
+  }
+  :deep(.v-card-subtitle) {
+    white-space: normal;
   }
 }
 
 .icon {
+  height: auto;
   color: $palette-primary-main;
   padding: spacing(2, 0)
 }

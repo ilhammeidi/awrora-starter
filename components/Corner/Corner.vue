@@ -1,23 +1,23 @@
 <template>
-  <fragment>
-    <page-nav v-if="type === 'nav'" />
-    <chat v-if="type === 'chat'" />
-  </fragment>
+  <page-nav v-if="type === 'nav'" />
+  <chat v-if="type === 'chat'" />
 </template>
 
 <script>
-import PageNav from '../PageNav'
-import Chat from '../Chat'
+import ui from '@/composables/uiTheme';
+import PageNav from '../PageNav';
+import Chat from '../Chat';
 
 export default {
   components: {
     PageNav,
-    Chat
+    Chat,
   },
-  computed: {
-    type() {
-      return this.$store.state.ui.corner
-    }
-  }
-}
+  setup() {
+    const type = ui.corner();
+    return {
+      type,
+    };
+  },
+};
 </script>

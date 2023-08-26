@@ -1,9 +1,9 @@
 <template>
   <v-container>
-    <h3 class="display-2 text-center mb-4">
+    <h3 class="use-text-title text-center mb-4">
       Blog and News
     </h3>
-    <p class="body-1 text-center mb-4">
+    <p class="use-text-subtitle2 text-center mb-4">
       Curabitur egestas consequat lorem, vel fermentum augue porta id.
     </p>
     <div
@@ -24,7 +24,7 @@
                 :title="item.title"
                 :desc="item.desc"
                 :date="item.date"
-                img="https://source.unsplash.com/random"
+                img="https://source.unsplash.com/random/?nice"
                 href="/blog/detail-blog"
               />
             </v-col>
@@ -40,11 +40,11 @@
 </style>
 
 <script>
-import PostCard from '../Cards/PostCard'
+import PostCard from '../Cards/PostCard';
 
 export default {
   components: {
-    PostCard
+    PostCard,
   },
   data() {
     return {
@@ -53,22 +53,22 @@ export default {
           title: 'Heading',
           date: '19 June 2020',
           desc:
-            'This is a media card. You can use this section to describe the content.'
+            'This is a media card. You can use this section to describe the content.',
         },
         {
           title: 'Heading',
           date: '19 June 2020',
           desc:
-            'This is a media card. You can use this section to describe the content.'
+            'This is a media card. You can use this section to describe the content.',
         },
         {
           title: 'Heading',
           date: '19 June 2020',
           desc:
-            'This is a media card. You can use this section to describe the content.'
-        }
-      ]
-    }
-  }
-}
+            'This is a media card. You can use this section to describe the content.',
+        },
+      ],
+    };
+  },
+};
 </script>

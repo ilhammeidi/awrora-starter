@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="main-wrap">
     <main-header />
     <div class="space-top">
       <pricing />
@@ -12,27 +12,27 @@
 </template>
 
 <style scoped lang="scss">
-@import '~/assets/pages';
+@import '@/assets/scss/pages';
 </style>
 
 <script>
-import brand from '~/static/text/brand'
-import Header from '~/components/Header'
-import Footer from '~/components/Footer'
-import Pricing from '~/components/Pricing'
-import Faq from '~/components/Faq'
+import brand from '@/assets/text/brand';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import Pricing from '@/components/Pricing';
+import Faq from '@/components/Faq';
 
 export default {
   components: {
     'main-header': Header,
     'main-footer': Footer,
     Pricing,
-    Faq
+    Faq,
   },
   head() {
     return {
-      title: brand.starter.name + ' - Pricing'
-    }
-  }
-}
+      title: brand.starter.name + ' - Pricing',
+    };
+  },
+};
 </script>

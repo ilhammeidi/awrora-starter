@@ -30,14 +30,23 @@
   margin-top: $spacing2
 }
 
+.action-area {
+  .main-btn {
+    display: flex;
+    @include breakpoints-up(sm) {
+      margin: 0 32px;
+    }
+  }
+}
+
 .action {
   padding: 0;
-  ::v-deep .v-btn {
+  :deep(.v-btn) {
     flex: 1;
     padding: $spacing1;
     height: 60px;
   }
-  ::v-deep .v-btn__content {
+  :deep(.v-btn__content) {
     flex-direction: column;
     text-transform: none;
     font-weight: $font-regular;
@@ -105,14 +114,9 @@
     }
   }
   .action {
-    margin: 0 $spacing5;
+    margin: 0 $spacing3;
     @include breakpoints-down(xs) {
       display: none
-    }
-    & > *:nth-child(1) {
-      @include breakpoints-down(sm) {
-        display: none
-      }
     }
   }
   .v-btn.main-btn {
@@ -168,6 +172,7 @@
       & > div {
         border-radius: 0 50% 50% 0 !important;
         height: 120% !important;
+        max-height: none;
         margin-top: -10%;
       }
     }
@@ -175,6 +180,7 @@
 }
 
 .over {
+  overflow: visible;
   &.portrait {
     margin-top: $spacing2;
     .figure {

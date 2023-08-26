@@ -11,11 +11,11 @@
           :label="$t('common.register_email')"
           class="input"
           dark
+          hide-details
         />
         <v-btn
           class="send"
-          small
-          outlined
+          variant="outlined"
           color="white"
         >
           {{ $t('common.btn_submit') }}
@@ -30,11 +30,11 @@
 </style>
 
 <script>
-import Paper from '../../Paper'
+import Paper from '../../Paper';
 
 export default {
   components: {
-    Paper
-  }
-}
+    Paper,
+  },
+};
 </script>

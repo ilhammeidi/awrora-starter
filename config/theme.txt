@@ -178,7 +178,7 @@ deepblue: {
   accentlight: colors.indigo.lighten4, // secondary light
   accentdark: colors.indigo.darken4 // secondary dark
 },
-leaf: {
+greenLeaf: {
   primary: colors.green.base, // primary main
   primarylight: colors.green.lighten4, // primary light
   primarydark: colors.green.darken4, // primary dark

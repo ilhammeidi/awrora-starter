@@ -1,6 +1,6 @@
 <template>
   <v-card class="card">
-    <p class="body1">
+    <p class="use-text-paragraph">
       {{ text }}
     </p>
     <div class="name">
@@ -29,16 +29,16 @@ export default {
   props: {
     text: {
       type: String,
-      required: true
+      required: true,
     },
     avatar: {
       type: String,
-      required: true
+      required: true,
     },
     name: {
       type: String,
-      required: true
-    }
-  }
-}
+      required: true,
+    },
+  },
+};
 </script>

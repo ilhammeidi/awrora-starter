@@ -1,8 +1,8 @@
 <template>
   <nav class="user-menu">
     <v-btn
-      :href="link.starter.login"
       v-if="isDesktop"
+      :href="link.starter.login"
       text
     >
       {{ $t('common.login') }}
@@ -18,7 +18,7 @@
       v-if="isDesktop"
       class="vertical-divider"
     />
-    <setting-menu />
+    <setting-menu v-if="loaded" />
   </nav>
 </template>
 
@@ -27,23 +27,27 @@
 </style>
 
 <script>
-import link from '~/static/text/link'
-import Settings from './Settings'
+import link from '@/assets/text/link';
+import Settings from './Settings';
 
 export default {
+  components: {
+    'setting-menu': Settings,
+  },
   data() {
     return {
-      link: link
-    }
-  },
-  components: {
-    'setting-menu': Settings
+      link,
+      loaded: false,
+    };
   },
   computed: {
     isDesktop() {
-      const smUp = this.$store.state.breakpoints.smUp
-      return smUp.indexOf(this.$mq) > -1
-    }
-  }
-}
+      const smUp = this.$vuetify.display.smAndUp;
+      return smUp;
+    },
+  },
+  mounted() {
+    this.loaded = true;
+  },
+};
 </script>

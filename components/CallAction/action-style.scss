@@ -14,18 +14,18 @@
   transform: scale(3);
   &.front {
     opacity: 0.2;
-    .theme--dark & {
+    .v-theme--dark & {
       fill:  $palette-primary-light;
     }
-    .theme--light & {
+    .v-theme--light & {
       fill: $palette-primary-light
     }
   }
   &.base {
-    .theme--dark & {
+    .v-theme--dark & {
       fill: $palette-common-black
     }
-    .theme--light & {
+    .v-theme--light & {
       fill: $palette-common-white
     }
   }
@@ -61,10 +61,10 @@
   }
   h4 {
     font-weight: 700;
-    .theme--dark & {
+    .v-theme--dark & {
       color: $palette-secondary-light
     }
-    .theme--light & {
+    .v-theme--light & {
       color: $palette-secondary-dark
     }
     font-family: 'Roboto Condensed';
@@ -87,7 +87,7 @@
 
 .right-icon {
   @include margin-left($spacing1);
-  .v-application--is-rtl & {
+  .v-locale--is-rtl & {
     transform: rotate(180deg)
   }
 }

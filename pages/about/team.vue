@@ -8,7 +8,9 @@
         <h4 class="use-text-title2 mb-3">
           {{ $t('common.about_team') }}
         </h4>
-        <p>Vestibulum faucibus eget erat eget pretium. Donec commodo convallis eget suscipit orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+        <p class="use-text-subtitle2">
+          Vestibulum faucibus eget erat eget pretium. Donec commodo convallis eget suscipit orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
         <team-grid />
       </v-container>
     </div>
@@ -23,20 +25,21 @@
 </template>
 
 <style lang="scss" scoped>
-@import '~/assets/pages';
+@import '@/assets/scss/pages';
 </style>
 
 <script>
-import brand from '~/static/text/brand'
-import Header from '~/components/Header'
-import Banner from '~/components/About/Banner'
-import Counter from '~/components/Counter'
-import PhotoSlider from '~/components/About/PhotoSlider'
-import CallAction from '~/components/CallAction'
-import TeamGrid from '~/components/About/TeamGrid'
-import Footer from '~/components/Footer'
+import brand from '@/assets/text/brand';
+import Header from '@/components/Header';
+import Banner from '@/components/About/Banner';
+import Counter from '@/components/Counter';
+import PhotoSlider from '@/components/About/PhotoSlider';
+import CallAction from '@/components/CallAction';
+import TeamGrid from '@/components/About/TeamGrid';
+import Footer from '@/components/Footer';
+import { defineNuxtComponent } from '#app';
 
-export default {
+export default defineNuxtComponent({
   components: {
     'main-header': Header,
     'main-footer': Footer,
@@ -44,12 +47,12 @@ export default {
     Banner,
     Counter,
     PhotoSlider,
-    CallAction
+    CallAction,
   },
   head() {
     return {
-      title: brand.starter.name + ' - About'
-    }
-  }
-}
+      title: brand.starter.name + ' - About',
+    };
+  },
+});
 </script>

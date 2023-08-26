@@ -95,7 +95,7 @@
 }
 
 .quick-links {
-  margin-top: $spacing6;
+  margin-top: $spacing3;
 }
 
 .blog-item {
@@ -138,6 +138,7 @@
     text-transform: none;
     margin-bottom: 0;
     font-weight: $font-regular;
+    white-space: normal;
     @include text-align(left);
   }
 }
@@ -173,10 +174,9 @@
   button {
     border-radius: 50%;
     margin: $spacing1;
-    color: $palette-primary-dark;
-    background: $palette-primary-main;
+    @include use-theme(background, $palette-primary-light, $palette-primary-dark);
     .icon {
-      color: $palette-common-white;
+      @include use-theme(color, $palette-primary-dark, $palette-primary-light);
       @include margin-left(-4px)
     }
   }
@@ -199,19 +199,19 @@
   margin-top: $spacing2;
   position: relative;
   z-index: 10;
-  ::v-deep .v-input__slot{
+  :deep(.v-input__slot) {
     min-height: 43px;
   }
-  ::v-deep .v-input__append-inner,
-  ::v-deep .v-input__prepend-inner {
+  :deep(.v-input__append-inner),
+  :deep(.v-input__prepend-inner) {
     margin-top: 10px
   }
-  ::v-deep .v-select__selections,
-  ::v-deep .v-icon{
+  :deep(.v-select__selections),
+  :deep(.v-icon) {
     padding: 0;
     color: var(--v-primarylight-base)
   }
-  ::v-deep fieldset {
+  :deep(fieldset) {
     box-shadow: 0 1.5px 12px 2px rgba(0, 0, 0, 0.06);
     border-color: var(--v-primarylight-darken3) !important;
     legend {

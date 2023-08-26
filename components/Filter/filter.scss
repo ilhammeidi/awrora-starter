@@ -2,7 +2,6 @@
   @include breakpoints-down(sm) {
     padding: $spacing4;
     height: 100%;
-    overflow: auto;
     position: absolute;
     width: 100%;
   }
@@ -69,10 +68,10 @@
   @include breakpoints-up(sm) {
     width: 600px;
   }
-  ::v-deep fieldset {
+  :deep(fieldset) {
     height: 41px;
   }
-  ::v-deep .v-text-field--outlined > .v-input__control > .v-input__slot {
+  :deep(.v-field__field) {
     @include padding-left($spacing5);
     min-height: 0;
     margin-bottom: 0;
@@ -80,13 +79,13 @@
       max-height: none;
     }
   }
-  ::v-deep .v-text-field__details {
+  :deep(.v-text-field__details) {
     display: none;
   }
   .search-icon {
     position: absolute;
-    top: 7px;
-    @include left($spacing1);
+    top: $spacing2;
+    @include left($spacing2);
   }
 }
 

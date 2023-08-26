@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="main-wrap">
     <main-header />
     <div class="space-top">
       <contact-map />
@@ -9,31 +9,31 @@
 </template>
 
 <style scoped lang="scss">
-@import '~/assets/pages';
+@import '@/assets/scss/pages';
 </style>
 
 <script>
-import brand from '~/static/text/brand'
-import Header from '~/components/Header'
-import Footer from '~/components/Footer'
-import ContactMap from '~/components/Forms/ContactMap'
+import brand from '@/assets/text/brand';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import ContactMap from '@/components/Forms/ContactMap';
 
 export default {
   components: {
     'main-header': Header,
     'main-footer': Footer,
-    ContactMap
+    ContactMap,
   },
   head() {
     return {
-      title: brand.starter.name + ' - Contact with Map'
-    }
+      title: brand.starter.name + ' - Contact with Map',
+    };
   },
   computed: {
     isMobile() {
-      const xsDown = this.$store.state.breakpoints.xsDown
-      return xsDown.indexOf(this.$mq) > -1
-    }
-  }
-}
+      const xsDown = this.$vuetify.display.xs;
+      return xsDown;
+    },
+  },
+};
 </script>

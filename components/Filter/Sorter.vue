@@ -1,9 +1,11 @@
 <template>
-  <v-row class="sorter" align="center" >
-    <v-col class="py-1" lg="9" md="8" sm="6" cols="12">
-      <h2 class="use-text-subtitle">{{ resultLength }} Items Found</h2>
+  <v-row class="sorter" align="center">
+    <v-col class="py-1" lg="8" sm="6" cols="12">
+      <h2 class="use-text-subtitle">
+        {{ resultLength }} Items Found
+      </h2>
     </v-col>
-    <v-col class="py-1" lg="3" md="4" sm="6" cols="12">
+    <v-col class="py-1" lg="4" sm="6" cols="12">
       <div class="d-flex justify-end align-center">
         <v-btn
           v-if="isMobile"
@@ -20,9 +22,10 @@
         </v-btn>
         <v-btn-toggle
           v-if="isDesktop"
-          :value="view"
-          class="me-4"
-          @change="(e) => switchView(e)"
+          :model-value="view"
+          variant="outlined"
+          class="pe-8"
+          @update:model-value="(e) => switchView(e)"
         >
           <v-btn small>
             <v-icon>mdi-view-grid</v-icon>
@@ -32,15 +35,15 @@
           </v-btn>
         </v-btn-toggle>
         <v-select
-          value="sortBySelected"
           :items="sortList"
-          @change="(e) => handleSortBy(e)"
           item-text="title"
           item-value="value"
           label="Sort By:"
           return-object
           single-line
+          hide-details
           persistent-hint
+          @update:model-value="(e) => handleSortBy(e)"
         />
       </div>
     </v-col>
@@ -53,62 +56,63 @@
 
 <script>
 export default {
+  props: {
+    view: {
+      type: Number,
+      default: 0,
+    },
+    sortBySelected: {
+      type: Object,
+      required: true,
+    },
+    resultLength: {
+      type: Number,
+      required: true,
+    },
+  },
+  emits: ['switch-view', 'sort-by', 'open-filter'],
   data() {
     return {
       sortList: [
         {
           title: 'Title A to Z',
-          value: 'title-asc'
+          value: 'title-asc',
         },
         {
           title: 'Title Z to A',
-          value: 'title-desc'
+          value: 'title-desc',
         },
         {
           title: 'Highest Price',
-          value: 'price-asc'
+          value: 'price-asc',
         },
         {
           title: 'Lowest Price',
-          value: 'price-desc'
-        }
-      ]
-    }
-  },
-  methods: {
-    switchView(view) {
-      this.$emit('switch-view', view)
-    },
-    handleSortBy(sortBySelected) {
-      this.$emit('sort-by', sortBySelected)
-    },
-    handleOpenFilter() {
-      this.$emit('open-filter')
-    }
-  },
-  props: {
-    view: {
-      type: Number,
-      default: 0
-    },
-    sortBySelected: {
-      type: Object,
-      required: true
-    },
-    resultLength: {
-      type: Number,
-      required: true
-    }
+          value: 'price-desc',
+        },
+      ],
+    };
   },
   computed: {
     isMobile() {
-      const smDown = this.$store.state.breakpoints.smDown
-      return smDown.indexOf(this.$mq) > -1
+      const smDown = this.$vuetify.display.smAndDown;
+      return smDown;
     },
     isDesktop() {
-      const smUp = this.$store.state.breakpoints.smUp
-      return smUp.indexOf(this.$mq) > -1
-    }
-  }
-}
+      const smUp = this.$vuetify.display.smAndUp;
+      return smUp;
+    },
+  },
+  methods: {
+    switchView(view) {
+      this.$emit('switch-view', view);
+    },
+    handleSortBy(sortBySelected) {
+      this.$emit('sort-by', sortBySelected);
+    },
+    handleOpenFilter() {
+      this.$emit('open-filter');
+    },
+  },
+};
 </script>

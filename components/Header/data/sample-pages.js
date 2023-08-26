@@ -1,4 +1,4 @@
-import imgAPI from '~/static/images/imgAPI'
+import imgAPI from '@/assets/images/imgAPI';
 
 const sample = [
   {
@@ -7,21 +7,21 @@ const sample = [
     child: [
       {
         name: 'about',
-        link: '/about'
+        link: '/about',
       },
       {
         name: 'team',
-        link: '/about/team'
+        link: '/about/team',
       },
       {
         name: 'blog',
-        link: '/blog'
+        link: '/blog',
       },
       {
         name: 'blog detail',
-        link: '/blog/detail-blog'
-      }
-    ]
+        link: '/blog/detail-blog',
+      },
+    ],
   },
   {
     name: 'Form',
@@ -29,21 +29,21 @@ const sample = [
     child: [
       {
         name: 'login',
-        link: '/login'
+        link: '/login',
       },
       {
         name: 'register',
-        link: '/register'
+        link: '/register',
       },
       {
         name: 'contact',
-        link: '/contact'
+        link: '/contact',
       },
       {
         name: 'contact map',
-        link: '/contact/with-map'
-      }
-    ]
+        link: '/contact/with-map',
+      },
+    ],
   },
   {
     name: 'items',
@@ -51,17 +51,17 @@ const sample = [
     child: [
       {
         name: 'card',
-        link: '/collection'
+        link: '/collection',
       },
       {
         name: 'product',
-        link: '/collection/products'
+        link: '/collection/products',
       },
       {
         name: 'product detail',
-        link: '/collection/detail-product'
-      }
-    ]
+        link: '/collection/detail-product',
+      },
+    ],
   },
   {
     name: 'utilities',
@@ -69,26 +69,26 @@ const sample = [
     child: [
       {
         name: 'pricing',
-        link: '/utils/pricing'
+        link: '/utils/pricing',
       },
       {
         name: 'faq',
-        link: '/utils/faq'
+        link: '/utils/faq',
       },
       {
         name: 'maintenance',
-        link: '/utils/maintenance'
+        link: '/utils/maintenance',
       },
       {
         name: 'coming soon',
-        link: '/utils/coming-soon'
+        link: '/utils/coming-soon',
       },
       {
         name: 'error',
-        link: '/error'
-      }
-    ]
-  }
-]
+        link: '/error',
+      },
+    ],
+  },
+];
 
-export default sample
+export default sample;

@@ -39,20 +39,24 @@ $flag: '/images/flag-logo.png';
 }
 
 .switch-toggle {
-  margin-top: 0;
-  ::v-deep .v-input--switch__thumb {
-    color: var(--v-secondary-base);
+  margin: spacing(-2, 2, 0);
+  height: 24px;
+  :deep(.v-switch__thumb) {
+    color: $palette-secondary-main
+  }
+  :deep(.v-switch__track) {
+    background-color: $palette-secondary-light
+  }
+  :deep(.v-selection-control) {
+    justify-content: center;
   }
 }
 
 .header {
   @include palette-text-primary;
   transition: all 0.3s ease;
-  &.v-app-bar.v-app-bar--fixed {
-    z-index: 120;
-  }
   .v-toolbar__content {
-    .container {
+    .v-container {
       #main-wrap & {
         padding: 0;
         @include breakpoints-up(md) {
@@ -61,21 +65,24 @@ $flag: '/images/flag-logo.png';
       }
     }
   }
-  &.v-app-bar.v-toolbar.v-sheet {
+  &.v-toolbar {
     background: none;
     box-shadow: none;
+    overflow: visible;
+  }
+  &.open-side-nav {
+    z-index: 1024 !important;
   }
   &.fixed {
+    z-index: 120;
     position: fixed;
     top: 0;
-    &.v-app-bar.v-toolbar.v-sheet {
-      @include shadow4;
-      @include palette-background-paper;
-    }
+    @include shadow4;
+    @include palette-background-paper;
     .vertical-divider {
       min-height: $spacing3;
     }
-    ::v-deep .logo {
+    :deep(.logo) {
       img {
         height: 32px;
         width: 32px
@@ -148,9 +155,13 @@ $flag: '/images/flag-logo.png';
       display: inline-block;
       padding: 10px 8px;
       height: auto;
+      text-align: center;
       @include palette-text-primary;
+      &:hover {
+        background: $light-divider
+      }
       &.active {
-        &:after {
+        &:before {
           content: '';
           position: absolute;
           width: 100%;
@@ -162,7 +173,7 @@ $flag: '/images/flag-logo.png';
       }
     }
   }
-  ::v-deep .logo {
+  :deep(.logo) {
     & img {
       @include breakpoints-down(xs) {
         height: 32px;
@@ -174,20 +185,20 @@ $flag: '/images/flag-logo.png';
 
 .main-menu, .multi-menu {
   flex: 1;
-  .v-btn:not(.v-btn--round).v-size--default {
+  .v-btn:not(.v-btn--round) {
     text-transform: capitalize;
   }
 }
 
 .main-menu {
-  .v-btn:not(.v-btn--round).v-size--default {
+  .v-btn:not(.v-btn--round) {
     margin: spacing(0, 1);
     padding: $spacing1;
   }
 }
 
 .multi-menu {
-  .v-btn:not(.v-btn--round).v-size--default {
+  .v-btn:not(.v-btn--round) {
     margin: spacing(0, 0.5);
     padding: $spacing1;
   }
@@ -232,7 +243,7 @@ $flag: '/images/flag-logo.png';
 }
 
 .mode-menu {
-  ::v-deep .v-list-item__content {
+  :deep(.v-list-item__content) {
     overflow: visible
   }
 }
@@ -280,6 +291,7 @@ $flag: '/images/flag-logo.png';
 .submenu-hover {
   position: absolute;
   left: 100%;
+  width: 100%;
   top: 0;
   display: none;
   background: none;
@@ -304,7 +316,6 @@ $flag: '/images/flag-logo.png';
   box-shadow: none !important;
 }
 
-
 .mega-menu {
   background: transparent;
   position: relative;
@@ -316,7 +327,7 @@ $flag: '/images/flag-logo.png';
   .v-list {
     background: none;
   }
-  .container.max-md {
+  .v-container.max-md {
     max-width: 960px
   }
 }
@@ -338,17 +349,19 @@ $flag: '/images/flag-logo.png';
     top: 0;
     height: 0;
     opacity: 0;
+    transition: all 0.4s ease;
     @include palette-background-paper;
   }
   &[aria-expanded="true"] {
     &:after {
+      transition-property: opacity;
       opacity: 1;
       height: 560px;
     }
   }
 }
 
-.v-application.theme--dark {
+.v-application.v-theme--dark {
   .button-item {
     &:after {
       box-shadow: 0px 1px 3px 0px rgba(64, 64, 64, 1), 0px 1px 1px 0px rgba(42, 42, 42, 1), 0px 2px 1px -1px rgba(20, 20, 20, 1)
@@ -356,7 +369,7 @@ $flag: '/images/flag-logo.png';
   }
 }
 
-.v-application.theme--light {
+.v-application.v-theme--light {
   .button-item {
     &:after {
       box-shadow: 0 6px 8px 1px rgba(0, 0, 0, 0.06);
@@ -387,27 +400,25 @@ $flag: '/images/flag-logo.png';
   &.short {
     width: 300px;
   }
-  ::v-deep fieldset {
+  :deep(fieldset) {
     height: 41px;
   }
-  ::v-deep .v-text-field--outlined > .v-input__control > .v-input__slot {
+  :deep(.v-field--variant-outlined .v-field__field) {
     @include padding-right($spacing2);
     min-height: 0;
     margin-bottom: 0;
     @include padding-left($spacing5);
     input {
-      max-height: none;
+      min-height: 0;
+      padding: spacing(1, 2, 1, 0)
     }
-  }
-  ::v-deep .v-text-field__details {
-    display: none;
   }
 }
 .search-icon {
   &.v-icon {
     position: absolute;
-    top: 7px;
-    @include left($spacing1);
+    top: 12px;
+    @include left(12px);
   }
 }
 
@@ -447,11 +458,14 @@ $flag: '/images/flag-logo.png';
     list-style: none;
     li {
       text-align: center;
-      ::v-deep .v-btn {
+      :deep(.v-btn) {
         font-size: 24px;
         @include palette-text-primary;
         padding: spacing(2.5, 4);
         height: auto;
+        &.active {
+          color: $palette-primary-main
+        }
         &:before {
           content: "";
           position: absolute;
@@ -508,4 +522,13 @@ $flag: '/images/flag-logo.png';
 
 .arrow-icon {
   @include rtl-flip
+}
+
+.wrap-menu {
+  :deep(.v-overlay__content .v-list) {
+    overflow: visible;
+  }
+  :deep(.v-card) {
+    overflow: visible;
+  }
 }

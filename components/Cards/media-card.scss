@@ -7,9 +7,9 @@
   height: 340px;
   figure {
     margin: 0;
+    height: 100%;
     img {
-      min-height: 100%;
-      width: 100%
+      object-fit: cover
     }
   }
   .v-badge {

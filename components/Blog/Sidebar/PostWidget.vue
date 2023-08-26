@@ -3,17 +3,17 @@
     <div>
       <v-list
         subheader
-        two-line
+        lines="two"
       >
         <v-list-item
           v-for="(item, index) in news"
           :key="index"
           href="#"
         >
-          <v-list-item-content>
+          <div>
             <v-list-item-title>{{ item.title }}</v-list-item-title>
             <v-list-item-subtitle>{{ item.date }}</v-list-item-subtitle>
-          </v-list-item-content>
+          </div>
         </v-list-item>
       </v-list>
     </div>
@@ -21,37 +21,37 @@
 </template>
 
 <script>
-import Paper from '../../Paper'
+import Paper from '../../Paper';
 
 export default {
   components: {
-    Paper
+    Paper,
   },
   data() {
     return {
       news: [
         {
           title: 'Vestibulum bibendum nisi eget magna',
-          date: 'Jan 9, 2014'
+          date: 'Jan 9, 2014',
         },
         {
           title: 'Quisque a consequat ante',
-          date: 'Jan 9, 2014'
+          date: 'Jan 9, 2014',
         },
         {
           title: 'Donec dignissim, odio ac imperdiet luctus',
-          date: 'Jan 9, 2014'
+          date: 'Jan 9, 2014',
         },
         {
           title: 'Suspendisse eleifend nunc non',
-          date: 'Jan 9, 2014'
+          date: 'Jan 9, 2014',
         },
         {
           title: 'Vestibulum a massa vestibulum',
-          date: 'Jan 9, 2014'
-        }
-      ]
-    }
-  }
-}
+          date: 'Jan 9, 2014',
+        },
+      ],
+    };
+  },
+};
 </script>

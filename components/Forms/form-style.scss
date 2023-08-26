@@ -74,6 +74,7 @@
 
 .btn-area {
   justify-content: space-between;
+  align-items: center;
   @include breakpoints-up(md) {
     margin-top: $spacing3;
     display: flex;
@@ -121,7 +122,7 @@
 .auth-frame {
   display: block;
   position: relative;
-  .row > div {
+  .v-row > div {
     padding: 0
   }
 }
@@ -135,7 +136,6 @@
   height: 100%;
   text-align: center;
   h6 {
-    color: $palette-primary-main;
     font-weight: $font-regular
   }
 }
@@ -149,7 +149,7 @@
   margin-bottom: $spacing5;
   text-transform: capitalize;
   @include breakpoints-down(sm) {
-    margin-top: $spacing2;
+    padding-top: $spacing2;
     justify-content: center;
     a {
       display: none
@@ -263,7 +263,7 @@
   @include breakpoints-up(md) {
     border-radius: 0 $rounded-medium $rounded-medium 0 !important;
   }
-  ::v-deep .GMap__Wrapper{
+  :deep(.GMap__Wrapper) {
     height: 745px;
     @include breakpoints-down(sm) {
       height: 300px !important;
@@ -271,7 +271,7 @@
   }
   &.full {
     height: 952px;
-    ::v-deep .GMap__Wrapper{
+    :deep(.GMap__Wrapper) {
       height: 952px;
     }
   }

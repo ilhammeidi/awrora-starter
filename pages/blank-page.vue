@@ -3,10 +3,10 @@
     <main-header />
     <div class="container-general">
       <div class="space-top space-bottom">
-        <h2 class="display-3 text-center mb-4">
+        <h2 class="use-text-title text-center mb-4">
           {{ $t('common.title') }}
         </h2>
-        <h4 class="display-1 text-center">
+        <h4 class="use-text-subtitle2 text-center">
           {{ $t('common.subtitle') }}
         </h4>
       </div>
@@ -16,23 +16,24 @@
 </template>
 
 <style scoped lang="scss">
-@import '~/assets/pages';
+@import '@/assets/scss/pages';
 </style>
 
 <script>
-import brand from '~/static/text/brand'
-import Header from '~/components/Header'
-import Footer from '~/components/Footer'
+import brand from '@/assets/text/brand';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import { defineNuxtComponent } from '#app';
 
-export default {
+export default defineNuxtComponent({
   components: {
     'main-header': Header,
-    'main-footer': Footer
+    'main-footer': Footer,
   },
   head() {
     return {
-      title: brand.starter.name + ' - Blank page'
-    }
-  }
-}
+      title: brand.starter.name + ' - Blank page',
+    };
+  },
+});
 </script>

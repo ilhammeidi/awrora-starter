@@ -1,37 +1,39 @@
 <template>
   <div class="banner-wrap">
-    <div class="carousel" v-if="loaded">
-      <slick
-        ref="slider"
-        :options="slickOptions"
-        @afterChange="handleAfterChange"
-      >
-        <div class="slide" v-for="(index) in 3" :key="index">
-          <div class="inner">
-            <v-container>
-              <v-row>
-                <v-col sm="7" lg="6" cols="12">
-                  <div class="text">
-                    <h4 class="text-h4">{{ $t('starter.banner_title') }}</h4>
-                    <h5 class="text-h5">{{ $t('starter.banner_subtitle') }}</h5>
-                  </div>
-                </v-col>
-              </v-row>
-            </v-container>
-            <div class="img">
-              <img src="/images/starter/Illustration.png" alt="illustration" />
+    <div class="carousel">
+      <splide ref="splide" :options="slickOptions" @splide:active="handleAfterChange">
+        <splide-slide v-for="(index) in 3" :key="index">
+          <div class="slide">
+            <div class="inner">
+              <v-container>
+                <v-row>
+                  <v-col sm="7" lg="6" cols="12">
+                    <div class="text">
+                      <h4 class="use-text-title">
+                        {{ $t('starter.banner_title') }}
+                      </h4>
+                      <h5 class="use-text-subtitle2">
+                        {{ $t('starter.banner_subtitle') }}
+                      </h5>
+                    </div>
+                  </v-col>
+                </v-row>
+              </v-container>
+              <div class="img">
+                <img src="/images/starter/Illustration.png" alt="illustration">
+              </div>
             </div>
           </div>
-        </div>
-      </slick>
+        </splide-slide>
+      </splide>
     </div>
     <hidden point="mdDown">
       <v-container class="max-md">
         <nav class="slide-nav">
           <v-btn
             :class="{ active: currentSlide === 0 }"
+            variant="text"
             @click="gotoSlide(0)"
-            text
           >
             <strong>First Slide</strong>
             Interdum et malesuada fames ac ante
@@ -39,8 +41,8 @@
           <v-divider class="divider" vertical inset />
           <v-btn
             :class="{ active: currentSlide === 1 }"
+            variant="text"
             @click="gotoSlide(1)"
-            text
           >
             <strong>Second Slide</strong>
             Interdum et malesuada fames ac ante
@@ -48,8 +50,8 @@
           <v-divider class="divider" vertical inset />
           <v-btn
             :class="{ active: currentSlide === 2 }"
+            variant="text"
             @click="gotoSlide(2)"
-            text
           >
             <strong>Third Slide</strong>
             Interdum et malesuada fames ac ante
@@ -65,45 +67,45 @@
 </style>
 
 <script>
-import Hidden from '../Hidden'
+import { Splide, SplideSlide } from '@splidejs/vue-splide';
+import Hidden from '../Hidden';
 
 export default {
   components: {
+    Splide,
+    SplideSlide,
     Hidden,
-    Slick: () => import('vue-slick')
   },
   data() {
     return {
-      loaded: false,
       currentSlide: 0,
       slickOptions: {
-        dots: false,
+        pagination: false,
         arrows: false,
-        slidesToShow: 1,
-        infinite: true,
+        perPage: 1,
+        type: 'loop',
         autoplay: false,
-        autoplaySpeed: 10000,
-        responsive: [
-          {
-            breakpoint: 800,
-            settings: {
-              dots: true
-            }
-          }
-        ]
-      }
-    }
-  },
-  mounted() {
-    this.loaded = true
+        interval: 10000,
+        reducedMotion: {
+          speed: 500,
+          rewindSpeed: 1000,
+          autoplay: true,
+        },
+        breakpoints: {
+          800: {
+            pagination: true,
+          },
+        },
+      },
+    };
   },
   methods: {
-    handleAfterChange(event, slick, currentSlide) {
-      this.currentSlide = currentSlide
+    handleAfterChange(slide) {
+      this.currentSlide = slide.index;
     },
     gotoSlide(index) {
-      this.$refs.slider.goTo(index)
-    }
-  }
-}
+      this.$refs.splide.go(index);
+    },
+  },
+};
 </script>

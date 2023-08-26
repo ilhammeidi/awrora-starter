@@ -7,6 +7,10 @@
   }
 }
 
+.link {
+  @include palette-text-primary
+}
+
 .text {
   @include text-align(left);
   h4 {
@@ -86,13 +90,12 @@
   vertical-align: middle;
   position: relative !important;
   margin: 0 auto;
-  width: 360px;
+  max-width: 360px;
   .figure {
     @include shadow3;
     overflow: hidden;
     border-radius: $rounded-big;
-    margin: $spacing2;
-    margin-top: 0;
+    margin: spacing(2, 0.5);
     cursor: pointer;
   }
   &:hover {

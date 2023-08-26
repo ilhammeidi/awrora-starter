@@ -1,9 +1,11 @@
 <template>
   <article class="blog-content">
-    <h4 class="use-text-title2 title-blog">Maecenas rutrum dolor sed nisi</h4>
+    <h4 class="use-text-title2 title-blog">
+      Maecenas rutrum dolor sed nisi
+    </h4>
     <time class="caption">June 19, 2020 by Oliver</time>
     <figure class="image-blog">
-      <img src="https://source.unsplash.com/random" alt="blog" />
+      <img src="https://source.unsplash.com/random/?nice" alt="blog">
     </figure>
     <p>Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
     <p>Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
@@ -15,7 +17,7 @@
     <strong>Sub-heading</strong>
     <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
     <figure class="image-blog">
-      <img src="https://source.unsplash.com/random" alt="blog" />
+      <img src="https://source.unsplash.com/random/?nice" alt="blog">
     </figure>
     <ul class="list">
       <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>
@@ -29,7 +31,9 @@
       <li>Maecenas sed diam eget risus varius blandit sit amet non magna.</li>
     </ol>
     <div class="share-socmed">
-      <h3 class="subtitle">{{ $t('common.blog_share') }}</h3>
+      <h3 class="subtitle">
+        {{ $t('common.blog_share') }}
+      </h3>
       <v-btn
         :icon="isMobile"
         outlined
@@ -59,9 +63,11 @@
       </v-btn>
     </div>
     <div class="comment">
-      <h3 class="subtitle">{{ $t('common.blog_write') }}</h3>
+      <h3 class="subtitle">
+        {{ $t('common.blog_write') }}
+      </h3>
       <comment-form avatar="/images/avatars/pp_boy2.svg" />
-      <v-list three-line>
+      <v-list lines="three">
         <comment-item
           v-for="(item, index) in comments"
           :key="index"
@@ -81,13 +87,13 @@
 </style>
 
 <script>
-import Form from '../Comment/Form'
-import Item from '../Comment/Item'
+import Form from '../Comment/Form';
+import Item from '../Comment/Item';
 
 export default {
   components: {
     'comment-item': Item,
-    'comment-form': Form
+    'comment-form': Form,
   },
   data() {
     return {
@@ -97,37 +103,37 @@ export default {
           avatar: '/images/avatars/pp_boy4.svg',
           date: '13 Jan 2020',
           comment:
-            'Maecenas nisl libero, tincidunt id odio id, feugiat vulputate quam. Vestibulum feugiat rhoncus metus. In non erat et ipsum molestie porta sit amet ut felis. Vestibulum a massa vestibulum, gravida odio id, fringilla ipsum.'
+            'Maecenas nisl libero, tincidunt id odio id, feugiat vulputate quam. Vestibulum feugiat rhoncus metus. In non erat et ipsum molestie porta sit amet ut felis. Vestibulum a massa vestibulum, gravida odio id, fringilla ipsum.',
         },
         {
           name: 'John Doe',
           avatar: '/images/avatars/pp_boy4.svg',
           date: '13 Jan 2020',
           comment:
-            'Maecenas nisl libero, tincidunt id odio id, feugiat vulputate quam. Vestibulum feugiat rhoncus metus. In non erat et ipsum molestie porta sit amet ut felis. Vestibulum a massa vestibulum, gravida odio id, fringilla ipsum.'
+            'Maecenas nisl libero, tincidunt id odio id, feugiat vulputate quam. Vestibulum feugiat rhoncus metus. In non erat et ipsum molestie porta sit amet ut felis. Vestibulum a massa vestibulum, gravida odio id, fringilla ipsum.',
         },
         {
           name: 'John Doe',
           avatar: '/images/avatars/pp_boy4.svg',
           date: '13 Jan 2020',
           comment:
-            'Maecenas nisl libero, tincidunt id odio id, feugiat vulputate quam. Vestibulum feugiat rhoncus metus. In non erat et ipsum molestie porta sit amet ut felis. Vestibulum a massa vestibulum, gravida odio id, fringilla ipsum.'
+            'Maecenas nisl libero, tincidunt id odio id, feugiat vulputate quam. Vestibulum feugiat rhoncus metus. In non erat et ipsum molestie porta sit amet ut felis. Vestibulum a massa vestibulum, gravida odio id, fringilla ipsum.',
         },
         {
           name: 'John Doe',
           avatar: '/images/avatars/pp_boy4.svg',
           date: '13 Jan 2020',
           comment:
-            'Maecenas nisl libero, tincidunt id odio id, feugiat vulputate quam. Vestibulum feugiat rhoncus metus. In non erat et ipsum molestie porta sit amet ut felis. Vestibulum a massa vestibulum, gravida odio id, fringilla ipsum.'
-        }
-      ]
-    }
+            'Maecenas nisl libero, tincidunt id odio id, feugiat vulputate quam. Vestibulum feugiat rhoncus metus. In non erat et ipsum molestie porta sit amet ut felis. Vestibulum a massa vestibulum, gravida odio id, fringilla ipsum.',
+        },
+      ],
+    };
   },
   computed: {
     isMobile() {
-      const xsDown = this.$store.state.breakpoints.xsDown
-      return xsDown.indexOf(this.$mq) > -1
-    }
-  }
-}
+      const xsDown = this.$vuetify.display.xs;
+      return xsDown;
+    },
+  },
+};
 </script>

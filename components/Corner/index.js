@@ -1,1 +1,1 @@
-export { default } from './Corner'
+export { default } from './Corner';

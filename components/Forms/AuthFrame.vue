@@ -11,7 +11,7 @@
             </v-card>
           </v-col>
           <v-col md="6" class="px-6" cols="12">
-            <hidden point="smDown">
+            <hidden point="mdDown">
               <div class="greeting">
                 <h4 class="use-text-title2 pb-2">
                   {{ title }}
@@ -20,8 +20,8 @@
                   {{ subtitle }}
                 </h6>
                 <div class="img">
-                  <img v-if="type === 'login'" src="/images/starter/Illustration.png" alt="illustration" />
-                  <img v-else src="/images/starter/Illustration.png" alt="illustration" />
+                  <img v-if="type === 'login'" src="/images/starter/Illustration.png" alt="illustration">
+                  <img v-else src="/images/starter/Illustration.png" alt="illustration">
                 </div>
               </div>
             </hidden>
@@ -37,33 +37,33 @@
 </style>
 
 <script>
-import brand from '~/static/text/brand'
-import routerLink from '~/static/text/link'
-import Hidden from '../Hidden'
+import brand from '@/assets/text/brand';
+import routerLink from '@/assets/text/link';
+import Hidden from '../Hidden';
 
 export default {
   components: {
-    Hidden
-  },
-  data() {
-    return {
-      brand: brand,
-      routerLink: routerLink
-    }
+    Hidden,
   },
   props: {
     title: {
       type: String,
-      required: true
+      required: true,
     },
     subtitle: {
       type: String,
-      default: ''
+      default: '',
     },
     type: {
       type: String,
-      default: ''
-    }
-  }
-}
+      default: '',
+    },
+  },
+  data() {
+    return {
+      brand,
+      routerLink,
+    };
+  },
+};
 </script>

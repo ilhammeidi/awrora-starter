@@ -1,7 +1,7 @@
 <template>
   <v-list class="side-multilv">
-    <fragment
-       v-for="(item, index) in dataMenu"
+    <template
+      v-for="(item, index) in dataMenu"
       :key="index"
     >
       <!-- Multilevel Nav -->
@@ -10,8 +10,8 @@
         no-action
         class="group-child"
       >
-        <template #activator>
-          <v-list-item class="has-child">
+        <template #activator="{props}">
+          <v-list-item v-bind="props">
             <v-list-item-title class="menu-list">
               {{ item.name }}
             </v-list-item-title>
@@ -34,7 +34,7 @@
           {{ item.name }}
         </v-list-item-title>
       </v-list-item>
-    </fragment>
+    </template>
     <v-divider />
     <v-list-item
       v-for="(item, index) in ['login', 'register']"
@@ -43,9 +43,11 @@
       :class="{ current: curURL === (curOrigin+langPath+item)}"
       link
     >
-      <v-list-item-content>
-        <v-list-item-title class="menu-list">{{ $t('common.header_'+item) }}</v-list-item-title>
-      </v-list-item-content>
+      <div>
+        <v-list-item-title class="menu-list">
+          {{ $t('common.header_'+item) }}
+        </v-list-item-title>
+      </div>
     </v-list-item>
   </v-list>
 </template>
@@ -55,30 +57,30 @@
 </style>
 
 <script>
-import SubmenuMobile from './SubmenuMobile'
+import SubmenuMobile from './SubmenuMobile';
 
 export default {
   components: {
-    SubmenuMobile
+    SubmenuMobile,
+  },
+  props: {
+    dataMenu: {
+      type: Array,
+      required: true,
+    },
   },
   data() {
     return {
       isOpen: false,
       curURL: '',
       curOrigin: '',
-      langPath: ''
-    }
+      langPath: '',
+    };
   },
   mounted() {
-    this.curURL = window.location.href
-    this.curOrigin = window.location.origin
-    this.langPath = '/' + this.$i18n.locale
+    this.curURL = window.location.href;
+    this.curOrigin = window.location.origin;
+    this.langPath = '/' + this.$i18n.locale;
   },
-  props: {
-    dataMenu: {
-      type: Array,
-      required: true
-    }
-  }
-}
+};
 </script>

@@ -20,27 +20,28 @@
 </template>
 
 <style lang="scss" scoped>
-@import '~/assets/pages';
+@import '@/assets/scss/pages';
 </style>
 
 <script>
-import brand from '~/static/text/brand'
-import BlogHeader from '~/components/Header/BlogHeader'
-import Article from '~/components/Blog/Article'
-import Sidebar from '~/components/Blog/Sidebar'
-import Footer from '~/components/Footer'
+import brand from '@/assets/text/brand';
+import BlogHeader from '@/components/Header/BlogHeader';
+import Article from '@/components/Blog/Article';
+import Sidebar from '@/components/Blog/Sidebar';
+import Footer from '@/components/Footer';
+import { defineNuxtComponent } from '#app';
 
-export default {
+export default defineNuxtComponent({
   components: {
     'main-header': BlogHeader,
     'main-footer': Footer,
     Sidebar,
-    'article-blog': Article
+    'article-blog': Article,
   },
   head() {
     return {
-      title: brand.starter.name + ' - Blog Detail'
-    }
-  }
-}
+      title: brand.starter.name + ' - Blog Detail',
+    };
+  },
+});
 </script>

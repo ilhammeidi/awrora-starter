@@ -1,3 +1,3 @@
-const single = ['feature', 'testimonials', 'pricing', 'blog', 'subscribe']
+const single = ['feature', 'testimonials', 'pricing', 'blog', 'subscribe'];
 
-export default single
+export default single;

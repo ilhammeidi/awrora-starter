@@ -9,15 +9,15 @@
           <p>Vestibulum faucibus eget erat eget pretium. Donec commodo convallis eget suscipit orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
           <p>Pellentesque ullamcorper aliquet ultrices. Aenean facilisis vitae purus facilisis semper. Nam vitae scelerisque lorem, quis tempus libero. Proin varius, tortor faucibus tempor pharetra, nunc mi consectetur enim, nec posuere ante magna vitae quam.</p>
           <div class="btn-area">
-            <v-btn href="#" class="text-btn" text>
+            <v-btn href="#" class="text-btn" variant="text">
               <i class="ion-md-share" />
               Share
             </v-btn>
-            <v-btn href="#" class="text-btn" text>
+            <v-btn href="#" class="text-btn" variant="text">
               <i class="ion-ios-film" />
               Trivia
             </v-btn>
-            <v-btn href="#" class="text-btn" text>
+            <v-btn href="#" class="text-btn" variant="text">
               <i class="ion-ios-star" />
               Rate this
             </v-btn>
@@ -25,18 +25,24 @@
         </v-col>
         <v-col class="px-4" sm="4" cols="12">
           <div class="person">
-            <h6 class="title-person">
+            <h6 class="text-h6">
               Property 1
             </h6>
-            <p>Item 1, Item 2, Item 3, Item 4, Item 5</p>
-            <h6 class="title-person">
+            <p class="mb-4">
+              Item 1, Item 2, Item 3, Item 4, Item 5
+            </p>
+            <h6 class="text-h6">
               Property 2
             </h6>
-            <p>Item 1, Item 2, Item 3, Item 4, Item 5</p>
-            <h6 class="title-person">
+            <p class="mb-4">
+              Item 1, Item 2, Item 3, Item 4, Item 5
+            </p>
+            <h6 class="text-h6">
               Property 3
             </h6>
-            <p>Item 1, Item 2, Item 3, Item 4, Item 5</p>
+            <p class="mb-4">
+              Item 1, Item 2, Item 3, Item 4, Item 5
+            </p>
           </div>
         </v-col>
       </v-row>
@@ -49,17 +55,17 @@
 </style>
 
 <script>
-import imgAPI from '~/static/images/imgAPI'
+import imgAPI from '@/assets/images/imgAPI';
 
 export default {
   data: () => ({
-    imgAPI: imgAPI
+    imgAPI,
   }),
   computed: {
     isMobile() {
-      const xsDown = this.$store.state.breakpoints.xsDown
-      return xsDown.indexOf(this.$mq) > -1
-    }
-  }
-}
+      const xsDown = this.$vuetify.display.xs;
+      return xsDown;
+    },
+  },
+};
 </script>

@@ -64,8 +64,10 @@
   }
 }
 .accordion-root {
-  background: none;
-  box-shadow: none
+  :deep(.v-expansion-panel__shadow) {
+    background: none;
+    box-shadow: none;
+  }
 }
 #main-wrap .accordion-content.v-expansion-panel {
   background-color: transparent;

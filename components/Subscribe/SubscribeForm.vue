@@ -3,9 +3,11 @@
     <v-row justify="center">
       <v-col md="12" cols="12" class="px-6">
         <v-card class="paper">
-          <h5 class="text-center headline">Subscribe Our Newsletter</h5>
+          <h5 class="text-center use-text-title2">
+            Subscribe Our Newsletter
+          </h5>
           <v-form class="container">
-            <v-row align="end">
+            <v-row align="center">
               <v-col
                 sm="9"
                 cols="12"
@@ -22,7 +24,9 @@
               >
                 <v-btn
                   color="primary"
-                  class="button"
+                  class="button mt-sm-3"
+                  size="large"
+                  :block="isMobile"
                 >
                   Send
                   <v-icon
@@ -45,3 +49,14 @@
 <style scoped lang="scss">
 @import './subscribe-style';
 </style>
+
+<script>
+export default {
+  computed: {
+    isMobile() {
+      const smDown = this.$vuetify.display.smAndDown;
+      return smDown;
+    },
+  },
+};
+</script>

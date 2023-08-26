@@ -15,33 +15,17 @@
               outlined
               color="primary"
               single-line
-              :value="value"
-              @input="(e) => updateValue(e)"
             />
-            <v-icon class="search-icon">mdi-magnify</v-icon>
+            <v-icon class="search-icon">
+              mdi-magnify
+            </v-icon>
           </div>
         </v-col>
       </v-row>
     </v-container>
-  </section>  
+  </section>
 </template>
 
 <style scoped lang="scss">
 @import './filter';
 </style>
-
-<script>
-export default {
-  methods: {
-    updateValue: function(value) {
-      this.$emit('input', value)
-    }
-  },
-  props: {
-    value: {
-      type: String,
-      default: ''
-    }
-  }
-}
-</script>

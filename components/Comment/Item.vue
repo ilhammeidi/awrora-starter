@@ -1,14 +1,22 @@
 <template>
   <div class="comment-list">
     <v-list-item>
-      <v-list-item-avatar>
-        <v-img :src="avatar" />
-      </v-list-item-avatar>
-      <v-list-item-content>
-        <v-list-item-title class="font-weight-bold">{{ name }}</v-list-item-title>
-        <v-subheader class="date">{{ date }}</v-subheader>
-        <v-list-item-subtitle class="content">{{ comment }}</v-list-item-subtitle>
-      </v-list-item-content>
+      <template #prepend>
+        <v-avatar>
+          <v-img :src="avatar" />
+        </v-avatar>
+      </template>
+      <div>
+        <v-list-item-title class="font-weight-bold">
+          {{ name }}
+        </v-list-item-title>
+        <v-list-subheader class="date">
+          {{ date }}
+        </v-list-subheader>
+        <p class="content">
+          {{ comment }}
+        </p>
+      </div>
     </v-list-item>
     <v-divider v-if="!last" />
   </div>
@@ -19,30 +27,30 @@
 </style>
 
 <script>
-import avatarDefault from '~/static/images/avatars/pp_boy4.svg'
+import avatarDefault from '@/assets/images/avatars/pp_boy4.svg';
 
 export default {
   props: {
     avatar: {
       type: String,
-      default: avatarDefault
+      default: avatarDefault,
     },
     name: {
       type: String,
-      required: true
+      required: true,
     },
     date: {
       type: String,
-      required: true
+      required: true,
     },
     comment: {
       type: String,
-      required: true
+      required: true,
     },
     last: {
       type: Boolean,
-      default: false
-    }
-  }
-}
+      default: false,
+    },
+  },
+};
 </script>

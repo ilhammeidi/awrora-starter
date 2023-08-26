@@ -9,21 +9,22 @@
         :src="img"
         class="white--text"
         height="200px"
+        cover
       />
     </div>
     <div :class="startPadding" class="properties">
       <v-card-subtitle class="head-line">
         {{ headline }}
       </v-card-subtitle>
-      <v-card-title class="news-title">
+      <div class="use-text-subtitle2 news-title">
         {{ title }}
-      </v-card-title>
+      </div>
       <v-card-actions>
         <v-spacer v-if="orientation === 'portrait'" />
         <v-btn
-          :small="orientation === 'landscape'"
+          :size="orientation === 'landscape' ? 'small' : 'regular'"
           :href="href"
-          text
+          variant="text"
           class="action-btn"
           color="primary"
         >
@@ -43,35 +44,35 @@ export default {
   props: {
     img: {
       type: String,
-      required: true
+      required: true,
     },
     title: {
       type: String,
-      required: true
+      required: true,
     },
     headline: {
       type: String,
-      default: 'news'
+      default: 'news',
     },
     orientation: {
       type: String,
-      default: 'portrait'
+      default: 'portrait',
     },
     type: {
       type: String,
-      default: 'full' // available props: full, rounded, over, oval
+      default: 'full', // available props: full, rounded, over, oval
     },
     href: {
       type: String,
-      default: '#'
-    }
+      default: '#',
+    },
   },
   computed: {
     startPadding() {
       return {
-        'ps-0': this.orientation === 'landscape' && this.type !== 'over'
-      }
-    }
-  }
-}
+        'ps-0': this.orientation === 'landscape' && this.type !== 'over',
+      };
+    },
+  },
+};
 </script>

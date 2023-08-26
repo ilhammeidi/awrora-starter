@@ -3,34 +3,38 @@
     <div>
       <v-list
         subheader
-        two-line
+        lines="two"
       >
         <v-list-item v-for="(item, index) in people" :key="index">
-          <v-list-item-avatar>
-            <v-img :src="item.img" />
-          </v-list-item-avatar>
-          <v-list-item-content>
+          <template #prepend>
+            <v-avatar>
+              <v-img :src="item.img" />
+            </v-avatar>
+          </template>
+          <div>
             <v-list-item-title>{{ item.name }}</v-list-item-title>
             <v-list-item-subtitle>{{ item.title }}</v-list-item-subtitle>
-          </v-list-item-content>
-          <v-list-item-action>
-            <v-btn small outlined>
+          </div>
+          <template #append>
+            <v-btn size="small" variant="outlined" color="primary">
               follow
             </v-btn>
-          </v-list-item-action>
+          </template>
         </v-list-item>
       </v-list>
-      <v-btn text block color="primary">See all</v-btn>
+      <v-btn variant="text" block color="primary">
+        See all
+      </v-btn>
     </div>
   </paper>
 </template>
 
 <script>
-import Paper from '../../Paper'
+import Paper from '../../Paper';
 
 export default {
   components: {
-    Paper
+    Paper,
   },
   data() {
     return {
@@ -38,35 +42,35 @@ export default {
         {
           img: '/images/avatars/pp_boy5.svg',
           name: 'John Doe',
-          title: 'Web Designer'
+          title: 'Web Designer',
         },
         {
           img: '/images/avatars/pp_girl.svg',
           name: 'Jean Doe',
-          title: 'Executive Merketing'
+          title: 'Executive Merketing',
         },
         {
           img: '/images/avatars/pp_boy2.svg',
           name: 'Jim Doe',
-          title: 'Dev Ops'
+          title: 'Dev Ops',
         },
         {
           img: '/images/avatars/pp_girl2.svg',
           name: 'Jihan Doe',
-          title: 'Director'
+          title: 'Director',
         },
         {
           img: '/images/avatars/pp_girl3.svg',
           name: 'Jena Doe',
-          title: 'CEO'
+          title: 'CEO',
         },
         {
           img: '/images/avatars/pp_boy3.svg',
           name: 'Johan Doe',
-          title: 'iOS Developer'
-        }
-      ]
-    }
-  }
-}
+          title: 'iOS Developer',
+        },
+      ],
+    };
+  },
+};
 </script>

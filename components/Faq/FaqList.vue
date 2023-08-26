@@ -2,8 +2,8 @@
   <div>
     <div
       v-for="(index) in 6"
-      :key="index"
       :id="'topic'+index"
+      :key="index"
       class="accordion"
     >
       <h4 class="use-text-subtitle mb-3">
@@ -18,16 +18,16 @@
           :key="index"
           class="paper"
         >
-           <v-expansion-panel-header class="content">
+          <v-expansion-panel-title class="content">
             <span class="heading">
               {{ item.q }}
             </span>
-          </v-expansion-panel-header>
-          <v-expansion-panel-content class="detail">
+          </v-expansion-panel-title>
+          <v-expansion-panel-text class="detail">
             <span>
               {{ item.a }}
             </span>
-          </v-expansion-panel-content>
+          </v-expansion-panel-text>
         </v-expansion-panel>
       </v-expansion-panels>
     </div>
@@ -43,42 +43,42 @@ const faqData = [
   {
     q: 'Pellentesque ac bibendum tortor?',
     a:
-      'Vivamus sit amet interdum elit. Proin lacinia erat ac velit tempus auctor.'
+      'Vivamus sit amet interdum elit. Proin lacinia erat ac velit tempus auctor.',
   },
   {
     q: 'In mi nulla, fringilla vestibulum?',
     a:
-      'Vivamus sit amet interdum elit. Proin lacinia erat ac velit tempus auctor. '
+      'Vivamus sit amet interdum elit. Proin lacinia erat ac velit tempus auctor. ',
   },
   {
     q: 'Quisque lacinia purus ut libero?',
     a:
-      'Vivamus sit amet interdum elit. Proin lacinia erat ac velit tempus auctor. '
+      'Vivamus sit amet interdum elit. Proin lacinia erat ac velit tempus auctor. ',
   },
   {
     q: 'Quisque ut metus sit amet augue?',
     a:
-      'Vivamus sit amet interdum elit. Proin lacinia erat ac velit tempus auctor. '
+      'Vivamus sit amet interdum elit. Proin lacinia erat ac velit tempus auctor. ',
   },
   {
     q: 'Pellentesque ac bibendum tortor?',
     a:
-      'Vivamus sit amet interdum elit. Proin lacinia erat ac velit tempus auctor. '
-  }
-]
+      'Vivamus sit amet interdum elit. Proin lacinia erat ac velit tempus auctor. ',
+  },
+];
 
 export default {
   data() {
     return {
       panel: 0,
-      faqData: faqData
-    }
+      faqData,
+    };
   },
   computed: {
     isMobile() {
-      const smDown = this.$store.state.breakpoints.smDown
-      return smDown.indexOf(this.$mq) > -1
-    }
-  }
-}
+      const smDown = this.$vuetify.display.smAndDown;
+      return smDown;
+    },
+  },
+};
 </script>

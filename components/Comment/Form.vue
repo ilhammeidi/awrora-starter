@@ -13,9 +13,10 @@
       </v-avatar>
       <v-text-field
         :placeholder="$t('common.blog_write')"
-        outlined
+        variant="outlined"
         color="primary"
         single-line
+        hide-details
       />
       <v-btn
         class="send-btn"
@@ -23,7 +24,9 @@
         color="primary"
       >
         {{ isMobile ? '' : $t('common.form_send') }}
-        <v-icon v-if="isMobile">mdi-send</v-icon>
+        <v-icon v-if="isMobile">
+          mdi-send
+        </v-icon>
       </v-btn>
     </div>
   </div>
@@ -34,20 +37,20 @@
 </style>
 
 <script>
-import avatarDefault from '~/static/images/avatars/pp_boy4.svg'
+import avatarDefault from '@/assets/images/avatars/pp_boy4.svg';
 
 export default {
   props: {
     avatar: {
       type: String,
-      default: avatarDefault
-    }
+      default: avatarDefault,
+    },
   },
   computed: {
     isMobile() {
-      const xsDown = this.$store.state.breakpoints.xsDown
-      return xsDown.indexOf(this.$mq) > -1
-    }
-  }
-}
+      const xsDown = this.$vuetify.display.xs;
+      return xsDown;
+    },
+  },
+};
 </script>

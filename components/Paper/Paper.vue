@@ -1,11 +1,11 @@
 <template>
   <v-card class="paper" :class="{ color: color }">
     <header>
-      <v-icon :color="color ? 'white' : ''" large class="icon">
+      <v-icon :color="color ? 'white' : ''" size="x-large" class="icon">
         {{ icon }}
       </v-icon>
       <div class="text">
-        <v-card-title class="title">
+        <v-card-title class="use-text-subtitle2">
           {{ title }}
         </v-card-title>
         <v-card-subtitle v-if="subtitle !== ''">
@@ -28,20 +28,20 @@ export default {
   props: {
     title: {
       type: String,
-      required: true
+      required: true,
     },
     icon: {
       type: String,
-      required: true
+      required: true,
     },
     subtitle: {
       type: String,
-      default: ''
+      default: '',
     },
     color: {
       type: Boolean,
-      default: false
-    }
-  }
-}
+      default: false,
+    },
+  },
+};
 </script>

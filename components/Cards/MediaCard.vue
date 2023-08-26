@@ -12,14 +12,14 @@
     />
     <a
       v-if="type === 'photo'"
-      :href="href !== '' ? href : 'javascript:void(0)'"
       v-ripple
+      :href="href !== '' ? href : '#!'"
       class="cover-link"
     >
       &nbsp;
     </a>
     <figure>
-      <img :src="thumb" alt="cover" />
+      <img :src="thumb" alt="cover">
     </figure>
     <div class="property">
       <v-btn
@@ -46,28 +46,28 @@ export default {
   props: {
     thumb: {
       type: String,
-      required: true
+      required: true,
     },
     title: {
       type: String,
-      required: true
+      required: true,
     },
     href: {
       type: String,
-      default: ''
+      default: '',
     },
     orientation: {
       type: String,
-      default: 'portrait'
+      default: 'portrait',
     },
     duration: {
       type: String,
-      default: '00:01'
+      default: '00:01',
     },
     type: {
       type: String,
-      default: 'video' // available props: photo, video
-    }
-  }
-}
+      default: 'video', // available props: photo, video
+    },
+  },
+};
 </script>

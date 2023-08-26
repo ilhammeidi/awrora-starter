@@ -15,12 +15,12 @@
 </template>
 
 <script>
-import ProfileWidget from './ProfileWidget'
-import SubscribeWidget from './SubscribeWidget'
-import PostWidget from './PostWidget'
-import CommentWidget from './CommentWidget'
-import ListWidget from './ListWidget'
-import GalleryWidget from './GalleryWidget'
+import ProfileWidget from './ProfileWidget';
+import SubscribeWidget from './SubscribeWidget';
+import PostWidget from './PostWidget';
+import CommentWidget from './CommentWidget';
+import ListWidget from './ListWidget';
+import GalleryWidget from './GalleryWidget';
 
 export default {
   components: {
@@ -29,7 +29,7 @@ export default {
     PostWidget,
     CommentWidget,
     ListWidget,
-    GalleryWidget
-  }
-}
+    GalleryWidget,
+  },
+};
 </script>

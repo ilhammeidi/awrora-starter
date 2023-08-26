@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="main-wrap">
     <main-header text="login" href="/login" />
     <div class="space-top">
       <register-form />
@@ -9,31 +9,31 @@
 </template>
 
 <style scoped lang="scss">
-@import '~/assets/pages';
+@import '@/assets/scss/pages';
 </style>
 
 <script>
-import brand from '~/static/text/brand'
-import Header from '~/components/Header/Basic'
-import Footer from '~/components/Footer'
-import RegisterForm from '~/components/Forms/Register'
+import brand from '@/assets/text/brand';
+import Header from '@/components/Header/Basic';
+import Footer from '@/components/Footer';
+import RegisterForm from '@/components/Forms/Register';
 
 export default {
   components: {
     'main-header': Header,
     'main-footer': Footer,
-    RegisterForm
+    RegisterForm,
   },
   head() {
     return {
-      title: brand.starter.name + ' - Register'
-    }
+      title: brand.starter.name + ' - Register',
+    };
   },
   computed: {
     isMobile() {
-      const xsDown = this.$store.state.breakpoints.xsDown
-      return xsDown.indexOf(this.$mq) > -1
-    }
-  }
-}
+      const xsDown = this.$vuetify.display.xs;
+      return xsDown;
+    },
+  },
+};
 </script>

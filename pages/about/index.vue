@@ -35,24 +35,25 @@
 </template>
 
 <style lang="scss" scoped>
-@import '~/assets/pages';
+@import '@/assets/scss/pages';
 </style>
 
 <script>
-import brand from '~/static/text/brand'
-import Header from '~/components/Header'
-import Banner from '~/components/About/Banner'
-import CompanyLogo from '~/components/CompanyLogo'
-import Counter from '~/components/Counter'
-import Video from '~/components/About/Video'
-import Progress from '~/components/About/Progress'
-import TeamSlider from '~/components/About/TeamSlider'
-import PhotoSlider from '~/components/About/PhotoSlider'
-import CallAction from '~/components/CallAction'
-import ContactMap from '~/components/Forms/ContactMap'
-import Footer from '~/components/Footer'
+import brand from '@/assets/text/brand';
+import Header from '@/components/Header';
+import Banner from '@/components/About/Banner';
+import CompanyLogo from '@/components/CompanyLogo';
+import Counter from '@/components/Counter';
+import Video from '@/components/About/Video';
+import Progress from '@/components/About/Progress';
+import TeamSlider from '@/components/About/TeamSlider';
+import PhotoSlider from '@/components/About/PhotoSlider';
+import CallAction from '@/components/CallAction';
+import ContactMap from '@/components/Forms/ContactMap';
+import Footer from '@/components/Footer';
+import { defineNuxtComponent } from '#app';
 
-export default {
+export default defineNuxtComponent({
   components: {
     'main-header': Header,
     'main-footer': Footer,
@@ -64,12 +65,12 @@ export default {
     TeamSlider,
     PhotoSlider,
     CallAction,
-    ContactMap
+    ContactMap,
   },
   head() {
     return {
-      title: brand.starter.name + ' - About'
-    }
-  }
-}
+      title: brand.starter.name + ' - About',
+    };
+  },
+});
 </script>

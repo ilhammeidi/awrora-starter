@@ -3,7 +3,7 @@
     <v-container class="fixed-width">
       <v-row class="spacing6">
         <v-col md="6" class="pa-6">
-          <h4 class="use-text-subtitle mb-3">
+          <h4 class="use-text-title2 mb-3" :class="[isMobile ? 'text-center' : 'text-start']">
             {{ $t('common.faq_title') }}
           </h4>
           <p
@@ -14,7 +14,7 @@
           </p>
           <hidden point="smDown">
             <div class="illustration">
-              <img src="/images/starter/Illustration.png" alt="illustration" />
+              <img src="/images/starter/Illustration.png" alt="illustration">
             </div>
           </hidden>
         </v-col>
@@ -29,16 +29,16 @@
                 :key="index"
                 class="paper"
               >
-                 <v-expansion-panel-header class="content">
+                <v-expansion-panel-title class="content">
                   <span class="heading">
                     {{ item.q }}
                   </span>
-                </v-expansion-panel-header>
-                <v-expansion-panel-content class="detail">
+                </v-expansion-panel-title>
+                <v-expansion-panel-text class="detail">
                   <span>
                     {{ item.a }}
                   </span>
-                </v-expansion-panel-content>
+                </v-expansion-panel-text>
               </v-expansion-panel>
             </v-expansion-panels>
           </div>
@@ -53,51 +53,51 @@
 </style>
 
 <script>
-import Hidden from '../Hidden'
+import Hidden from '../Hidden';
 
 const faqData = [
   {
     q: 'Pellentesque ac bibendum tortor?',
     a:
-      'Vivamus sit amet interdum elit. Proin lacinia erat ac velit tempus auctor.'
+      'Vivamus sit amet interdum elit. Proin lacinia erat ac velit tempus auctor.',
   },
   {
     q: 'In mi nulla, fringilla vestibulum?',
     a:
-      'Vivamus sit amet interdum elit. Proin lacinia erat ac velit tempus auctor. '
+      'Vivamus sit amet interdum elit. Proin lacinia erat ac velit tempus auctor. ',
   },
   {
     q: 'Quisque lacinia purus ut libero?',
     a:
-      'Vivamus sit amet interdum elit. Proin lacinia erat ac velit tempus auctor. '
+      'Vivamus sit amet interdum elit. Proin lacinia erat ac velit tempus auctor. ',
   },
   {
     q: 'Quisque ut metus sit amet augue?',
     a:
-      'Vivamus sit amet interdum elit. Proin lacinia erat ac velit tempus auctor. '
+      'Vivamus sit amet interdum elit. Proin lacinia erat ac velit tempus auctor. ',
   },
   {
     q: 'Pellentesque ac bibendum tortor?',
     a:
-      'Vivamus sit amet interdum elit. Proin lacinia erat ac velit tempus auctor. '
-  }
-]
+      'Vivamus sit amet interdum elit. Proin lacinia erat ac velit tempus auctor. ',
+  },
+];
 
 export default {
   components: {
-    Hidden
+    Hidden,
   },
   data() {
     return {
       panel: 0,
-      faqData: faqData
-    }
+      faqData,
+    };
   },
   computed: {
     isMobile() {
-      const smDown = this.$store.state.breakpoints.smDown
-      return smDown.indexOf(this.$mq) > -1
-    }
-  }
-}
+      const smDown = this.$vuetify.display.smAndDown;
+      return smDown;
+    },
+  },
+};
 </script>

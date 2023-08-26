@@ -6,7 +6,7 @@
 .slide {
   position: relative;
   @include breakpoints-up('sm') {
-    height: 450px;
+    height: 500px;
   }
   @include breakpoints-down('xs') {
     padding: spacing(15, 0, 5)
@@ -36,9 +36,10 @@
   display: flex;
   height: 100%;
   align-items: center;
-  @include breakpoints-down('md') {
+  @include breakpoints-down('xs') {
     flex-direction: column;
     justify-content: center;
+    text-align: center;
   }
 }
 
@@ -60,7 +61,7 @@
     padding: $spacing1;
     flex: 1;
     font-weight: $font-regular;
-    ::v-deep .v-btn__content {
+    :deep(.v-btn__content) {
       flex-direction: column;
       align-items: flex-start;
       text-align: left;
@@ -72,7 +73,7 @@
       font-weight: $font-bold;
     }
     &.active {
-      color: $palette-link
+      color: $palette-primary-main
     }
   }
 }

@@ -10,14 +10,16 @@
           Live Chat
         </h3>
         <v-btn
-          @click="closeChat()"
           class="close"
+          size="small"
+          variant="text"
           icon
+          @click="closeChat()"
         >
           <i class="ion-md-close" />
         </v-btn>
       </header>
-      <div class="chat-room" id="chat-container">
+      <div id="chat-container" class="chat-room">
         <ul>
           <li
             v-for="(item, index) in conversation"
@@ -43,18 +45,21 @@
           </li>
         </ul>
       </div>
-      <div class="form">
+      <div class="form mb-4">
         <v-text-field
           v-model="message"
-          @keyup.enter="send()"
           label="Ask something"
           class="input"
+          hide-details
+          @keyup.enter="send()"
         />
         <v-btn
           elevation="0"
           class="send"
-          fab
+          icon
           small
+          color="primary"
+          variant="tonal"
           @click="send()"
         >
           <span class="ion-md-send" />
@@ -62,9 +67,10 @@
       </div>
     </div>
     <v-btn
-      @click="toggleChat()"
-      fab
+      icon
+      size="large"
       class="chat-button"
+      @click="toggleChat()"
     >
       <span class="indicator online" />
       <i class="ion-md-text" />
@@ -77,7 +83,7 @@
 </style>
 
 <script>
-import avatar from '~/static/images/avatars/pp_boy4.svg'
+import avatar from '@/assets/images/avatars/pp_boy4.svg';
 
 export default {
   data() {
@@ -88,37 +94,37 @@ export default {
       conversation: [
         {
           text: 'Hola!, Maecenas',
-          visitor: false
+          visitor: false,
         },
         {
           text: 'Hola!, Maecenas nisl ',
-          visitor: true
+          visitor: true,
         },
         {
           text: 'Hola!, Maecenas',
-          visitor: false
-        }
-      ]
-    }
+          visitor: false,
+        },
+      ],
+    };
   },
   methods: {
     send() {
       if (this.message !== '') {
-        this.conversation.push({ text: this.message, visitor: true })
-        this.message = ''
+        this.conversation.push({ text: this.message, visitor: true });
+        this.message = '';
         // scroll to bottom
-        const ctn = document.getElementById('chat-container')
+        const ctn = document.getElementById('chat-container');
         setTimeout(() => {
-          ctn.scrollTo(0, ctn.scrollHeight)
-        }, 300)
+          ctn.scrollTo(0, ctn.scrollHeight);
+        }, 300);
       }
     },
     toggleChat() {
-      this.showChat = !this.showChat
+      this.showChat = !this.showChat;
     },
     closeChat() {
-      this.showChat = false
-    }
-  }
-}
+      this.showChat = false;
+    },
+  },
+};
 </script>

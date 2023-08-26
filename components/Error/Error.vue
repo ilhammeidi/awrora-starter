@@ -5,24 +5,26 @@
         <v-col cols="12" md="5">
           <div class="flex">
             <div class="illustration">
-              <img src="/images/starter/Illustration.png" alt="illustration" />
+              <img src="/images/starter/Illustration.png" alt="illustration">
             </div>
           </div>
         </v-col>
         <v-col cols="12" md="7">
           <div class="text">
-            <h3>
+            <h1 class="text-h1 font-weight-bold">
               {{ errCode }}
-            </h3>
-            <h4 class="display-1">{{ text }}</h4>
+            </h1>
+            <h4 class="use-text-title2">
+              {{ text }}
+            </h4>
             <p>
               {{ $t('common.404_subtitle') }}
             </p>
             <v-btn
               :href="link.starter.home"
-              outlined
+              variant="outlined"
               color="primary"
-              large
+              size="large"
               class="button"
             >
               {{ $t('common.back') }}
@@ -39,23 +41,23 @@
 </style>
 
 <script>
-import link from '~/static/text/link'
+import link from '@/assets/text/link';
 
 export default {
-  data() {
-    return {
-      link: link
-    }
-  },
   props: {
     errCode: {
       type: Number,
-      default: 404
+      default: 404,
     },
     text: {
       type: String,
-      default: ''
-    }
-  }
-}
+      default: '',
+    },
+  },
+  data() {
+    return {
+      link,
+    };
+  },
+};
 </script>

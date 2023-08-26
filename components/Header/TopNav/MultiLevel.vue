@@ -1,6 +1,6 @@
 <template>
   <div class="multi-menu">
-    <fragment
+    <template
       v-for="(item, index) in dataMenu"
       :key="index"
     >
@@ -8,13 +8,12 @@
       <v-menu
         v-if="item.child"
         :open-on-hover="hover"
-        offset-y
+        location="bottom"
         class="wrap-menu"
       >
-        <template #activator="{ attrs, on }">
+        <template #activator="{ props }">
           <v-btn
-            v-bind="attrs"
-            v-on="on"
+            v-bind="props"
             text
           >
             {{ item.name }}
@@ -41,7 +40,7 @@
       >
         {{ item.name }}
       </v-btn>
-    </fragment>
+    </template>
   </div>
 </template>
 
@@ -50,31 +49,31 @@
 </style>
 
 <script>
-import Submenu from './SubMenuClick'
+import Submenu from './SubMenuClick';
 // import Submenu from './SubMenuHover'
 
 export default {
   components: {
-    Submenu
+    Submenu,
+  },
+  props: {
+    dataMenu: {
+      type: Array,
+      required: true,
+    },
   },
   data() {
     return {
       hover: false,
       curURL: '',
       curOrigin: '',
-      langPath: ''
-    }
+      langPath: '',
+    };
   },
   mounted() {
-    this.curURL = window.location.href
-    this.curOrigin = window.location.origin
-    this.langPath = '/' + this.$i18n.locale
+    this.curURL = window.location.href;
+    this.curOrigin = window.location.origin;
+    this.langPath = '/' + this.$i18n.locale;
   },
-  props: {
-    dataMenu: {
-      type: Array,
-      required: true
-    }
-  }
-}
+};
 </script>

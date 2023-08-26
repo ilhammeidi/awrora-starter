@@ -1,9 +1,9 @@
 .error-wrap {
   width: 100%;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   @include breakpoints-up(md) {
-    min-height: 100vh;
+    min-height: 80vh;
   }
   @include breakpoints-down(sm) {
     margin: spacing(10, 0)

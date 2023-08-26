@@ -1,9 +1,10 @@
 .logo {
-  font-size: 18px;
+  font-size: 24px;
   font-weight: $font-bold;
   @include palette-text-primary;
   display: flex;
   img {
+    transition: all 0.3s ease;
     width: 54px;
     height: 54px;
   }

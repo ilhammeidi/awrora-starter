@@ -12,6 +12,7 @@
       @include palette-text-secondary
     }
     ul {
+      list-style: none;
       li {
         @include palette-text-secondary
       }

@@ -2,11 +2,14 @@
   <div class="search" :class="{ short: short}">
     <v-text-field
       :placeholder="$t('common.header_search')"
-      outlined
+      variant="outlined"
       color="primary"
       single-line
+      hide-details
     />
-    <v-icon class="search-icon">mdi-magnify</v-icon>
+    <v-icon class="search-icon">
+      mdi-magnify
+    </v-icon>
   </div>
 </template>
 
@@ -19,8 +22,8 @@ export default {
   props: {
     short: {
       type: Boolean,
-      default: false
-    }
-  }
-}
+      default: false,
+    },
+  },
+};
 </script>

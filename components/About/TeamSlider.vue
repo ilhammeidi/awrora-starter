@@ -1,34 +1,37 @@
 <template>
-  <div class="bg-wrapper">
+  <div class="bg-wrapper team-root">
     <v-container>
       <h4 class="use-text-title2 mb-3">
         {{ $t('common.about_team') }}
       </h4>
-      <p>Vestibulum faucibus eget erat eget pretium. Donec commodo convallis eget suscipit orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+      <p class="use-text-subtitle2">
+        Vestibulum faucibus eget erat eget pretium. Donec commodo convallis eget suscipit orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </p>
     </v-container>
-    <div class="carousel mt-15" v-if="loaded">
-      <slick
+    <div class="carousel mt-15">
+      <splide
         ref="slick"
         :options="slickOptions"
       >
-        <div
+        <splide-slide
           v-for="(index) in 6"
           :key="index"
-          class="item px-3"
         >
-          <profile-card
-            :connection="100"
-            :favorites="10"
-            :albums="12"
-            cover="https://source.unsplash.com/random"
-            name="John Dalton"
-            title="Web Designer"
-            type="full"
-            orientation="landscape"
-            avatar="/images/avatars/pp_girl3.svg"
-          />
-        </div>
-      </slick>
+          <div class="item px-3">
+            <profile-card
+              :connection="100"
+              :favorites="10"
+              :albums="12"
+              cover="https://source.unsplash.com/random/?nice"
+              name="John Dalton"
+              title="Web Designer"
+              type="full"
+              orientation="landscape"
+              avatar="/images/avatars/pp_girl3.svg"
+            />
+          </div>
+        </splide-slide>
+      </splide>
     </div>
   </div>
 </template>
@@ -38,43 +41,36 @@
 </style>
 
 <script>
-import ProfileCard from '../Cards/ProfileCard'
+import { Splide, SplideSlide } from '@splidejs/vue-splide';
+import ProfileCard from '../Cards/ProfileCard';
 
 export default {
   components: {
     ProfileCard,
-    Slick: () => import('vue-slick')
+    Splide,
+    SplideSlide,
   },
   data() {
     return {
-      loaded: false,
       slickOptions: {
-        dots: true,
+        pagination: true,
         arrows: false,
-        slidesToShow: 1,
-        variableWidth: true,
-        autoplay: false,
-        responsive: [
-          {
-            breakpoint: 800,
-            settings: {
-              slidesToShow: 2,
-              slidesToScroll: 1
-            }
+        perPage: 2,
+        perMove: 1,
+        autoWidth: true,
+        direction: 'ltr',
+        reducedMotion: {
+          autoplay: true,
+          speed: 500,
+          rewindSpeed: 1000,
+        },
+        breakpoints: {
+          600: {
+            perPage: 1,
           },
-          {
-            breakpoint: 600,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1
-            }
-          }
-        ]
-      }
-    }
+        },
+      },
+    };
   },
-  mounted() {
-    this.loaded = true
-  }
-}
+};
 </script>

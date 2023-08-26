@@ -10,34 +10,25 @@
   position: relative;
   display: flex;
   align-items: center;
-  ::v-deep fieldset {
+  :deep(fieldset) {
     height: 41px;
   }
-  ::v-deep .v-text-field--outlined > .v-input__control > .v-input__slot {
-    @include padding-right($spacing10);
+  :deep(.v-field__field) {
+    @include padding-right(140px);
     min-height: 0;
     margin-bottom: 0;
     input {
       max-height: none;
     }
   }
-  ::v-deep .v-text-field__details {
+  :deep(.v-text-field__details) {
     display: none;
   }
   .send-btn {
     position: absolute;
-    top: 0;
-    @include right(0);
+    top: 12px;
+    @include right($spacing1);
     @include use-theme(background-color, $palette-primary-light, $palette-primary-dark);
-    .v-application--is-ltr & {
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
-    }
-    .v-application--is-rtl & {
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0;
-    }
-      
   }
 }
 
@@ -53,6 +44,7 @@
   height: auto;
   padding: 0;
   font-size: 12px;
+  margin-left: -16px
 }
 
 .content {

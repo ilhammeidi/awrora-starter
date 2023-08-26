@@ -3,64 +3,68 @@
     <div>
       <v-list
         subheader
-        two-line
+        lines="two"
       >
         <v-list-item
           v-for="(item, index) in news"
           :key="index"
           href="#"
         >
-          <v-list-item-avatar rounded="lg" width="60">
-            <v-img :src="item.img" />
-          </v-list-item-avatar>
-          <v-list-item-content>
+          <template #prepend>
+            <v-avatar rounded="lg" width="60">
+              <v-img cover :src="item.img" />
+            </v-avatar>
+          </template>
+          <div>
             <v-list-item-title>{{ item.title }}</v-list-item-title>
             <v-list-item-subtitle>{{ item.source }}</v-list-item-subtitle>
-          </v-list-item-content>
+          </div>
         </v-list-item>
       </v-list>
-      <v-btn text block color="primary">See all</v-btn>
+      <v-btn variant="text" block color="primary">
+        See all
+      </v-btn>
     </div>
   </paper>
 </template>
 
 <script>
-import Paper from '../../Paper'
+import Paper from '../../Paper';
 
 export default {
   components: {
-    Paper
+    Paper,
   },
   data() {
     return {
       news: [
         {
-          img: 'https://source.unsplash.com/random',
+          img: 'https://source.unsplash.com/random/?orientation=squarish',
           title: 'Vestibulum bibendum nisi eget magna',
-          source: 'the-news.com'
+          source: 'the-news.com',
         },
         {
-          img: 'https://source.unsplash.com/random',
+          img: 'https://source.unsplash.com/random/?orientation=squarish',
           title: 'Quisque a consequat ante',
-          source: 'the-news.com'
+          source: 'the-news.com',
         },
         {
-          img: 'https://source.unsplash.com/random',
+          img: 'https://source.unsplash.com/random/?orientation=squarish',
           title: 'Donec dignissim, odio ac imperdiet luctus',
-          source: 'the-news.com'
+          source: 'the-news.com',
         },
         {
-          img: 'https://source.unsplash.com/random',
+          img: 'https://source.unsplash.com/random/?orientation=squarish',
           title: 'Suspendisse eleifend nunc non',
-          source: 'the-news.com'
+          source: 'the-news.com',
         },
         {
-          img: 'https://source.unsplash.com/random',
+          img: 'https://source.unsplash.com/random/?orientation=squarish',
           title: 'Vestibulum a massa vestibulum',
-          source: 'the-news.com'
-        }
-      ]
-    }
-  }
-}
+          source: 'the-news.com',
+        },
+      ],
+    };
+  },
+};
 </script>

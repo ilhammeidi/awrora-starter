@@ -12,15 +12,51 @@
                   Profile Cards Portrait
                 </h4>
                 <v-row>
-                  <v-col sm="6" cols="12" v-for="index in 2" :key="index">
+                  <v-col sm="6" cols="12">
                     <profile-card
                       :connection="100"
                       :favorites="10"
                       :albums="12"
-                      cover="https://source.unsplash.com/random"
+                      cover="https://source.unsplash.com/random/?nice"
                       name="John Dalton"
                       title="Web Designer"
                       type="oval"
+                      orientation="portrait"
+                    />
+                  </v-col>
+                  <v-col sm="6" cols="12">
+                    <profile-card
+                      :connection="100"
+                      :favorites="10"
+                      :albums="12"
+                      cover="https://source.unsplash.com/random/?nice"
+                      name="John Dalton"
+                      title="Web Designer"
+                      type="full"
+                      orientation="portrait"
+                    />
+                  </v-col>
+                  <v-col sm="6" cols="12">
+                    <profile-card
+                      :connection="100"
+                      :favorites="10"
+                      :albums="12"
+                      cover="https://source.unsplash.com/random/?nice"
+                      name="John Dalton"
+                      title="Web Designer"
+                      type="round"
+                      orientation="portrait"
+                    />
+                  </v-col>
+                  <v-col sm="6" cols="12">
+                    <profile-card
+                      :connection="100"
+                      :favorites="10"
+                      :albums="12"
+                      cover="https://source.unsplash.com/random/?nice"
+                      name="John Dalton"
+                      title="Web Designer"
+                      type="over"
                       orientation="portrait"
                     />
                   </v-col>
@@ -32,166 +68,374 @@
                 </h4>
                 <v-row>
                   <v-col md="12">
-                    <fragment v-for="index in 3" :key="index">
-                      <profile-card
-                        :connection="100"
-                        :favorites="10"
-                        :albums="12"
-                        cover="https://source.unsplash.com/random"
-                        name="John Dalton"
-                        title="Web Designer"
-                        type="round"
-                        orientation="landscape"
-                      />
-                      <br /><br />
-                    </fragment>
+                    <profile-card
+                      :connection="100"
+                      :favorites="10"
+                      :albums="12"
+                      cover="https://source.unsplash.com/random/?nice"
+                      name="John Dalton"
+                      title="Web Designer"
+                      type="full"
+                      orientation="landscape"
+                    />
+                    <br><br>
+                    <profile-card
+                      :connection="100"
+                      :favorites="10"
+                      :albums="12"
+                      cover="https://source.unsplash.com/random/?nice"
+                      name="John Dalton"
+                      title="Web Designer"
+                      type="oval"
+                      orientation="landscape"
+                    />
+                    <br><br>
+                    <profile-card
+                      :connection="100"
+                      :favorites="10"
+                      :albums="12"
+                      cover="https://source.unsplash.com/random/?nice"
+                      name="John Dalton"
+                      title="Web Designer"
+                      type="round"
+                      orientation="landscape"
+                    />
+                    <br><br>
+                    <profile-card
+                      :connection="100"
+                      :favorites="10"
+                      :albums="12"
+                      cover="https://source.unsplash.com/random/?nice"
+                      name="John Dalton"
+                      title="Web Designer"
+                      type="over"
+                      orientation="landscape"
+                    />
+                    <br><br>
                   </v-col>
                 </v-row>
               </div>
-              <div class="space-top-short" id="product_p">
+              <div id="product_p" class="space-top-short">
                 <h4 class="use-text-subtitle mb-3">
                   Product Cards Portrait
                 </h4>
                 <v-row>
-                  <v-col sm="4" cols="12" v-for="index in 3" :key="index">
+                  <v-col sm="6" cols="12">
                     <product-card
                       :rating="3"
                       :price="20"
-                      img="https://source.unsplash.com/random"
+                      img="https://source.unsplash.com/random/?nice"
+                      title="Sed lacinia velit"
+                      desc="Proin pretium arcu eget metus porta consecteturc"
+                      orientation="portrait"
+                      type="full"
+                    />
+                  </v-col>
+                  <v-col sm="6" cols="12">
+                    <product-card
+                      :rating="3"
+                      :price="20"
+                      img="https://source.unsplash.com/random/?nice"
+                      title="Sed lacinia velit"
+                      desc="Proin pretium arcu eget metus porta consecteturc"
+                      orientation="portrait"
+                      type="oval"
+                    />
+                  </v-col>
+                  <v-col sm="6" cols="12">
+                    <product-card
+                      :rating="3"
+                      :price="20"
+                      img="https://source.unsplash.com/random/?nice"
                       title="Sed lacinia velit"
                       desc="Proin pretium arcu eget metus porta consecteturc"
                       orientation="portrait"
                       type="round"
                     />
                   </v-col>
+                  <v-col sm="6" cols="12">
+                    <product-card
+                      :rating="3"
+                      :price="20"
+                      img="https://source.unsplash.com/random/?nice"
+                      title="Sed lacinia velit"
+                      desc="Proin pretium arcu eget metus porta consecteturc"
+                      orientation="portrait"
+                      type="over"
+                    />
+                  </v-col>
                 </v-row>
               </div>
-              <div class="space-top-short" id="product_l">
+              <div id="product_l" class="space-top-short">
                 <h4 class="use-text-subtitle mb-3">
                   Product Cards Landscape
                 </h4>
                 <v-row>
                   <v-col md="12">
-                    <fragment v-for="index in 3" :key="index">
-                      <product-card
-                        :rating="3"
-                        :price="20"
-                        img="https://source.unsplash.com/random"
-                        title="Sed lacinia velit"
-                        desc="Proin pretium arcu eget metus porta consecteturc"
-                        orientation="landscape"
-                        type="oval"
-                      />
-                      <br /><br />
-                    </fragment>
+                    <product-card
+                      :rating="3"
+                      :price="20"
+                      img="https://source.unsplash.com/random/?nice"
+                      title="Sed lacinia velit"
+                      desc="Proin pretium arcu eget metus porta consecteturc"
+                      orientation="landscape"
+                      type="full"
+                    />
+                    <br><br>
+                    <product-card
+                      :rating="3"
+                      :price="20"
+                      img="https://source.unsplash.com/random/?nice"
+                      title="Sed lacinia velit"
+                      desc="Proin pretium arcu eget metus porta consecteturc"
+                      orientation="landscape"
+                      type="oval"
+                    />
+                    <br><br>
+                    <product-card
+                      :rating="3"
+                      :price="20"
+                      img="https://source.unsplash.com/random/?nice"
+                      title="Sed lacinia velit"
+                      desc="Proin pretium arcu eget metus porta consecteturc"
+                      orientation="landscape"
+                      type="round"
+                    />
+                    <br><br>
+                    <product-card
+                      :rating="3"
+                      :price="20"
+                      img="https://source.unsplash.com/random/?nice"
+                      title="Sed lacinia velit"
+                      desc="Proin pretium arcu eget metus porta consecteturc"
+                      orientation="landscape"
+                      type="over"
+                    />
+                    <br><br>
                   </v-col>
                 </v-row>
               </div>
-              <div class="space-top-short" id="media_video">
+              <div id="media_video" class="space-top-short">
                 <h4 class="use-text-subtitle mb-3">
                   Video Cards
                 </h4>
                 <v-row>
-                  <v-col sm="6" cols="12" v-for="index in 2" :key="index">
+                  <v-col v-for="index in 2" :key="index" sm="6" cols="12">
                     <media-card
                       title="Sed lacinia velit, ut malesuada eros interdum a"
                       orientation="portrait"
                       type="video"
-                      thumb="https://source.unsplash.com/random"
+                      thumb="https://source.unsplash.com/random/?nice"
                       href="#"
                     />
                   </v-col>
                 </v-row>
               </div>
-              <div class="space-top-short" id="media_photo">
+              <div id="media_photo" class="space-top-short">
                 <h4 class="use-text-subtitle mb-3">
                   Image Cards
                 </h4>
                 <v-row>
-                  <v-col sm="6" cols="12" v-for="index in 2" :key="index">
+                  <v-col v-for="index in 2" :key="index" sm="6" cols="12">
                     <media-card
                       title="Sed lacinia velit, ut malesuada eros interdum a"
                       orientation="portrait"
                       type="photo"
-                      thumb="https://source.unsplash.com/random"
+                      thumb="https://source.unsplash.com/random/?nice"
                       href="#"
                     />
                   </v-col>
                 </v-row>
               </div>
-              <div class="space-top-short" id="news_p">
+              <div id="news_p" class="space-top-short">
                 <h4 class="use-text-subtitle mb-3">
                   News Cards Portrait
                 </h4>
                 <v-row>
-                  <v-col sm="4" cols="12" v-for="index in 3" :key="index">
+                  <v-col sm="6" cols="12">
                     <news-card
                       title="Ut sed eros finibus, placerat orci id, dapibus mauris. Vestibulum consequat hendrerit lacus."
                       headline="news"
                       orientation="portrait"
                       type="full"
-                      img="https://source.unsplash.com/random"
+                      img="https://source.unsplash.com/random/?nice"
+                      href="#"
+                    />
+                  </v-col>
+                  <v-col sm="6" cols="12">
+                    <news-card
+                      title="Ut sed eros finibus, placerat orci id, dapibus mauris. Vestibulum consequat hendrerit lacus."
+                      headline="news"
+                      orientation="portrait"
+                      type="oval"
+                      img="https://source.unsplash.com/random/?nice"
+                      href="#"
+                    />
+                  </v-col>
+                  <v-col sm="6" cols="12">
+                    <news-card
+                      title="Ut sed eros finibus, placerat orci id, dapibus mauris. Vestibulum consequat hendrerit lacus."
+                      headline="news"
+                      orientation="portrait"
+                      type="round"
+                      img="https://source.unsplash.com/random/?nice"
+                      href="#"
+                    />
+                  </v-col>
+                  <v-col sm="6" cols="12">
+                    <news-card
+                      title="Ut sed eros finibus, placerat orci id, dapibus mauris. Vestibulum consequat hendrerit lacus."
+                      headline="news"
+                      orientation="portrait"
+                      type="over"
+                      img="https://source.unsplash.com/random/?nice"
                       href="#"
                     />
                   </v-col>
                 </v-row>
               </div>
-              <div class="space-top-short" id="news_l">
+              <div id="news_l" class="space-top-short">
                 <h4 class="use-text-subtitle mb-3">
                   News Cards Landscape
                 </h4>
                 <v-row>
                   <v-col md="12">
-                    <fragment v-for="index in 3" :key="index">
-                      <news-card
-                        title="Ut sed eros finibus, placerat orci id, dapibus mauris. Vestibulum consequat hendrerit lacus."
-                        headline="news"
-                        orientation="landscape"
-                        type="oval"
-                        img="https://source.unsplash.com/random"
-                        href="#"
-                      />
-                      <br /><br />
-                    </fragment>
+                    <news-card
+                      title="Ut sed eros finibus, placerat orci id, dapibus mauris. Vestibulum consequat hendrerit lacus."
+                      headline="news"
+                      orientation="landscape"
+                      type="full"
+                      img="https://source.unsplash.com/random/?nice"
+                      href="#"
+                    />
+                    <br><br>
+                    <news-card
+                      title="Ut sed eros finibus, placerat orci id, dapibus mauris. Vestibulum consequat hendrerit lacus."
+                      headline="news"
+                      orientation="landscape"
+                      type="oval"
+                      img="https://source.unsplash.com/random/?nice"
+                      href="#"
+                    />
+                    <br><br>
+                    <news-card
+                      title="Ut sed eros finibus, placerat orci id, dapibus mauris. Vestibulum consequat hendrerit lacus."
+                      headline="news"
+                      orientation="landscape"
+                      type="round"
+                      img="https://source.unsplash.com/random/?nice"
+                      href="#"
+                    />
+                    <br><br>
+                    <news-card
+                      title="Ut sed eros finibus, placerat orci id, dapibus mauris. Vestibulum consequat hendrerit lacus."
+                      headline="news"
+                      orientation="landscape"
+                      type="over"
+                      img="https://source.unsplash.com/random/?nice"
+                      href="#"
+                    />
+                    <br><br>
                   </v-col>
                 </v-row>
               </div>
-              <div class="space-top-short" id="post_p">
+              <div id="post_p" class="space-top-short">
                 <h4 class="use-text-subtitle mb-3">
                   Post Cards Portrait
                 </h4>
                 <v-row>
-                  <v-col sm="4" cols="12" v-for="index in 3" :key="index">
+                  <v-col sm="6" cols="12">
+                    <post-card
+                      title="Maecenas rutrum dolor sed nisi"
+                      desc="Proin pretium arcu eget metus porta consectetur Pellentesque habitant"
+                      date="12 Nov 2020"
+                      orientation="portrait"
+                      type="full"
+                      img="https://source.unsplash.com/random/?nice"
+                      href="#"
+                    />
+                  </v-col>
+                  <v-col sm="6" cols="12">
+                    <post-card
+                      title="Maecenas rutrum dolor sed nisi"
+                      desc="Proin pretium arcu eget metus porta consectetur Pellentesque habitant"
+                      date="12 Nov 2020"
+                      orientation="portrait"
+                      type="oval"
+                      img="https://source.unsplash.com/random/?nice"
+                      href="#"
+                    />
+                  </v-col>
+                  <v-col sm="6" cols="12">
+                    <post-card
+                      title="Maecenas rutrum dolor sed nisi"
+                      desc="Proin pretium arcu eget metus porta consectetur Pellentesque habitant"
+                      date="12 Nov 2020"
+                      orientation="portrait"
+                      type="round"
+                      img="https://source.unsplash.com/random/?nice"
+                      href="#"
+                    />
+                  </v-col>
+                  <v-col sm="6" cols="12">
                     <post-card
                       title="Maecenas rutrum dolor sed nisi"
                       desc="Proin pretium arcu eget metus porta consectetur Pellentesque habitant"
                       date="12 Nov 2020"
                       orientation="portrait"
                       type="over"
-                      img="https://source.unsplash.com/random"
+                      img="https://source.unsplash.com/random/?nice"
                       href="#"
                     />
                   </v-col>
                 </v-row>
               </div>
-              <div class="space-top-short" id="post_l">
+              <div id="post_l" class="space-top-short">
                 <h4 class="use-text-subtitle mb-3">
                   Post Cards Landscape
                 </h4>
                 <v-row>
                   <v-col md="12">
-                    <fragment v-for="index in 3" :key="index">
-                      <post-card
-                        title="Maecenas rutrum dolor sed nisi"
-                        desc="Vestibulum faucibus eget erat eget pretium. Donec commodo convallis ligula, eget suscipit orci. Suspendisse potenti. Proin pretium arcu eget metus porta consectetur Pellentesque habitant. Vestibulum faucibus eget erat eget pretium. Donec commodo convallis ligula, eget suscipit orci. Suspendisse potenti. Proin pretium arcu eget metus porta consectetur Pellentesque habitant"
-                        date="12 Nov 2020"
-                        orientation="landscape"
-                        type="oval"
-                        img="https://source.unsplash.com/random"
-                        href="#"
-                      />
-                      <br /><br />
-                    </fragment>
+                    <post-card
+                      title="Maecenas rutrum dolor sed nisi"
+                      desc="Vestibulum faucibus eget erat eget pretium. Donec commodo convallis ligula, eget suscipit orci. Suspendisse potenti. Proin pretium arcu eget metus porta consectetur Pellentesque habitant. Vestibulum faucibus eget erat eget pretium. Donec commodo convallis ligula, eget suscipit orci. Suspendisse potenti. Proin pretium arcu eget metus porta consectetur Pellentesque habitant"
+                      date="12 Nov 2020"
+                      orientation="landscape"
+                      type="full"
+                      img="https://source.unsplash.com/random/?nice"
+                      href="#"
+                    />
+                    <br><br>
+                    <post-card
+                      title="Maecenas rutrum dolor sed nisi"
+                      desc="Vestibulum faucibus eget erat eget pretium. Donec commodo convallis ligula, eget suscipit orci. Suspendisse potenti. Proin pretium arcu eget metus porta consectetur Pellentesque habitant. Vestibulum faucibus eget erat eget pretium. Donec commodo convallis ligula, eget suscipit orci. Suspendisse potenti. Proin pretium arcu eget metus porta consectetur Pellentesque habitant"
+                      date="12 Nov 2020"
+                      orientation="landscape"
+                      type="oval"
+                      img="https://source.unsplash.com/random/?nice"
+                      href="#"
+                    />
+                    <br><br>
+                    <post-card
+                      title="Maecenas rutrum dolor sed nisi"
+                      desc="Vestibulum faucibus eget erat eget pretium. Donec commodo convallis ligula, eget suscipit orci. Suspendisse potenti. Proin pretium arcu eget metus porta consectetur Pellentesque habitant. Vestibulum faucibus eget erat eget pretium. Donec commodo convallis ligula, eget suscipit orci. Suspendisse potenti. Proin pretium arcu eget metus porta consectetur Pellentesque habitant"
+                      date="12 Nov 2020"
+                      orientation="landscape"
+                      type="round"
+                      img="https://source.unsplash.com/random/?nice"
+                      href="#"
+                    />
+                    <br><br>
+                    <post-card
+                      title="Maecenas rutrum dolor sed nisi"
+                      desc="Vestibulum faucibus eget erat eget pretium. Donec commodo convallis ligula, eget suscipit orci. Suspendisse potenti. Proin pretium arcu eget metus porta consectetur Pellentesque habitant. Vestibulum faucibus eget erat eget pretium. Donec commodo convallis ligula, eget suscipit orci. Suspendisse potenti. Proin pretium arcu eget metus porta consectetur Pellentesque habitant"
+                      date="12 Nov 2020"
+                      orientation="landscape"
+                      type="over"
+                      img="https://source.unsplash.com/random/?nice"
+                      href="#"
+                    />
+                    <br><br>
                   </v-col>
                 </v-row>
               </div>
@@ -208,26 +452,27 @@
 </template>
 
 <style scoped lang="scss">
-@import '~/assets/pages';
+@import '@/assets/scss/pages';
 </style>
 
 <script>
-import brand from '~/static/text/brand'
-import Header from '~/components/Header'
-import Footer from '~/components/Footer'
-import Search from '~/components/Filter/Search'
-import PostCard from '~/components/Cards/PostCard'
-import NewsCard from '~/components/Cards/NewsCard'
-import MediaCard from '~/components/Cards/MediaCard'
-import ProductCard from '~/components/Cards/ProductCard'
-import ProfileCard from '~/components/Cards/ProfileCard'
-import Sidebar from '~/components/List/Sidebar'
+import brand from '@/assets/text/brand';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import Search from '@/components/Filter/Search';
+import PostCard from '@/components/Cards/PostCard';
+import NewsCard from '@/components/Cards/NewsCard';
+import MediaCard from '@/components/Cards/MediaCard';
+import ProductCard from '@/components/Cards/ProductCard';
+import ProfileCard from '@/components/Cards/ProfileCard';
+import Sidebar from '@/components/List/Sidebar';
+import { defineNuxtComponent } from '#app';
 
-export default {
+export default defineNuxtComponent({
   data() {
     return {
-      keyword: ''
-    }
+      keyword: '',
+    };
   },
   components: {
     'main-header': Header,
@@ -238,12 +483,12 @@ export default {
     MediaCard,
     ProductCard,
     ProfileCard,
-    Sidebar
+    Sidebar,
   },
   head() {
     return {
-      title: brand.starter.name + ' - Card Collection'
-    }
-  }
-}
+      title: brand.starter.name + ' - Card Collection',
+    };
+  },
+});
 </script>

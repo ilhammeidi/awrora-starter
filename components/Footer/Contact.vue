@@ -4,7 +4,7 @@
       <v-row :class="{ 'column-reverse': isMobile }" align="center">
         <v-col cols="12" md="5" class="px-12">
           <logo type="portrait" />
-          <p>
+          <p class="use-text-subtitle2">
             Donec sit amet nulla sed arcu pulvinar ultricies commodo id ligula.
           </p>
           <div class="socmed">
@@ -15,7 +15,7 @@
               <i class="ion-logo-linkedin" />
             </v-btn>
             <v-btn icon class="margin">
-               <i class="ion-logo-twitter" />
+              <i class="ion-logo-twitter" />
             </v-btn>
             <v-btn icon class="margin">
               <i class="ion-logo-instagram" />
@@ -24,13 +24,13 @@
           <div class="contact">
             <p class="use-text-paragraph">
               {{ $t('common.blog_phone') }}
-              <br />
+              <br>
               +12 345 678 90
             </p>
             <v-divider class="divider my-3" />
             <p class="use-text-paragraph">
               Skype
-              <br />
+              <br>
               company.skype
             </p>
           </div>
@@ -90,9 +90,9 @@
                       <div class="btn-area">
                         <v-btn
                           color="primary"
-                          large
-                          @click="validate"
+                          size="large"
                           block
+                          @click="validate"
                         >
                           {{ $t('common.form_send') }}
                         </v-btn>
@@ -114,15 +114,15 @@
 </style>
 
 <script>
-import Logo from '../Logo'
-import brand from '~/static/text/brand'
+import Logo from '../Logo';
+import brand from '@/assets/text/brand';
 
 export default {
   components: {
-    Logo
+    Logo,
   },
   data: () => ({
-    brand: brand,
+    brand,
     openNotif: false,
     valid: true,
     name: '',
@@ -130,22 +130,22 @@ export default {
     email: '',
     emailRules: [
       v => !!v || 'E-mail is required',
-      v => /.+@.+\..+/.test(v) || 'E-mail must be valid'
+      v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
     ],
-    message: ''
+    message: '',
   }),
+  computed: {
+    isMobile() {
+      const smDown = this.$vuetify.display.smAndDown;
+      return smDown;
+    },
+  },
   methods: {
     validate() {
       if (this.$refs.form.validate()) {
-        this.openNotif = true
+        this.openNotif = true;
       }
-    }
+    },
   },
-  computed: {
-    isMobile() {
-      const smDown = this.$store.state.breakpoints.smDown
-      return smDown.indexOf(this.$mq) > -1
-    }
-  }
-}
+};
 </script>

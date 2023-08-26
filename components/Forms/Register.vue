@@ -81,7 +81,7 @@
             </div>
           </div>
           <v-btn
-            large
+            size="large"
             color="secondary"
             @click="handleSubmit"
           >
@@ -98,13 +98,13 @@
 </style>
 
 <script>
-import SocialAuth from './SocialAuth'
-import AuthFrame from './AuthFrame'
+import SocialAuth from './SocialAuth';
+import AuthFrame from './AuthFrame';
 
 export default {
   components: {
     SocialAuth,
-    AuthFrame
+    AuthFrame,
   },
   data() {
     return {
@@ -113,30 +113,30 @@ export default {
       name: '',
       emailRules: [
         v => !!v || 'E-mail is required',
-        v => /.+@.+\..+/.test(v) || 'E-mail must be valid'
+        v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
       ],
       password: '',
       confirmPassword: '',
       requiredRules: [v => !!v || 'This field is required'],
       passwordRules: [
         v => !!v || 'This field is required',
-        v => v === this.password || 'Passwords do not match'
+        v => v === this.password || 'Passwords do not match',
       ],
-      checkbox: false
-    }
+      checkbox: false,
+    };
+  },
+  computed: {
+    isMobile() {
+      const smDown = this.$vuetify.display.smAndDown;
+      return smDown;
+    },
   },
   methods: {
     handleSubmit() {
       if (this.$refs.form.validate()) {
-        console.log('data submited')
+        console.log('data submited');
       }
-    }
+    },
   },
-  computed: {
-    isMobile() {
-      const smDown = this.$store.state.breakpoints.smDown
-      return smDown.indexOf(this.$mq) > -1
-    }
-  }
-}
+};
 </script>

@@ -9,20 +9,21 @@
           <v-col
             v-for="(item, i) in images"
             :key="i"
-            cols="12"
-            md="6"
+            cols="6"
             class="gallery-item"
           >
             <v-item v-slot="{ active, toggle }">
               <v-img
                 :src="item.src"
                 height="150"
-                class="text-right pa-2"
+                class="text-right pa-1"
+                cover
                 @click="toggle"
               >
                 <v-btn
                   icon
-                  dark
+                  variant="text"
+                  color="white"
                 >
                   <v-icon>
                     {{ active ? 'mdi-heart' : 'mdi-heart-outline' }}
@@ -33,7 +34,7 @@
           </v-col>
         </v-row>
       </v-item-group>
-      <v-btn text block color="primary">
+      <v-btn variant="text" block color="primary">
         {{ $t('common.btn_seeall') }}
       </v-btn>
     </div>
@@ -45,30 +46,30 @@
 </style>
 
 <script>
-import Paper from '../../Paper'
+import Paper from '../../Paper';
 
 export default {
   components: {
-    Paper
+    Paper,
   },
   data() {
     return {
       images: [
         {
-          src: 'https://source.unsplash.com/random'
+          src: 'https://source.unsplash.com/random/?nice',
         },
         {
-          src: 'https://source.unsplash.com/random'
+          src: 'https://source.unsplash.com/random/?nice',
         },
         {
-          src: 'https://source.unsplash.com/random'
+          src: 'https://source.unsplash.com/random/?nice',
         },
         {
-          src: 'https://source.unsplash.com/random'
-        }
+          src: 'https://source.unsplash.com/random/?nice',
+        },
       ],
-      selected: []
-    }
-  }
-}
+      selected: [],
+    };
+  },
+};
 </script>

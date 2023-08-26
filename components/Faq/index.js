@@ -1,1 +1,1 @@
-export { default } from './Faq'
+export { default } from './Faq';

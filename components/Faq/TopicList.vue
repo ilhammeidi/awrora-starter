@@ -23,30 +23,30 @@ export default {
       topics: [
         {
           title: 'Nullam pulvinar pellentesque',
-          href: '#topic1'
+          href: '#topic1',
         },
         {
           title: 'Sed luctus mauris',
-          href: '#topic2'
+          href: '#topic2',
         },
         {
           title: 'Vestibulum libero',
-          href: '#topic3'
+          href: '#topic3',
         },
         {
           title: 'Pellentesque a magna eget',
-          href: '#topic4'
+          href: '#topic4',
         },
         {
           title: 'Suspendisse pulvinar non orci vel lobortis',
-          href: '#topic5'
+          href: '#topic5',
         },
         {
           title: 'Quisque posuere at nisi',
-          href: '#topic6'
-        }
-      ]
-    }
-  }
-}
+          href: '#topic6',
+        },
+      ],
+    };
+  },
+};
 </script>

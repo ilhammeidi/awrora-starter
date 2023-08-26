@@ -1,8 +1,12 @@
 <template>
   <v-card class="center-box price-card">
     <v-card-title class="price-header justify-center">
-      <h5 class="text-xs-center headline">{{ title }}</h5>
-      <div class="small-title text-xs-center body-1"> {{ subheader }}</div>
+      <h5 class="text-xs-center use-text-subtitle">
+        {{ title }}
+      </h5>
+      <div class="small-title text-xs-center use-text-subtitle2">
+        {{ subheader }}
+      </div>
       <v-icon
         v-if="title === 'Pro'"
         class="icon"
@@ -12,10 +16,10 @@
     </v-card-title>
     <v-card-text class="pa-4">
       <div class="card-pricing">
-        <h2 class="price text-xs-center display-2">
+        <h2 class="price text-xs-center use-text-title2">
           $ {{ price }}
         </h2>
-        <h6 class="title">
+        <h6 class="use-text-subtitle2">
           / mo
         </h6>
       </div>
@@ -23,7 +27,7 @@
         <li
           v-for="(line, index) in description"
           :key="index"
-          class="text-center subtitle-1"
+          class="text-center use-text-paragraph"
         >
           {{ line }}
         </li>
@@ -50,28 +54,28 @@ export default {
   props: {
     title: {
       type: String,
-      required: true
+      required: true,
     },
     subheader: {
       type: String,
-      default: ''
+      default: '',
     },
     price: {
       type: String,
-      required: true
+      required: true,
     },
     description: {
       type: Array,
-      required: true
+      required: true,
     },
     buttonText: {
       type: String,
-      required: true
+      required: true,
     },
     buttonVariant: {
       type: String,
-      default: 'outlined'
-    }
-  }
-}
+      default: 'outlined',
+    },
+  },
+};
 </script>

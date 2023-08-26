@@ -9,25 +9,25 @@
           </v-col>
         </v-row>
         <v-row class="mt-8">
-          <v-col md="6" cols="12" class="px-3">
+          <v-col lg="6" cols="12" class="px-3">
             <post-card
               title="Maecenas rutrum dolor sed nisi"
               desc="Proin pretium arcu eget metus porta consectetur Pellentesque habitant"
               date="12 Nov 2020"
               orientation="landscape"
               type="round"
-              img="https://source.unsplash.com/random"
+              img="https://source.unsplash.com/random/?orientation=landscape"
               href="/blog/detail-blog"
             />
           </v-col>
-          <v-col md="6" cols="12" class="px-4">
+          <v-col lg="6" cols="12" class="px-4">
             <post-card
               title="Maecenas rutrum dolor sed nisi"
               desc="Proin pretium arcu eget metus porta consectetur Pellentesque habitant"
               date="12 Nov 2020"
               orientation="landscape"
               type="round"
-              img="https://source.unsplash.com/random"
+              img="https://source.unsplash.com/random/?orientation=landscape"
               href="/blog/detail-blog"
             />
           </v-col>
@@ -45,18 +45,22 @@
                 date="12 Nov 2020"
                 orientation="portrait"
                 type="oval"
-                img="https://source.unsplash.com/random"
+                img="https://source.unsplash.com/random/?orientation=landscape"
                 href="/blog/detail-blog"
               />
             </div>
             <v-row justify="space-between" class="mt-5 mb-10">
-              <v-btn text>
-                <v-icon>mdi-arrow-left</v-icon>
+              <v-btn variant="text">
+                <v-icon class="use-rtl-flip">
+                  mdi-arrow-left
+                </v-icon>
                 {{ $t('common.btn_prev') }}
               </v-btn>
-              <v-btn text>
+              <v-btn variant="text">
                 {{ $t('common.btn_next') }}
-                <v-icon>mdi-arrow-right</v-icon>
+                <v-icon class="use-rtl-flip">
+                  mdi-arrow-right
+                </v-icon>
               </v-btn>
             </v-row>
           </v-col>
@@ -73,29 +77,30 @@
 </template>
 
 <style lang="scss" scoped>
-@import '~/assets/pages';
+@import '@/assets/scss/pages';
 </style>
 
 <script>
-import brand from '~/static/text/brand'
-import BlogHeader from '~/components/Header/BlogHeader'
-import Headline from '~/components/Blog/Headline'
-import PostCard from '~/components/Cards/PostCard'
-import Sidebar from '~/components/Blog/Sidebar'
-import Footer from '~/components/Footer'
+import brand from '@/assets/text/brand';
+import BlogHeader from '@/components/Header/BlogHeader';
+import Headline from '@/components/Blog/Headline';
+import PostCard from '@/components/Cards/PostCard';
+import Sidebar from '@/components/Blog/Sidebar';
+import Footer from '@/components/Footer';
+import { defineNuxtComponent } from '#app';
 
-export default {
+export default defineNuxtComponent({
   components: {
     'main-header': BlogHeader,
     'main-footer': Footer,
     Headline,
     Sidebar,
-    PostCard
+    PostCard,
   },
   head() {
     return {
-      title: brand.starter.name + ' - Blog Home'
-    }
-  }
-}
+      title: brand.starter.name + ' - Blog Home',
+    };
+  },
+});
 </script>

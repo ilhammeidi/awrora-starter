@@ -14,6 +14,16 @@
   position: relative;
 }
 
+.headline {
+  display: flex;
+  align-items: center;
+  .title-main {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
 .img {
   text-align: center;
   @include breakpoints-down('xs') {
@@ -51,7 +61,7 @@
   @include breakpoints-up(sm) {
     width: 690px;
   }
-  ::v-deep iframe {
+  :deep(iframe) {
     width: 100%
   }
 }
@@ -99,7 +109,7 @@
 .progress {
   border-radius: 10px;
   @include use-theme(background, $light-divider, $dark-divider);
-  ::v-deep .v-progress-linear__determinate {
+  :deep(.v-progress-linear__determinate) {
     transition: all 0.5s cubic-bezier(0, 0, 0, 0.96);
     border-radius: 10px;
     background-image: linear-gradient(120deg, $palette-secondary-main, $palette-primary-main);
@@ -115,7 +125,7 @@
   @include breakpoints-down(xs) {
     text-align: center
   }
-  ::v-deep .slick-dots {
+  :deep(.splide__pagination) {
     bottom: -55px;
   }
 }
@@ -130,12 +140,14 @@
 
 .carousel {
   position: relative;
+  z-index: 10;
+  direction: ltr;
 }
 
 .nav {
   position: absolute;
   top: 50%;
-  font-size: 38px;
+  font-size: 24px;
 }
 
 .prev {

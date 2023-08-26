@@ -1,24 +1,24 @@
-import sample from './sample-pages'
-import imgAPI from '~/static/images/imgAPI'
+import sample from './sample-pages';
+import imgAPI from '@/assets/images/imgAPI';
 
 const grandChild = [
   {
     name: 'Vivamus Condimentum',
-    link: '#'
+    link: '#',
   },
   {
     name: 'Lorem',
-    link: '#'
+    link: '#',
   },
   {
     name: 'Eu Rhoncus Odio',
-    link: '#'
+    link: '#',
   },
   {
     name: 'Praesent Tristique',
-    link: '#'
-  }
-]
+    link: '#',
+  },
+];
 
 const mega = [
   {
@@ -27,44 +27,44 @@ const mega = [
       {
         name: 'Eu Rhoncus Odio',
         thumb: imgAPI.photo[0],
-        child: grandChild
+        child: grandChild,
       },
       {
         name: 'In Lorem',
         thumb: imgAPI.photo[1],
-        child: grandChild
+        child: grandChild,
       },
       {
         name: 'Eu Rhoncus Odio',
         thumb: imgAPI.photo[2],
-        child: grandChild
+        child: grandChild,
       },
       {
         name: 'Praesent Tristique',
         thumb: imgAPI.photo[3],
-        child: grandChild
+        child: grandChild,
       },
       {
         name: 'Eu Rhoncus Odio',
         thumb: imgAPI.photo[4],
-        child: grandChild
+        child: grandChild,
       },
       {
         name: 'In Lorem',
         thumb: imgAPI.photo[5],
-        child: grandChild
+        child: grandChild,
       },
       {
         name: 'Eu Rhoncus Odio',
         thumb: imgAPI.photo[6],
-        child: grandChild
+        child: grandChild,
       },
       {
         name: 'Praesent Tristique',
         thumb: imgAPI.photo[7],
-        child: grandChild
-      }
-    ]
+        child: grandChild,
+      },
+    ],
   },
   {
     name: 'Second Menu',
@@ -72,44 +72,44 @@ const mega = [
       {
         name: 'Eu Rhoncus Odio',
         thumb: imgAPI.photo[8],
-        child: grandChild
+        child: grandChild,
       },
       {
         name: 'In Lorem',
         thumb: imgAPI.photo[9],
-        child: grandChild
+        child: grandChild,
       },
       {
         name: 'Eu Rhoncus Odio',
         thumb: imgAPI.photo[10],
-        child: grandChild
+        child: grandChild,
       },
       {
         name: 'Praesent Tristique',
         thumb: imgAPI.photo[0],
-        child: grandChild
+        child: grandChild,
       },
       {
         name: 'Eu Rhoncus Odio',
         thumb: imgAPI.photo[1],
-        child: grandChild
+        child: grandChild,
       },
       {
         name: 'In Lorem',
         thumb: imgAPI.photo[2],
-        child: grandChild
+        child: grandChild,
       },
       {
         name: 'Eu Rhoncus Odio',
         thumb: imgAPI.photo[3],
-        child: grandChild
+        child: grandChild,
       },
       {
         name: 'Praesent Tristique',
         thumb: imgAPI.photo[4],
-        child: grandChild
-      }
-    ]
+        child: grandChild,
+      },
+    ],
   },
   {
     name: 'Third Menu',
@@ -117,44 +117,44 @@ const mega = [
       {
         name: 'Eu Rhoncus Odio',
         thumb: imgAPI.photo[5],
-        child: grandChild
+        child: grandChild,
       },
       {
         name: 'In Lorem',
         thumb: imgAPI.photo[6],
-        child: grandChild
+        child: grandChild,
       },
       {
         name: 'Eu Rhoncus Odio',
         thumb: imgAPI.photo[7],
-        child: grandChild
+        child: grandChild,
       },
       {
         name: 'Praesent Tristique',
         thumb: imgAPI.photo[8],
-        child: grandChild
+        child: grandChild,
       },
       {
         name: 'Eu Rhoncus Odio',
         thumb: imgAPI.photo[9],
-        child: grandChild
+        child: grandChild,
       },
       {
         name: 'In Lorem',
         thumb: imgAPI.photo[10],
-        child: grandChild
+        child: grandChild,
       },
       {
         name: 'Eu Rhoncus Odio',
         thumb: imgAPI.photo[0],
-        child: grandChild
+        child: grandChild,
       },
       {
         name: 'Praesent Tristique',
         thumb: imgAPI.photo[1],
-        child: grandChild
-      }
-    ]
+        child: grandChild,
+      },
+    ],
   },
   {
     name: 'Fourth Menu',
@@ -162,49 +162,49 @@ const mega = [
       {
         name: 'Eu Rhoncus Odio',
         thumb: imgAPI.photo[0],
-        child: grandChild
+        child: grandChild,
       },
       {
         name: 'In Lorem',
         thumb: imgAPI.photo[1],
-        child: grandChild
+        child: grandChild,
       },
       {
         name: 'Eu Rhoncus Odio',
         thumb: imgAPI.photo[2],
-        child: grandChild
+        child: grandChild,
       },
       {
         name: 'Praesent Tristique',
         thumb: imgAPI.photo[3],
-        child: grandChild
+        child: grandChild,
       },
       {
         name: 'Eu Rhoncus Odio',
         thumb: imgAPI.photo[4],
-        child: grandChild
+        child: grandChild,
       },
       {
         name: 'In Lorem',
         thumb: imgAPI.photo[5],
-        child: grandChild
+        child: grandChild,
       },
       {
         name: 'Eu Rhoncus Odio',
         thumb: imgAPI.photo[6],
-        child: grandChild
+        child: grandChild,
       },
       {
         name: 'Praesent Tristique',
         thumb: imgAPI.photo[7],
-        child: grandChild
-      }
-    ]
+        child: grandChild,
+      },
+    ],
   },
   {
     name: 'Sample Pages',
-    child: sample
-  }
-]
+    child: sample,
+  },
+];
 
-export default mega
+export default mega;

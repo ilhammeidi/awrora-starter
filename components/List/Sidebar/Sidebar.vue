@@ -15,12 +15,12 @@
 </template>
 
 <script>
-import PeopleWidget from './PeopleWidget'
-import TrendingWidget from './TrendingWidget'
-import NewsWidget from './NewsWidget'
-import ImageWidget from './ImageWidget'
-import ProductWidget from './ProductWidget'
-import HelpWidget from './HelpWidget'
+import PeopleWidget from './PeopleWidget';
+import TrendingWidget from './TrendingWidget';
+import NewsWidget from './NewsWidget';
+import ImageWidget from './ImageWidget';
+import ProductWidget from './ProductWidget';
+import HelpWidget from './HelpWidget';
 
 export default {
   components: {
@@ -29,7 +29,7 @@ export default {
     NewsWidget,
     ImageWidget,
     ProductWidget,
-    HelpWidget
-  }
-}
+    HelpWidget,
+  },
+};
 </script>

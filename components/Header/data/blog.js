@@ -1,4 +1,4 @@
-import sample from './sample-pages'
+import sample from './sample-pages';
 
 const multiple = [
   {
@@ -6,68 +6,68 @@ const multiple = [
     child: [
       {
         name: 'Eu Rhoncus Odio',
-        link: '/'
+        link: '/',
       },
       {
         name: 'Eu Rhoncus Odio',
-        link: '/'
+        link: '/',
       },
       {
         name: 'Eu Rhoncus Odio',
-        link: '/'
+        link: '/',
       },
       {
         name: 'Eu Rhoncus Odio',
-        link: '/'
-      }
-    ]
+        link: '/',
+      },
+    ],
   },
   {
     name: 'Category 2',
     child: [
       {
         name: 'Eu Rhoncus Odio',
-        link: '/'
+        link: '/',
       },
       {
         name: 'Eu Rhoncus Odio',
-        link: '/'
+        link: '/',
       },
       {
         name: 'Eu Rhoncus Odio',
-        link: '/'
+        link: '/',
       },
       {
         name: 'Eu Rhoncus Odio',
-        link: '/'
-      }
-    ]
+        link: '/',
+      },
+    ],
   },
   {
     name: 'Category 3',
     child: [
       {
         name: 'Eu Rhoncus Odio',
-        link: '/'
+        link: '/',
       },
       {
         name: 'Eu Rhoncus Odio',
-        link: '/'
+        link: '/',
       },
       {
         name: 'Eu Rhoncus Odio',
-        link: '/'
+        link: '/',
       },
       {
         name: 'Eu Rhoncus Odio',
-        link: '/'
-      }
-    ]
+        link: '/',
+      },
+    ],
   },
   {
     name: 'Sample Pages',
-    child: sample
-  }
-]
+    child: sample,
+  },
+];
 
-export default multiple
+export default multiple;

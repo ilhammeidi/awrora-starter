@@ -16,7 +16,7 @@
           <product-card
             :rating="3"
             :price="20"
-            img="https://source.unsplash.com/random"
+            img="https://source.unsplash.com/random/?nice"
             title="Sed lacinia velit"
             desc="Proin pretium arcu eget metus porta consecteturc"
             orientation="portrait"
@@ -33,21 +33,21 @@
 </style>
 
 <script>
-import ProductCard from '../Cards/ProductCard'
-import imgAPI from '~/static/images/imgAPI'
+import ProductCard from '../Cards/ProductCard';
+import imgAPI from '@/assets/images/imgAPI';
 
 export default {
   components: {
-    ProductCard
+    ProductCard,
   },
   data: () => ({
-    imgAPI: imgAPI
+    imgAPI,
   }),
   computed: {
     isMobile() {
-      const xsDown = this.$store.state.breakpoints.xsDown
-      return xsDown.indexOf(this.$mq) > -1
-    }
-  }
-}
+      const xsDown = this.$vuetify.display.xs;
+      return xsDown;
+    },
+  },
+};
 </script>

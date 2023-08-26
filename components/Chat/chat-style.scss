@@ -11,12 +11,11 @@
   i {
     position: relative;
     @include left(-3px);
-    top: 3px;
     @include use-theme(color, $palette-primary-dark, $palette-primary-light);
   }
   .indicator {
     position: absolute;
-    top: -4px;
+    top: 0px;
     left: 2px;
   }
 }
@@ -38,7 +37,8 @@
   overflow: hidden;
   header {
     display: flex;
-    padding: spacing(2, 2, 0.5);
+    align-items: center;
+    padding: spacing(2, 0, 0.5, 2);
     @include use-theme(background-color, $palette-primary-light, $palette-primary-dark);
     h3 {
       flex: 1
@@ -98,10 +98,9 @@
 }
 
 .avatar {
-  img {
-    width: 38px;
-    height: 38px;
-  }
+  width: 38px;
+  height: 38px;
+  margin-right: $spacing1
 }
 
 .talk {

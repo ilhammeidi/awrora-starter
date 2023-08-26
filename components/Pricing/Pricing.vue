@@ -1,9 +1,9 @@
 <template>
   <v-container>
-    <h3 class="display-2 text-center mb-4">
+    <h3 class="use-text-title text-center mb-4">
       Pricing and Plan
     </h3>
-    <p class="body-1 text-center mb-4">
+    <p class="use-text-subtitle2 text-center mb-4">
       Curabitur egestas consequat lorem, vel fermentum augue porta id.
     </p>
     <div class="pricing-wrap">
@@ -35,11 +35,11 @@
 </style>
 
 <script>
-import PricingCard from '../Cards/PricingCard'
+import PricingCard from '../Cards/PricingCard';
 
 export default {
   components: {
-    PricingCard
+    PricingCard,
   },
   data() {
     return {
@@ -49,7 +49,7 @@ export default {
           price: '0',
           description: ['10 users included', '2 GB of storage'],
           buttonText: 'Sign up for free',
-          buttonVariant: 'outlined'
+          buttonVariant: 'outlined',
         },
         {
           title: 'Personal',
@@ -57,10 +57,10 @@ export default {
           description: [
             '15 users included',
             '10 GB of storage',
-            'Help center access'
+            'Help center access',
           ],
           buttonText: 'Get started',
-          buttonVariant: 'outlined'
+          buttonVariant: 'outlined',
         },
         {
           title: 'Pro',
@@ -70,10 +70,10 @@ export default {
             '20 users included',
             '10 GB of storage',
             'Help center access',
-            'Priority email support'
+            'Priority email support',
           ],
           buttonText: 'Get started',
-          buttonVariant: 'contained'
+          buttonVariant: 'contained',
         },
         {
           title: 'Enterprise',
@@ -82,13 +82,13 @@ export default {
             '50 users included',
             '30 GB of storage',
             'Help center access',
-            'Phone & email support'
+            'Phone & email support',
           ],
           buttonText: 'Contact us',
-          buttonVariant: 'outlined'
-        }
-      ]
-    }
-  }
-}
+          buttonVariant: 'outlined',
+        },
+      ],
+    };
+  },
+};
 </script>
